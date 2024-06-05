@@ -1,0 +1,19 @@
+{
+"1": {
+		"id": "1",
+        "name": "Monokuma's chocolate factory'",
+        "businessHours": "12:00 - 21:00",
+        "isOpen": true,
+        "location": {
+        	"longitude": 20.0,
+        	"latitude": 45.0,
+        	"address": {
+            	"street": "Main St 123",
+            	"city": "Chocolate City",
+            	"postalCode": "12345"
+        		}
+        },
+        "picture": "monokuma-logo.jpg",
+        "rating": 5.0
+    }
+}

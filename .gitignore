@@ -1,0 +1,22 @@
+# Ignoriši Tomcat webapps direktorijum
+WebShopAppREST/webapps/
+
+# Uključujući sve druge standardne direktorijume koje ne želite da verzionišete
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.iws
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+.gradle/
+build/
+conf/
+logs/
+temp/
+work/
