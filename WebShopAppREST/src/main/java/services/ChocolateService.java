@@ -4,8 +4,10 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -42,11 +44,35 @@ public class ChocolateService {
 		return dao.getByFabricId(id);
 	}
 	
+	@GET
+	@Path("/getChocolate{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Chocolate getChocolate(@PathParam("id") String id) {
+		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
+		return dao.getById(id);
+	}
+	
 	@POST
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	public void createChocolate(Chocolate chocolate) {
 		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
 		dao.addChocolate(chocolate);
+	}
+	
+	@PUT
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Chocolate editChocolate(Chocolate chocolate) {
+		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
+		return dao.editChocolate(chocolate);
+	}
+	
+	@DELETE
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Chocolate deleteChocolate(@PathParam("id") String id) {
+		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
+		return dao.deleteChocolate(id);
 	}
 }

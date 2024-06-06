@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click.prevent="GoToChocolateInsertionForm">Add chocolate</button>
         <h2>{{ factory.name }}</h2>
         <img :src="factory.picture" :alt="factory.name" width="50" height="50" />
         <br/>
@@ -17,9 +18,8 @@
             <p><strong>Grams:</strong> {{ chocolate.grams }}</p>
             <p><strong>In stock:</strong> {{ chocolate.isInStock ? 'Yes' : 'No' }}</p>
             <p><strong>Stock quantity:</strong> {{ chocolate.stockQuantity }}</p>
-
-
-
+            <button @click.prevent="editChocolate(chocolate)">Edit</button>
+            <button @click.prevent="deleteChocolate(chocolate)">Delete</button>
         </div>
     </div>
 </template>
@@ -28,15 +28,24 @@
     import {ref, onMounted} from "vue";
     import {useRoute} from 'vue-router';
     import axios from 'axios';
+    import { useRouter } from "vue-router";
+
 
     onMounted(() =>{
         loadFactory();
         loadChocolates();
-    })
+    });
 
     const factory = ref({});
     const route = useRoute();
     const chocolates = ref([]);
+    const router = useRouter();
+
+    
+    function GoToChocolateInsertionForm(){
+        router.push({name: "addChocolate", params: {id: route.params.id}});
+
+    }
 
     function loadFactory(){
         const id = route.params.id;
@@ -56,6 +65,19 @@
         if (!location) return '';
             const { address, latitude, longitude } = location;
             return `${address.street}, ${address.city}, ${address.postalCode}, Lat: ${latitude}, Long: ${longitude}`;
+    }
+
+    function editChocolate(chocolate){
+        router.push({name: "editChocolate", params: {id: chocolate.id}});
+
+    }
+
+    function deleteChocolate(chocolate){
+        axios.delete(`http://localhost:8080/WebShopAppREST/rest/chocolates/${chocolate.id}`, chocolate).then(() =>{
+            loadFactory();
+            loadChocolates();
+        }
+    )
     }
 
 </script>

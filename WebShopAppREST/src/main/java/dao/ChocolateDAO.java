@@ -2,11 +2,14 @@ package dao;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import beans.Chocolate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
@@ -35,9 +38,10 @@ public class ChocolateDAO {
 	
 	private void loadChocolates(String fileName) {
         try {
-            File file = new File(fileName + "/chocolates.json");
+            File file = new File(fileName + "chocolate.json");
             if (file.exists()) {
                 chocolateMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Chocolate>>() {});
+                System.out.println(fileName + "chocolate.json");
                 
             }
         } catch (IOException e) {
@@ -46,22 +50,14 @@ public class ChocolateDAO {
     }
 	
 	private void saveChocolates(String fileName) {
-	    try {
-	        File file = new File(fileName + "/chocolates.json");
-	        if (!file.exists()) {
-                file.createNewFile(); // Kreiranje fajla ako ne postoji
-                System.out.println("Dati fajl ne postoji");
-            }
-	        System.out.println("Chocolate map before saving: " + chocolateMap);
-	        objectMapper.writeValue(file, chocolateMap);
-	        System.out.println("Data successfully written to file.");
-	        
-	        // Provera sadržaja fajla nakon upisa
-	        String jsonContent = new String(Files.readAllBytes(file.toPath()));
-	        System.out.println("File content after writing: " + jsonContent);
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter(fileName + "chocolate.json")) {
+            gson.toJson(chocolateMap, writer);
+            System.out.println("Data successfully written to file.");
+            System.out.println(fileName + "chocolate.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 	
 	public Collection<Chocolate> getByFabricId(String fabricId){
@@ -69,17 +65,9 @@ public class ChocolateDAO {
 	}
 	
 	public void addChocolate(Chocolate chocolate) {
-	    // Generiši novi ID
 	    String newId = generateNewId();
-	    
-	    // Kreiraj novi objekat Chocolate
-	    //Chocolate newChocolate = new Chocolate(newId, name, type, weight);
-	    
-	    // Dodaj novi objekat u mapu
 	    chocolateMap.put(newId, chocolate);
 	    chocolate.setId(newId);
-	    
-	    // Sačuvaj mapu u JSON fajl
 	    saveChocolates(fileName);
 	}
 
@@ -94,6 +82,46 @@ public class ChocolateDAO {
 	    return String.valueOf(maxId + 1);
 	}
 	
+	
+	public Chocolate getById(String id) {
+		return chocolateMap.get(id);
+	}
+	
+	public Chocolate editChocolate(Chocolate chocolate) {
+		Chocolate chocolateToEdit = chocolateMap.get(chocolate.getId());
+
+	    if (chocolateToEdit != null) {
+	        chocolateToEdit.setName(chocolate.getName());
+	        chocolateToEdit.setPrice(chocolate.getPrice());
+	        chocolateToEdit.setType(chocolate.getType());
+	        chocolateToEdit.setFlavor(chocolate.getFlavor());
+	        chocolateToEdit.setGrams(chocolate.getGrams());
+	        chocolateToEdit.setDescription(chocolate.getDescription());
+	        chocolateToEdit.setPicture(chocolate.getPicture());
+	        chocolateToEdit.setStockQuantity(chocolate.getStockQuantity());
+	        chocolateToEdit.setIsInStock(chocolate.getIsInStock());
+
+	        // Ako želiš da sačuvaš promene u fajl, pozovi saveChocolates() ovde
+	        saveChocolates(fileName);
+
+	        return chocolateToEdit;
+	    } else {
+	        // Ako čokolada sa datim ID-jem ne postoji, možeš vratiti null ili baciti izuzetak
+	        return null;
+	    }
+	}
+	
+	public Chocolate deleteChocolate(String id) {
+		Chocolate chocolateToDelete = chocolateMap.get(id);
+		if(chocolateToDelete == null) {
+			return null;
+		}
+		
+		chocolateMap.remove(id);
+		saveChocolates(fileName);
+		return chocolateToDelete;
+		
+	}
 	
 
 }

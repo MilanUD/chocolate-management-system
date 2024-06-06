@@ -37,6 +37,7 @@ public class Chocolate {
     @JsonProperty("fabricId")
     private String fabricId;
     
+    
 	public String getFabricId() {
 		return fabricId;
 	}
