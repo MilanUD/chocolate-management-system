@@ -1,7 +1,7 @@
 {
 "1": {
 		"id": "1",
-        "name": "Monokuma's chocolate factory'",
+        "name": "Monokuma's chocolate factory",
         "businessHours": "12:00 - 21:00",
         "isOpen": true,
         "location": {
@@ -13,7 +13,58 @@
             	"postalCode": "12345"
         		}
         },
-        "picture": "monokuma-logo.jpg",
+        "picture": "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
         "rating": 5.0
+    },
+    "2": {
+		"id": "2",
+        "name": "Chocolate rush",
+        "businessHours": "06:00 - 23:00",
+        "isOpen": false,
+        "location": {
+        	"longitude": 35.1234512,
+        	"latitude": 75.7841234,
+        	"address": {
+            	"street": "Krajiska 7",
+            	"city": "Beocin",
+            	"postalCode": "21300"
+        		}
+        },
+        "picture": "http://localhost:8080/images/chocolate-rush.png",
+        "rating": 4.8
+    },
+    "3": {
+		"id": "3",
+        "name": "The best",
+        "businessHours": "08:00 - 22:00",
+        "isOpen": true,
+        "location": {
+        	"longitude": 21.3254,
+        	"latitude": 25.7841234,
+        	"address": {
+            	"street": "Miroslava Antica13",
+            	"city": "Beocin",
+            	"postalCode": "21300"
+        		}
+        },
+        "picture": "http://localhost:8080/images/chocolate-rush.png",
+        "rating": 3.2
+    },
+    "4": {
+		"id": "2",
+        "name": "Milka",
+        "businessHours": "09:00 - 20:00",
+        "isOpen": false,
+        "location": {
+        	"longitude": 74.1234512,
+        	"latitude": 54.7841234,
+        	"address": {
+            	"street": "Bulevar Oslobodjenja 12",
+            	"city": "Novi Sad",
+            	"postalCode": "21000"
+        		}
+        },
+        "picture": "http://localhost:8080/images/chocolate-rush.png",
+        "rating": 2.2
     }
 }
