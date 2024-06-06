@@ -14,7 +14,7 @@ public class ChocolateFactory {
 	private String name;
 	
 	private List<Chocolate> chocolates;
-	
+		
 	@JsonProperty("businessHours")
 	private String businessHours;
 	

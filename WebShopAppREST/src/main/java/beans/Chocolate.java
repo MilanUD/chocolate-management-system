@@ -37,7 +37,20 @@ public class Chocolate {
     @JsonProperty("fabricId")
     private String fabricId;
     
+    @JsonProperty("isDeleted")
+    private boolean isDeleted;
     
+    
+	public boolean getIsDeleted() {
+		return isDeleted;
+	}
+
+
+	public void setIsDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+
+
 	public String getFabricId() {
 		return fabricId;
 	}

@@ -13,14 +13,13 @@ public class ChocolateFactoryDAO {
 
 	private HashMap<String, ChocolateFactory> chocolateFactoryMap = new HashMap<String, ChocolateFactory>();
 	private ObjectMapper objectMapper = new ObjectMapper();     
+	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	
+	
+
 	
 	
 	public ChocolateFactoryDAO() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public ChocolateFactoryDAO(String fileName) {
         loadChocolateFactories(fileName);
 	}
 	

@@ -1,17 +1,17 @@
 <template>
     <table>
         <thead>
-            <th>Naziv</th>
-            <th>Lokacija</th>
+            <th>Name</th>
+            <th>Location</th>
             <th>Logo</th>
-            <th>Prosecna ocena</th>
+            <th>Review score</th>
             <th>More info</th>
         </thead>
         <tr v-for="factory in factories" :key="factory.id">
             <td>{{factory.name}}</td>
             <td>{{ formatLocation(factory.location) }}</td>
            <td> <img :src="factory.picture" :alt="factory.name" width="50" height="50" /> </td>
-            <td>{{ factory.rating }}</td>
+            <td>{{ factory.rating || "No rating" }}</td>
             <td><button @click.prevent="loadInformationAboutSpecificFactory(factory.id)">More info</button></td>
         </tr>
     </table>

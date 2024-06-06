@@ -7,7 +7,7 @@
         <p><strong>Business hours:</strong> {{ factory.businessHours }}</p>
         <p><strong>Status:</strong> {{ factory.isOpen ? 'Open' : 'Closed' }}</p>
         <p><strong>Location:</strong> {{ formatLocation(factory.location) }}</p>
-        <p><strong>Rating:</strong> {{ factory.rating || 'Nema ocenu' }}</p>
+        <p><strong>Rating:</strong> {{ factory.rating || 'No rating' }}</p>
         <div v-for="chocolate in chocolates" :key="chocolate.id">
             <h4>{{ chocolate.name }}</h4>
             <p><strong>Description: </strong> {{ chocolate.description }}</p>
@@ -21,6 +21,7 @@
             <button @click.prevent="editChocolate(chocolate)">Edit</button>
             <button @click.prevent="deleteChocolate(chocolate)">Delete</button>
         </div>
+        <p><strong>Comments</strong>There are no comments</p>
     </div>
 </template>
 

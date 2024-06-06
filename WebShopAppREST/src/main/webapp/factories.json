@@ -30,7 +30,7 @@
             	"postalCode": "21300"
         		}
         },
-        "picture": "http://localhost:8080/images/chocolate-rush.png",
+        "picture": "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
         "rating": 4.8
     },
     "3": {
@@ -47,8 +47,8 @@
             	"postalCode": "21300"
         		}
         },
-        "picture": "http://localhost:8080/images/chocolate-rush.png",
-        "rating": 3.2
+        "picture": "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+        "rating": 0.0
     },
     "4": {
 		"id": "2",
@@ -64,7 +64,7 @@
             	"postalCode": "21000"
         		}
         },
-        "picture": "http://localhost:8080/images/chocolate-rush.png",
+        "picture": "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
         "rating": 2.2
     }
 }

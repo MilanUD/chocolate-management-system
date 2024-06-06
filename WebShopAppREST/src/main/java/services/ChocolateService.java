@@ -32,16 +32,16 @@ public class ChocolateService {
 	public void init() {
 		if (ctx.getAttribute("chocolatesDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("chocolatesDAO", new ChocolateDAO(contextPath));
+			ctx.setAttribute("chocolatesDAO", new ChocolateDAO());
 		}
 	}
 	
 	@GET
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Collection<Chocolate> getChocolates(@PathParam("id") String id) {
+	public Collection<Chocolate> getChocolates(@PathParam("id") String fabricId) {
 		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
-		return dao.getByFabricId(id);
+		return dao.getByFabricId(fabricId);
 	}
 	
 	@GET

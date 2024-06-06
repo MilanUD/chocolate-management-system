@@ -1,3 +1,86 @@
 {
-
+  "1": {
+    "id": "1",
+    "name": "Milanova Cokolada",
+    "price": 2.77,
+    "type": "Cokolada za jelo",
+    "flavor": "bela cokolada",
+    "grams": 300.0,
+    "description": "Najukusnija cokolada ikada!!!!!!!!!!!!!!!!!!!!",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "1",
+    "isDeleted": false
+  },
+  "2": {
+    "id": "2",
+    "name": "Monokumas delicasd",
+    "price": 211.0,
+    "type": "da",
+    "flavor": "daaa",
+    "grams": 320.0,
+    "description": "wwwwwwwww",
+    "picture": "aaaaaaaaaaaa",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "1",
+    "isDeleted": true
+  },
+  "3": {
+    "id": "3",
+    "name": "Milicina Cokolada",
+    "price": 21.25,
+    "type": "cokolada za kuvanje",
+    "flavor": "gorka",
+    "grams": 200.0,
+    "description": "prelepa cokolada",
+    "picture": "21a",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "1",
+    "isDeleted": true
+  },
+  "4": {
+    "id": "4",
+    "name": "da",
+    "price": 21.45,
+    "type": "da",
+    "flavor": "da",
+    "grams": 45.12,
+    "description": "da",
+    "picture": "da",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "1",
+    "isDeleted": true
+  },
+  "5": {
+    "id": "5",
+    "name": "Milka cokolada",
+    "price": 3.5,
+    "type": "Cokolada za jelo",
+    "flavor": "mlecna",
+    "grams": 300.0,
+    "description": "Najlepsa cokolada na svetu!",
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA\u0026s",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "3",
+    "isDeleted": false
+  },
+  "6": {
+    "id": "6",
+    "name": "Nova cokolada",
+    "price": 217.45,
+    "type": "ne znam",
+    "flavor": "dsa",
+    "grams": 421.21,
+    "description": "ddddddddddddddd",
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "1",
+    "isDeleted": false
+  }
 }

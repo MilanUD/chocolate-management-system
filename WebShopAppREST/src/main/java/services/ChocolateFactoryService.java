@@ -33,7 +33,7 @@ public class ChocolateFactoryService {
 
 		if (ctx.getAttribute("chocolateFactoryDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("chocolateFactoryDAO", new ChocolateFactoryDAO(contextPath));
+			ctx.setAttribute("chocolateFactoryDAO", new ChocolateFactoryDAO());
 		}
 	}
 	

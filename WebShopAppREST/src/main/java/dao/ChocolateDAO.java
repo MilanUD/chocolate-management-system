@@ -26,22 +26,19 @@ public class ChocolateDAO {
 
 	private ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
     private HashMap<String, Chocolate> chocolateMap = new HashMap<String, Chocolate>();
-    private String fileName;
-	public ChocolateDAO() {
-		// TODO Auto-generated constructor stub
-	}
+	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
 	
-	public ChocolateDAO(String contextPath) {
-		fileName = contextPath;
-		loadChocolates(contextPath);
+	public ChocolateDAO() {
+		
+		loadChocolates(fileName);
 	}	
 	
 	private void loadChocolates(String fileName) {
         try {
-            File file = new File(fileName + "chocolate.json");
+            File file = new File(fileName + "/chocolate.json");
             if (file.exists()) {
                 chocolateMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Chocolate>>() {});
-                System.out.println(fileName + "chocolate.json");
+                System.out.println(fileName + "/chocolate.json");
                 
             }
         } catch (IOException e) {
@@ -51,7 +48,7 @@ public class ChocolateDAO {
 	
 	private void saveChocolates(String fileName) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter(fileName + "chocolate.json")) {
+        try (FileWriter writer = new FileWriter(fileName + "/chocolate.json")) {
             gson.toJson(chocolateMap, writer);
             System.out.println("Data successfully written to file.");
             System.out.println(fileName + "chocolate.json");
@@ -61,7 +58,7 @@ public class ChocolateDAO {
 	}
 	
 	public Collection<Chocolate> getByFabricId(String fabricId){
-		return chocolateMap.values().stream().filter(c -> c.getFabricId().equals(fabricId)).collect(Collectors.toList());
+		return chocolateMap.values().stream().filter(c -> c.getFabricId().equals(fabricId) && !c.getIsDeleted()).collect(Collectors.toList());
 	}
 	
 	public void addChocolate(Chocolate chocolate) {
@@ -117,7 +114,7 @@ public class ChocolateDAO {
 			return null;
 		}
 		
-		chocolateMap.remove(id);
+		chocolateToDelete.setIsDeleted(true);
 		saveChocolates(fileName);
 		return chocolateToDelete;
 		

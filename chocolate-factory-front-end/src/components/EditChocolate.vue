@@ -6,7 +6,7 @@
             <input type="text" v-model="newChocolate.name">
             <br/>
             <label>price:</label>
-            <input type="number" v-model="newChocolate.price">
+            <input type="number" step="0.01" v-model="newChocolate.price">
             <br/>
             <label>type:</label>
             <input type="text" v-model="newChocolate.type"/>
@@ -15,7 +15,7 @@
             <input type="text" v-model="newChocolate.flavor"/>
             <br/>
             <label>grams:</label>
-            <input type="nubmer" v-model="newChocolate.grams"/>
+            <input type="number" step="0.01" v-model="newChocolate.grams"/>
             <br/>
             <label>description:</label>
             <input type="text" v-model="newChocolate.description"/>
@@ -23,7 +23,7 @@
             <label>picture:</label>
             <input type="text" v-model="newChocolate.picture"/>
             <br/>
-            <button type="submit">Add </button>
+            <button type="submit">Edit </button>
 
         </form>
     </div>
@@ -53,7 +53,7 @@
         picture: '',
         stockQuantity: 0,
         isInStock: false,
-        fabricId: 1
+        fabricId: 0
 
     });
 
