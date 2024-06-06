@@ -1,19 +1,42 @@
 package beans;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Chocolate {
+	
+	@JsonProperty("id")
+    private String id;
 
-	private String id;
-	private String name;
-	private double price;
-	private String type;
-	private String flavor;
-	private double grams;
-	private String description;
-	private String picture;
-	private int stockQuantity;
-	private boolean isInStock;
-	private String fabricId;
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("price")
+    private double price;
+
+    @JsonProperty("type")
+    private String type;
+
+    @JsonProperty("flavor")
+    private String flavor;
+
+    @JsonProperty("grams")
+    private double grams;
+
+    @JsonProperty("description")
+    private String description;
+
+    @JsonProperty("picture")
+    private String picture;
+
+    @JsonProperty("stockQuantity")
+    private int stockQuantity;
+
+    @JsonProperty("isInStock")
+    private boolean isInStock;
+
+    @JsonProperty("fabricId")
+    private String fabricId;
+    
 	public String getFabricId() {
 		return fabricId;
 	}

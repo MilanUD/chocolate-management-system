@@ -1,5 +1,6 @@
 package beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -112,6 +113,7 @@ public class ChocolateFactory {
 
 	public ChocolateFactory() {
 		// TODO Auto-generated constructor stub
+		chocolates = new ArrayList<Chocolate>();
 	}
 
 }

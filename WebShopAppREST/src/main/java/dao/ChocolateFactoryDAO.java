@@ -29,7 +29,7 @@ public class ChocolateFactoryDAO {
             File file = new File(fileName + "/factories.json");
             if (file.exists()) {
                 chocolateFactoryMap = objectMapper.readValue(file, new TypeReference<HashMap<String, ChocolateFactory>>() {});
-                System.out.println("Loaded chocolate factories: " + chocolateFactoryMap.size()); // Dodato za debugging
+                
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,6 +38,11 @@ public class ChocolateFactoryDAO {
 	
 	public Collection<ChocolateFactory> getAll(){
 		return chocolateFactoryMap.values();
+	}
+	
+	public ChocolateFactory getFactoryDetails(String id){		
+		return chocolateFactoryMap.get(id);
+		
 	}
 
 }
