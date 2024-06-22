@@ -2,10 +2,10 @@
   "1": {
     "id": "1",
     "name": "Milanova Cokolada",
-    "price": 2.77,
-    "type": "Cokolada za jelo",
+    "price": 2.99,
+    "type": "cokolada za guvanje",
     "flavor": "bela cokolada",
-    "grams": 300.0,
+    "grams": 250.0,
     "description": "Najukusnija cokolada ikada!!!!!!!!!!!!!!!!!!!!",
     "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
     "stockQuantity": 0,
@@ -81,6 +81,20 @@
     "stockQuantity": 0,
     "isInStock": false,
     "fabricId": "1",
+    "isDeleted": true
+  },
+  "7": {
+    "id": "7",
+    "name": "daadad",
+    "price": 100.0,
+    "type": "aaaaaaaa",
+    "flavor": "aaaaaaaaa",
+    "grams": 22.0,
+    "description": "aaaaaaaa",
+    "picture": "aaaaaaaaaaaaaa",
+    "stockQuantity": 0,
+    "isInStock": false,
+    "fabricId": "3",
     "isDeleted": false
   }
 }

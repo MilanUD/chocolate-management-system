@@ -16,7 +16,7 @@
               <i class="bi bi-geo-alt-fill"></i>
               <p>{{ formatLocation(factory.location) }}</p>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-3">
+            <div class="d-flex align-items-center justify-content-center">
               <button @click.prevent="loadInformationAboutSpecificFactory(factory.id)" class="btn btn-primary">More info</button>
             </div>
           </div>

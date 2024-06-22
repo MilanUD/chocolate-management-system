@@ -8,9 +8,9 @@
         	"longitude": 20.0,
         	"latitude": 45.0,
         	"address": {
-            	"street": "Main St 123",
-            	"city": "Chocolate City",
-            	"postalCode": "12345"
+            	"street": "Novosadska 13",
+            	"city": "Beočin",
+            	"postalCode": "21300"
         		}
         },
         "picture": "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
@@ -42,7 +42,7 @@
         	"longitude": 21.3254,
         	"latitude": 25.7841234,
         	"address": {
-            	"street": "Miroslava Antica13",
+            	"street": "Miroslava Antica 13",
             	"city": "Beocin",
             	"postalCode": "21300"
         		}
@@ -51,7 +51,7 @@
         "rating": 0.0
     },
     "4": {
-		"id": "2",
+		"id": "4",
         "name": "Milka",
         "businessHours": "09:00 - 20:00",
         "isOpen": false,
