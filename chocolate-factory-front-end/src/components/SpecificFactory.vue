@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="specificFactory">
+        <h1>{{ factory.name }}</h1>
         <button @click.prevent="GoToChocolateInsertionForm">Add chocolate</button>
-        <h2>{{ factory.name }}</h2>
+        
         <img :src="factory.picture" :alt="factory.name" width="50" height="50" />
         <br/>
         <p><strong>Business hours:</strong> {{ factory.businessHours }}</p>
@@ -82,3 +83,11 @@
     }
 
 </script>
+
+<style scoped>
+    .specificFactory{
+        background-color: #4b3621;
+        color: white;
+    }
+
+</style>
