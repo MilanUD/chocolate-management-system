@@ -1,6 +1,7 @@
 <template>
     <div class="specificFactory">
-        <div class="card custom-card">
+        <div class="d-flex justify-content-center">
+            <div class="card custom-card">
             <div class="card-body">
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-start">
@@ -55,9 +56,11 @@
                 </div>
             </div>
         </div>
+        </div>
         <div v-if="isShowChocolatesButtonPressed">
             <div v-for="chocolate in chocolates" :key="chocolate.id">
-            <div class="card">
+                <div class="d-flex justify-content-center">
+                    <div class="card chocolate-card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-2">
@@ -68,34 +71,45 @@
                             <p>{{ chocolate.price }}</p>                         
                         </div>
                         <div class="col-md-2 d-flex flex-column">
-                            <i class="bi bi-info-circle"></i>
+                            <font-awesome-icon :icon="['fas', 'weight-hanging']" style="font-size: 2rem; margin-right: 5px;" />
                             <p> {{ chocolate.grams }} grams</p>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column">
+                            <p class="pClass">Flavor:</p>
+                            <p>{{ chocolate.flavor }}</p>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column">
+                            <p class="pClass">Stock quantity:</p>
+                            <p>{{ chocolate.stockQuantity }}</p>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column">
+                            <button class="btn btn-primary" @click.prevent="editChocolate(chocolate)">Edit</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2">
                             <img :src="chocolate.picture" height="100" width="150">
                         </div>
+                        <div class="col-md-4 d-flex flex-column">
+                           <p>{{ chocolate.description }}</p>
+                        </div>
                         <div class="col-md-2 d-flex flex-column">
-                           
+                            <p class="pClass">Type:</p>
+                            <p>{{ chocolate.type }}</p>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column">
+                            <p class="pClass">Stock:</p>
+                            <p> {{ chocolate.isInStock ? 'In stock' : 'Out of stock' }}</p>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column">
+                            <button class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
                         </div>
                     </div>
                 </div>
             </div>
+                </div>
         </div>
-        <div v-for="chocolate in chocolates" :key="chocolate.id">
-            <h4>{{ chocolate.name }}</h4>
-            <p><strong>Description: </strong> {{ chocolate.description }}</p>
-            <p><strong>Price:</strong> {{ chocolate.price }}</p>
-            <img :src="chocolate.picture" height="100" width="150"/>
-            <p><strong>Type:</strong> {{ chocolate.type }}</p>
-            <p><strong>Flavor:</strong> {{ chocolate.flavor }}</p>
-            <p><strong>Grams:</strong> {{ chocolate.grams }}</p>
-            <p><strong>In stock:</strong> {{ chocolate.isInStock ? 'Yes' : 'No' }}</p>
-            <p><strong>Stock quantity:</strong> {{ chocolate.stockQuantity }}</p>
-            <button @click.prevent="editChocolate(chocolate)">Edit</button>
-            <button @click.prevent="deleteChocolate(chocolate)">Delete</button>
-        </div>
+        
         </div>
         
     </div>
@@ -174,6 +188,10 @@
     flex-direction: column;
     }
 
+    .pClass{
+        margin-bottom: 0;
+    }
+
 
     .buttonStyle{
         width: 50%;
@@ -185,12 +203,25 @@
 
     .custom-card {
   border: 1px solid black; /* Crni okvir */
-  background-color: #4b3621; /* Svetlo braon boja */
+  background-color: rgb(137, 99, 60); /* Svetlo braon boja */
   padding: 1rem; /* Padding unutar kartice */
   margin-bottom: 1rem; /* Margina između kartica */
   border-radius: 5px; /* Zaobljeni uglovi */
   color: white;
   border-width: 5px;
+  width: 90%;
+}
+
+.chocolate-card{
+    border: 1px solid black; /* Crni okvir */
+    background-color:#f5deb3; /* Svetlo braon boja */
+    padding: 1rem; /* Padding unutar kartice */
+    margin-bottom: 1rem; /* Margina između kartica */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    color: black;
+    border-width: 5px;
+    width: 70%;
+    
 }
 
 
