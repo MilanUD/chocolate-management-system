@@ -1,0 +1,38 @@
+{
+  "1" : {
+    "id" : "1",
+    "username" : "dark destroyer 123",
+    "name" : "Petar",
+    "lastName" : "Kocic",
+    "gender" : "Male",
+    "birthDate" : "1999-06-22",
+    "userType" : "Customer"
+  },
+  "2" : {
+    "id" : "2",
+    "username" : null,
+    "name" : null,
+    "lastName" : null,
+    "gender" : null,
+    "birthDate" : null,
+    "userType" : null
+  },
+  "3" : {
+    "id" : "3",
+    "username" : null,
+    "name" : null,
+    "lastName" : null,
+    "gender" : null,
+    "birthDate" : null,
+    "userType" : null
+  },
+  "4" : {
+    "id" : "4",
+    "username" : null,
+    "name" : null,
+    "lastName" : null,
+    "gender" : null,
+    "birthDate" : null,
+    "userType" : null
+  }
+}

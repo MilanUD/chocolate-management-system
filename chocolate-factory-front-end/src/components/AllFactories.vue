@@ -10,11 +10,11 @@
               <h5>{{ factory.name }}</h5>
               <img :src="factory.picture" :alt="factory.name" width="100" height="100" class="mt-2"/>
             </div>
-            <div class="d-flex flex-column align-items-center mt-3">
+            <div class="d-flex flex-column align-items-center mt-3" v-if="factory.location">
               <i class="bi bi-star-fill"></i>
               <p>{{ factory.rating || "No rating" }}</p>
               <i class="bi bi-geo-alt-fill"></i>
-              <p>{{ formatLocation(factory.location) }}</p>
+              <MapComponent :address="formatAddress(factory.location.address)" />
             </div>
             <div class="d-flex align-items-center justify-content-center">
               <button @click.prevent="loadInformationAboutSpecificFactory(factory.id)" class="btn btn-primary">More info</button>
@@ -31,6 +31,7 @@
     import axios from "axios";
     import {onMounted, ref} from "vue";
     import { useRouter } from "vue-router";
+    import MapComponent from './MapComponent.vue';
 
     const factories = ref([""])
     
@@ -40,14 +41,12 @@
 
     const router = useRouter();
 
-    function formatLocation(location) {
-        if (!location) return '';
-            const { address, latitude, longitude } = location;
-            return `${address.street}, ${address.city}, ${address.postalCode}, Lat: ${latitude}, Long: ${longitude}`;
-    }
-
     function loadInformationAboutSpecificFactory(factoryId){
        router.push({name: "FactoryDetails", params: {id: factoryId}});
+    }
+
+    function formatAddress(address) {
+        return `${address.street}, ${address.city}, ${address.postalCode}`;
     }
 
     function loadFactories(){

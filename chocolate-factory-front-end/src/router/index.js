@@ -1,8 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import AllFactoriesView from '../views/AllFactoriesView';
 import SpecificFactoryView from '../views/SpecificFactoryView.vue';
-import AddChocolateToFactoryView from '../views/AddChocolateToFactoryView.vue'
-import EditChocolate from '../views/EditChocolateView.vue'
+import AddChocolateToFactoryView from '../views/AddChocolateToFactoryView.vue';
+import EditChocolate from '../views/EditChocolateView.vue';
+import CustomerRegistration from '../views/CustomerRegistrationView.vue';
+import LogIn from '../views/LogInView.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: "/editChocolate/:id",
     name: "editChocolate",
     component: EditChocolate,
+  },
+  {
+    path: "/logIn",
+    name: "logIn",
+    component: LogIn,
+  },
+  {
+    path: "/customerRegistration",
+    name: "customerRegistration",
+    component: CustomerRegistration,
   },
   
 ];
