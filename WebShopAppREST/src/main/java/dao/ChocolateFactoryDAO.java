@@ -44,5 +44,12 @@ public class ChocolateFactoryDAO {
 		
 	}
 	
+	public void connectChocolateToFactory(Chocolate chocolate) {
+		if(chocolateFactoryMap.get(chocolate.getFabricId()) == null) {
+			return;
+		}
+		chocolateFactoryMap.get(chocolate.getFabricId()).getChocolates().add(chocolate);
+	}
+	
 
 }

@@ -10,29 +10,20 @@
   },
   "2" : {
     "id" : "2",
-    "username" : null,
-    "name" : null,
-    "lastName" : null,
-    "gender" : null,
-    "birthDate" : null,
-    "userType" : null
+    "username" : "dark destroyer 456",
+    "name" : "Petar",
+    "lastName" : "Kocic",
+    "gender" : "Male",
+    "birthDate" : "1999-06-22",
+    "userType" : "Customer"
   },
   "3" : {
     "id" : "3",
-    "username" : null,
-    "name" : null,
-    "lastName" : null,
-    "gender" : null,
-    "birthDate" : null,
-    "userType" : null
-  },
-  "4" : {
-    "id" : "4",
-    "username" : null,
-    "name" : null,
-    "lastName" : null,
-    "gender" : null,
-    "birthDate" : null,
-    "userType" : null
+    "username" : "DiligentPianist3855",
+    "name" : "nikola",
+    "lastName" : "lakic",
+    "gender" : "Male",
+    "birthDate" : "2024-01-22",
+    "userType" : "Customer"
   }
 }

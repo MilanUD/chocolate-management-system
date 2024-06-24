@@ -24,7 +24,7 @@
             </div>
             <div>
                 <label for="birthDate">Date of birth: </label>
-                <input type="date" id="birthDate" name="birthDate">
+                <input type="date" id="birthDate" name="birthDate" v-model="userForRegistration.birthDate">
             </div>
             <input type="submit" value="Register">
         </form>

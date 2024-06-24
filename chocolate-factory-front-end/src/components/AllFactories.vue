@@ -1,8 +1,72 @@
 <template>
     <div class="all-factories">
         <h1>All factories</h1>
+        <div class="container">
+  <form @submit.prevent="searchFactories">
+    <fieldset class="border p-4">
+      <legend class="w-auto px-2">Search</legend>
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="form-group">
+            <label for="fabricName">Fabric name:</label>
+            <input type="text" class="form-control" id="fabricName" name="fabricName" v-model="fabricForSearch.name" placeholder="Enter fabric name">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="chocolateName">Chocolate name:</label>
+            <input type="text" class="form-control" id="chocolateName" name="chocolateName" v-model="fabricForSearch.chocolateName" placeholder="Enter chocolate name">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" v-model="fabricForSearch.location" placeholder="Enter location">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input step="0.01" type="number" class="form-control" id="rating" name="rating" v-model="fabricForSearch.rating" placeholder="Enter rating">
+          </div>
+        </div>
+        <div class="col-auto mt-4">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-9"></div>
+  <div class="col-md-3 d-flex justify-content-end">
+    <div class="form-group">
+      <label for="sort">Sort by: </label>
+      <select class="form-control" id="sort" name="sort" @change="sortFactories($event)">
+        <option value="Default">Default</option>
+        <option value="Sort by factory name asc">Factory name asc</option>
+        <option value="Sort by factory name desc">Factory name desc</option>
+        <option value="Sort by location asc">Location asc</option>
+        <option value="Sort by location desc">Location desc</option>
+        <option value="Sort by rating asc">Rating asc</option>
+        <option value="Sort by rating desc">Rating desc</option>
+      </select>
+    </div>
+  </div>
+</div>
         <div class="container mt-4">
     <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label for="filterByFlavor">Filter by flavor:</label>
+          <select @change="filterChocolatesByFlavor" id="filterByFlavor" name="filterByFlavor" v-model="selectedFlavor" class="form-control">
+            <option value="default">Default</option>
+            <option v-for="flavor in uniqeFlavors" :value="flavor" :key="flavor">{{ flavor }}</option>
+          </select>
+        </div>
+      </div>
       <div class="col-md-4" v-for="factory in factories" :key="factory.id">
         <div class="card custom-card">
           <div class="card-body">
@@ -33,13 +97,33 @@
     import { useRouter } from "vue-router";
     import MapComponent from './MapComponent.vue';
 
-    const factories = ref([""])
+    const factories = ref([""]);
+    const allFactories = ref([""]);
+    const uniqeFlavors = new Set();
+    const selectedFlavor = ref('');
     
     onMounted(() =>{
         loadFactories();
     });
 
     const router = useRouter();
+
+    const fabricForSearch = ref({
+      name: '',
+      chocolateName: '',
+      location: '',
+      rating: 0
+    })
+
+    function searchFactories(){
+      factories.value = allFactories.value.filter(factory =>{
+        const matchFactoryName = fabricForSearch.value.name ? factory.name.toLowerCase().includes(fabricForSearch.value.name.toLowerCase()) : true;
+        const matchChocolateName = fabricForSearch.value.chocolateName ? factory.chocolates.some(chocolate => chocolate.name.toLowerCase().includes(fabricForSearch.value.chocolateName.toLowerCase())) : true;
+        const matchLocation = fabricForSearch.value.location ? factory.location.address.city.toLowerCase().includes(fabricForSearch.value.location.toLowerCase()) : true;
+        const matchRating = fabricForSearch.value.rating ? factory.rating == fabricForSearch.value.rating : true;
+        return matchFactoryName && matchChocolateName && matchLocation && matchRating;
+      });
+    }
 
     function loadInformationAboutSpecificFactory(factoryId){
        router.push({name: "FactoryDetails", params: {id: factoryId}});
@@ -51,10 +135,72 @@
 
     function loadFactories(){
         axios.get('http://localhost:8080/WebShopAppREST/rest/chocolateFactory/').then(response => {
+            allFactories.value = response.data;
             factories.value = response.data
             factories.value.sort((a, b) => b.isOpen - a.isOpen);
+            factories.value.forEach(factory => {
+              factory.chocolates.forEach(chocolate => uniqeFlavors.add(chocolate.flavor))
+            });
+            uniqeFlavors.values = Array.from(uniqeFlavors);
     });
     }
+
+    function sortFactories(event){
+      const selectedOption = event.target.value;
+      switch(selectedOption){
+        case "Sort by factory name asc":
+          factories.value.sort((a,b) => {
+            if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+            if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+            return 0;
+          });
+            break;
+        case "Sort by factory name desc":
+          factories.value.sort((a, b) => {
+            if(a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+            if(a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+            return 0;          
+          });
+          break;
+        case "Sort by location asc":
+          factories.value.sort((a, b) => {
+            if(a.location.address.city.toLowerCase() > b.location.address.city.toLowerCase()) return 1;
+            if(a.location.address.city.toLowerCase() < b.location.address.city.toLowerCase()) return -1;
+            return 0;
+          });
+          break;
+        case "Sort by location desc":
+          factories.value.sort((a, b) => {
+            if(a.location.address.city.toLowerCase() > b.location.address.city.toLowerCase()) return -1;
+            if(a.location.address.city.toLowerCase() < b.location.address.city.toLowerCase()) return 1;
+            return 0;
+          });
+          break;
+        case "Sort by rating asc":
+          factories.value.sort((a, b) => a.rating-b.rating);
+          break;
+        case "Sort by rating desc":
+          factories.value.sort((a, b) => b.rating-a.rating);
+          break;
+        default:
+        factories.value.sort((a, b) => b.isOpen - a.isOpen);
+        break;
+      }
+      
+    }
+
+    function filterChocolatesByFlavor(){
+      factories.value = allFactories.value;
+      if(selectedFlavor.value !== "default"){
+      factories.value = factories.value.filter(factory =>
+        factory.chocolates.some(chocolate => chocolate.flavor === selectedFlavor.value)
+      );
+      return;
+      }
+      factories.value = allFactories.value;
+    }
+
+    
     
 </script>
 

@@ -42,6 +42,12 @@ public class ChocolateFactoryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Collection<ChocolateFactory> getAll(){
 		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
+		ChocolateDAO chocolateDAO = new ChocolateDAO();
+		Collection<Chocolate> chocolates = chocolateDAO.getAll();
+		//Collection<ChocolateFactory> chocolateFactories = dao.getAll();
+		for(Chocolate chocolate: chocolates) {
+			dao.connectChocolateToFactory(chocolate);
+		}
 		return dao.getAll();
 	}
 	

@@ -112,12 +112,15 @@ public class ChocolateDAO {
 		Chocolate chocolateToDelete = chocolateMap.get(id);
 		if(chocolateToDelete == null) {
 			return null;
-		}
-		
+		}		
 		chocolateToDelete.setIsDeleted(true);
 		saveChocolates(fileName);
 		return chocolateToDelete;
 		
+	}
+	
+	public Collection<Chocolate> getAll(){
+		return chocolateMap.values();
 	}
 	
 

@@ -24,7 +24,8 @@ public class UserDAO {
 	private HashMap<String, User> userMap = new HashMap<String, User>();
 	 private ObjectMapper objectMapper = new ObjectMapper()
 	            .registerModule(new JavaTimeModule())
-	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	
+	 private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
 	
 
 	public UserDAO() {
