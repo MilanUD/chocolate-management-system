@@ -12,7 +12,11 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 // Dodaj sve solid ikone u biblioteku
 library.add(fas)
 
+// Importuj store iz store.js
+import store from './store/store'
+
 createApp(App)
   .component('font-awesome-icon', FontAwesomeIcon)
   .use(router)
+  .use(store) // Dodaj store
   .mount('#app')

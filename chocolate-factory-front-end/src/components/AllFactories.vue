@@ -58,12 +58,22 @@
 </div>
         <div class="container mt-4">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 d-flex flex-column">
         <div class="form-group">
           <label for="filterByFlavor">Filter by flavor:</label>
-          <select @change="filterChocolatesByFlavor" id="filterByFlavor" name="filterByFlavor" v-model="selectedFlavor" class="form-control">
-            <option value="default">Default</option>
+          <select @change="filterFactories" id="filterByFlavor" name="filterByFlavor" v-model="selectedFlavor" class="form-control">
+            <option value="Default">Default</option>
             <option v-for="flavor in uniqeFlavors" :value="flavor" :key="flavor">{{ flavor }}</option>
+          </select>
+          <label for="filterByType">Filter by type:</label>
+          <select @change="filterFactories" id="filterByType" name="filterByType" v-model="selectedType" class="form-control">
+            <option value="Default">Default</option>
+            <option v-for="type in uniqueTypes" :value="type" :key="type"> {{ type }}</option>
+          </select>
+          <label for="filterByIsOpen">Filter by status:</label>
+          <select @change="filterFactories" id="filterByIsOpen" name="filterByIsOpen" v-model="selectedOption" class="form-control">
+            <option value="showAll"> All</option>
+            <option value="showOpen">Open</option>
           </select>
         </div>
       </div>
@@ -100,7 +110,10 @@
     const factories = ref([""]);
     const allFactories = ref([""]);
     const uniqeFlavors = new Set();
-    const selectedFlavor = ref('');
+    const selectedFlavor = ref('Default');
+    const uniqueTypes = new Set();
+    const selectedType = ref('Default');
+    const selectedOption = ref('showAll');
     
     onMounted(() =>{
         loadFactories();
@@ -139,9 +152,13 @@
             factories.value = response.data
             factories.value.sort((a, b) => b.isOpen - a.isOpen);
             factories.value.forEach(factory => {
-              factory.chocolates.forEach(chocolate => uniqeFlavors.add(chocolate.flavor))
+              factory.chocolates.forEach(chocolate => {
+                uniqeFlavors.add(chocolate.flavor);
+                uniqueTypes.add(chocolate.type);
+              })
             });
             uniqeFlavors.values = Array.from(uniqeFlavors);
+            uniqueTypes.values = Array.from(uniqueTypes);
     });
     }
 
@@ -189,16 +206,37 @@
       
     }
 
+    function filterFactories(){
+      factories.value = allFactories.value.filter(factory =>{
+        return factory.chocolates.some(chocolate =>{
+          const matchingFlavor = selectedFlavor.value === "Default" || selectedFlavor.value === chocolate.flavor;
+          const matchingType = selectedType.value === "Default" || selectedType.value === chocolate.type;
+          return matchingFlavor && matchingType;
+        }) && (selectedOption.value === "showAll" || (selectedOption.value === "showOpen" && factory.isOpen))
+      })
+    }
+/*
     function filterChocolatesByFlavor(){
-      factories.value = allFactories.value;
-      if(selectedFlavor.value !== "default"){
-      factories.value = factories.value.filter(factory =>
+      if(selectedFlavor.value !== "Default" && selectedType === "Default"){
+      factories.value = allFactories.value.filter(factory =>
         factory.chocolates.some(chocolate => chocolate.flavor === selectedFlavor.value)
       );
       return;
+      }else if(selectedFlavor.value !== "Default" && selectedType !== "Default"){
+        factories.value = allFactories.value.filter(factory =>
+        factory.chocolates.some(chocolate => chocolate.flavor === selectedFlavor.value && chocolate.type.selectedType)
+      );
       }
       factories.value = allFactories.value;
     }
+
+    function filterFactoriesByFlavor(){
+      if(selectedType.value !== "Default"){
+        factories.value = allFactories.value.filter(factory => factory.chocolates.some(chocolate => chocolate.type === selectedType.value))
+        return;
+      }
+      factories.value = allFactories.value;
+    } */
 
     
     

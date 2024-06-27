@@ -2,6 +2,7 @@
   "1" : {
     "id" : "1",
     "username" : "dark destroyer 123",
+    "password" : "darklord123",
     "name" : "Petar",
     "lastName" : "Kocic",
     "gender" : "Male",
@@ -11,6 +12,7 @@
   "2" : {
     "id" : "2",
     "username" : "dark destroyer 456",
+    "password" : "password",
     "name" : "Petar",
     "lastName" : "Kocic",
     "gender" : "Male",
@@ -20,10 +22,21 @@
   "3" : {
     "id" : "3",
     "username" : "DiligentPianist3855",
+    "password" : "violin321",
     "name" : "nikola",
     "lastName" : "lakic",
     "gender" : "Male",
     "birthDate" : "2024-01-22",
+    "userType" : "Customer"
+  },
+  "4" : {
+    "id" : "4",
+    "username" : "tenkotrash",
+    "password" : "tenko123",
+    "name" : "nikola",
+    "lastName" : "Keča",
+    "gender" : "Male",
+    "birthDate" : "1995-06-06",
     "userType" : "Customer"
   }
 }

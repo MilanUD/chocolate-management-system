@@ -10,6 +10,10 @@
                 </router-link>
             </div>
             <div class="col-md-3 d-flex justify-content-end">
+                <div v-if="isLoggedIn">
+                    <p>{{ user ? user.username : '' }}</p>
+                </div>
+                <div v-if="!isLoggedIn">
                 <router-link :to="{name: 'logIn'}">
                     <p>Log in | </p>
                 </router-link>
@@ -17,9 +21,22 @@
                     <p>Register</p>
                 </router-link>
             </div>
+            </div>
         </div>
     </div>
 </template>
+<script setup>
+    import { computed, watch } from 'vue';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
+    const isLoggedIn = computed(() => store.getters.isLoggedIn);
+    const user = computed(() => store.getters.user);
+    watch(() => isLoggedIn.value, (newValue) => {
+    console.log('isLoggedIn changed:', newValue);
+    });
+    
+</script>
 
 <style scoped>
     .specificFactory{

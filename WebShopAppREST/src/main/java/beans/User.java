@@ -12,6 +12,9 @@ public class User {
 	    @JsonProperty("username")
 	    private String username;
 	    
+	    @JsonProperty("password")
+	    private String password;
+	    
 	    @JsonProperty("name")
 	    private String name;
 	    
@@ -27,19 +30,31 @@ public class User {
 	    @JsonProperty("userType")
 	    private String userType;
 	
-	
 
-	public User(String id, String username, String name, String lastName, String gender, LocalDate birthDate,
-			String userType) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.name = name;
-		this.lastName = lastName;
-		this.gender = gender;
-		this.birthDate = birthDate;
-		this.userType = userType;
-	}
+	public User(String id, String username, String password, String name, String lastName, String gender,
+				LocalDate birthDate, String userType) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.password = password;
+			this.name = name;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.birthDate = birthDate;
+			this.userType = userType;
+		}
+
+
+
+	public String getPassword() {
+			return password;
+		}
+
+
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
 
 
 

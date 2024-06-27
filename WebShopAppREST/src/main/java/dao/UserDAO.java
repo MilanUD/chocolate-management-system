@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,6 +57,7 @@ public class UserDAO {
 	    saveUser(fileName);
 	}
 
+
 	private String generateNewId() {
 	    int maxId = 0;
 	    for (String id : userMap.keySet()) {
@@ -78,6 +81,17 @@ public class UserDAO {
 	
 	public Collection<User> getAll(){
 		return userMap.values();
+	}
+
+	public User logIn(User user) {
+		// TODO Auto-generated method stub
+			Optional<User> userToLogIn = userMap.values().stream().filter(u -> u.getUsername().equals(user.getUsername()) && u.getPassword().equals(user.getPassword())).findAny();
+			if(userToLogIn.isPresent()) {
+				return userToLogIn.get();
+			}
+		
+	    System.out.println("Login endpoint hit with username: " + user.getUsername());
+		return null;
 	}
 	
 	

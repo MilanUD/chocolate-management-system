@@ -7,6 +7,10 @@
                 <input id="username" name="username" type="text" v-model="userForRegistration.username">
             </div>
             <div>
+                <label for="password">Password: </label>
+                <input id="password" name="password" type="text" v-model="userForRegistration.password">
+            </div>
+            <div>
                 <label for="name">Name: </label>
                 <input type="text" id="name" name="name" v-model="userForRegistration.name">
             </div>
@@ -36,6 +40,7 @@
 
     const userForRegistration = ref({
         username : '',
+        password: '',
         name : '',
         lastName : '',
         gender : '',
