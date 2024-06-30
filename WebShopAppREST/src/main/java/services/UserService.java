@@ -18,8 +18,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import beans.CustomerType;
 import beans.User;
 import dao.ChocolateFactoryDAO;
+import dao.CustomerTypeDAO;
 import dao.UserDAO;
 
 @Path("/users")
@@ -48,6 +50,9 @@ public class UserService {
 	public void register(User user) {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		dao.addUser(user);
+		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
+		CustomerType customerType = new CustomerType(user.getId());
+		customerTypeDAO.addCustomerType(customerType);
 	}
 	
 	@POST

@@ -58,6 +58,7 @@ public class ChocolateDAO {
 	}
 	
 	public Collection<Chocolate> getByFabricId(String fabricId){
+		loadChocolates(fabricId);
 		return chocolateMap.values().stream().filter(c -> c.getFabricId().equals(fabricId) && !c.getIsDeleted()).collect(Collectors.toList());
 	}
 	
@@ -121,6 +122,18 @@ public class ChocolateDAO {
 	
 	public Collection<Chocolate> getAll(){
 		return chocolateMap.values();
+	}
+	
+	public void updateChocolatesQuantity(Collection<Chocolate> chocolates) {
+		for(Chocolate chocolate: chocolates) {
+			Chocolate chocolateToChange = chocolateMap.get(chocolate.getId());
+			chocolateToChange.setStockQuantity(chocolateToChange.getStockQuantity()-1);
+			if(chocolateToChange.getStockQuantity() == 0) {
+				chocolateToChange.setIsInStock(false);
+			}
+		}
+		saveChocolates(fileName);
+		loadChocolates(fileName);
 	}
 	
 

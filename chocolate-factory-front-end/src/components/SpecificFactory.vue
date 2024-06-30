@@ -83,7 +83,12 @@
                             <p>{{ chocolate.stockQuantity }}</p>
                         </div>
                         <div class="col-md-2 d-flex flex-column">
-                            <button class="btn btn-primary" @click.prevent="editChocolate(chocolate)">Edit</button>
+                            <button v-if="user.userType == 'Manager'" class="btn btn-primary" @click.prevent="editChocolate(chocolate)">Edit</button>
+                            <div v-if="user.userType == 'Customer' && chocolate.isInStock" class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" @click="decreaseQuantity(chocolate.id)">-</button>
+                                    <input @input="validateQuantity(chocolate)" :max="chocolate.stockQuantity" type="number" class="form-control" id="quantity-input" v-model="quantityToBuy[chocolate.id]">
+                                    <button class="btn btn-outline-secondary" type="button" @click="increaseQuantity(chocolate)">+</button>
+                                </div>    
                         </div>
                     </div>
                     <div class="row">
@@ -101,8 +106,11 @@
                             <p class="pClass">Stock:</p>
                             <p> {{ chocolate.isInStock ? 'In stock' : 'Out of stock' }}</p>
                         </div>
-                        <div class="col-md-2 d-flex flex-column">
-                            <button class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
+                        <div class="col-md-2">
+                                <button v-if="user.userType == 'Manager'" class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
+                                <button v-if="user.userType == 'Customer' && chocolate.isInStock" class="btn btn-success mt-2" @click="addToCart(chocolate)">
+                                    <i class="bi bi-cart"></i> Add to Cart
+                                </button>                             
                         </div>
                     </div>
                 </div>
@@ -116,16 +124,32 @@
 </template>
 
 <script setup>
-    import {ref, onMounted} from "vue";
+    import {ref, onMounted, computed} from "vue";
     import {useRoute} from 'vue-router';
     import axios from 'axios';
     import { useRouter } from "vue-router";
     import MapComponent from './MapComponent.vue';
+    import { useStore } from 'vuex';
 
+    const store = useStore();
+    const user = computed(() => store.getters.user);
+    const isLoggedIn = computed(() => store.getters.isLoggedIn);
+    const customerType = ref({
+        id: '',
+        type: '',
+        discount: 0.00,
+        pointsUntilNextRank: 0.00,
+        userId: ''
+
+    })
+
+    const quantityToBuy = ref({});
 
     onMounted(() =>{
         loadFactory();
         loadChocolates();
+        assingUserIdToCart();
+        assignUserType();
     });
 
     const factory = ref({});
@@ -154,8 +178,27 @@
     function loadChocolates(){
         const id = route.params.id;
         axios.get(`http://localhost:8080/WebShopAppREST/rest/chocolates/${id}`).then(response =>{
-            chocolates.value = response.data;          
+            chocolates.value = response.data;
+            chocolates.value.forEach(chocolate => {
+                quantityToBuy.value[chocolate.id]= 1;
+            })          
         })
+    }
+
+    function assignUserType(){
+        if(isLoggedIn.value){
+            axios.get(`http://localhost:8080/WebShopAppREST/rest/customerTypes/${user.value.id}`).then(response => {
+                customerType.value = response.data;
+                applyDiscounts();
+            })
+        }
+    }
+
+    function applyDiscounts(){
+        console.log('Vrednost customer type je: ', customerType.value)
+        if(customerType.value !== 'Bronze'){
+            chocolates.value.forEach(choco => choco.price -= choco.price*customerType.value.discount)
+        }
     }
 
 
@@ -173,7 +216,35 @@
             loadFactory();
             loadChocolates();
         }
-    )
+    )}
+
+    function increaseQuantity(chocolate){
+        if(chocolate.stockQuantity > quantityToBuy.value[chocolate.id])
+        {
+            quantityToBuy.value[chocolate.id]= quantityToBuy.value[chocolate.id]+1;
+        }
+    }
+
+    function decreaseQuantity(chocolateId){
+        if(quantityToBuy.value[chocolateId] != 1){
+            quantityToBuy.value[chocolateId]= quantityToBuy.value[chocolateId]-1;
+        }
+    }
+
+    function addToCart(chocolate){
+        for(let i=0; i < quantityToBuy.value[chocolate.id];i++){
+            store.commit('addToCart', chocolate);
+        }
+    }
+
+    function validateQuantity(chocolate){
+        if(quantityToBuy.value[chocolate.id] > chocolate.stockQuantity){
+            quantityToBuy.value[chocolate.id] = chocolate.stockQuantity;
+        }
+    }
+
+    function assingUserIdToCart(){
+        store.commit('updateCartUserId');
     }
 
 </script>

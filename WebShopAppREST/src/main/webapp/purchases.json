@@ -1,0 +1,152 @@
+{
+  "X1ZPRFO480" : {
+    "id" : "X1ZPRFO480",
+    "chocolateIds" : [ "5", "5", "5" ],
+    "date" : "2024-06-30T14:26:07.4618074",
+    "factoryId" : "3",
+    "price" : 10.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "9XZ9NXHZIR" : {
+    "id" : "9XZ9NXHZIR",
+    "chocolateIds" : [ "7", "7", "7", "5", "5" ],
+    "date" : "2024-06-30T14:40:15.9015096",
+    "factoryId" : "3",
+    "price" : 307.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "0MWNONGWEB" : {
+    "id" : "0MWNONGWEB",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T14:57:05.8164847",
+    "factoryId" : "3",
+    "price" : 7.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "0BZGNJGIHC" : {
+    "id" : "0BZGNJGIHC",
+    "chocolateIds" : [ "5", "5", "5" ],
+    "date" : "2024-06-30T14:28:51.9445259",
+    "factoryId" : "3",
+    "price" : 10.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "S4JFKE0QF2" : {
+    "id" : "S4JFKE0QF2",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T15:15:41.9989413",
+    "factoryId" : "3",
+    "price" : 7.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "S8MWQ7GZKI" : {
+    "id" : "S8MWQ7GZKI",
+    "chocolateIds" : [ "5", "5", "5", "7", "7" ],
+    "date" : "2024-06-30T14:25:34.0717622",
+    "factoryId" : "3",
+    "price" : 210.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "7307S22XBT" : {
+    "id" : "7307S22XBT",
+    "chocolateIds" : [ "5", "5", "5" ],
+    "date" : "2024-06-30T15:19:21.0305251",
+    "factoryId" : "3",
+    "price" : 10.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "VC73K88LU9" : {
+    "id" : "VC73K88LU9",
+    "chocolateIds" : [ "5", "5", "7" ],
+    "date" : "2024-06-30T14:43:47.682621",
+    "factoryId" : "3",
+    "price" : 107.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "TPLWR4SGMG" : {
+    "id" : "TPLWR4SGMG",
+    "chocolateIds" : [ "7", "5" ],
+    "date" : "2024-06-30T14:54:12.9185505",
+    "factoryId" : "3",
+    "price" : 103.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "25V1V6M2Q0" : {
+    "id" : "25V1V6M2Q0",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T15:19:29.132785",
+    "factoryId" : "3",
+    "price" : 7.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "E1FDOL8V2O" : {
+    "id" : "E1FDOL8V2O",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T15:04:06.9238907",
+    "factoryId" : "3",
+    "price" : 7.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "S6POO7VOYF" : {
+    "id" : "S6POO7VOYF",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T15:08:48.6758252",
+    "factoryId" : "3",
+    "price" : 7.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "0LL31VL0EI" : {
+    "id" : "0LL31VL0EI",
+    "chocolateIds" : [ "5", "5", "5", "7" ],
+    "date" : "2024-06-30T14:50:27.3190649",
+    "factoryId" : "3",
+    "price" : 110.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "WOII8S99FJ" : {
+    "id" : "WOII8S99FJ",
+    "chocolateIds" : [ "5", "5" ],
+    "date" : "2024-06-30T16:15:27.0878856",
+    "factoryId" : "3",
+    "price" : 6.65,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "6U2DHBLJRP" : {
+    "id" : "6U2DHBLJRP",
+    "chocolateIds" : [ "7", "7" ],
+    "date" : "2024-06-30T14:27:38.2382131",
+    "factoryId" : "3",
+    "price" : 200.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  }
+}

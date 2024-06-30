@@ -59,8 +59,6 @@
         axios.post('http://localhost:8080/WebShopAppREST/rest/users/', userForRegistration.value);
     }
 
-
-
     onMounted(() => {
         loadUsers();
     });

@@ -1,6 +1,7 @@
 package beans;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -29,7 +30,27 @@ public class User {
 	    
 	    @JsonProperty("userType")
 	    private String userType;
+	    
+	    @JsonIgnore
+	    private String cart;
 	
+	    
+	    
+
+	public User(String id, String username, String password, String name, String lastName, String gender,
+				LocalDate birthDate, String userType, String cart) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.password = password;
+			this.name = name;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.birthDate = birthDate;
+			this.userType = userType;
+			this.cart = cart;
+		}
+
 
 	public User(String id, String username, String password, String name, String lastName, String gender,
 				LocalDate birthDate, String userType) {
@@ -43,6 +64,17 @@ public class User {
 			this.birthDate = birthDate;
 			this.userType = userType;
 		}
+	
+
+	public String getCart() {
+		return cart;
+	}
+
+	public void setCart(String cart) {
+		this.cart = cart;
+	}
+
+
 
 
 

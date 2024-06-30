@@ -1,10 +1,21 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 
+const defaultUser = {
+  id: '',
+  username: '',
+  password: '',
+  name: '',
+  lastName: '',
+  gender: '',
+  birthDate: '',
+  userType: ''
+};
+
 const getUserFromLocalStorage = () => {
   const user = localStorage.getItem('user');
   try {
-    return user ? JSON.parse(user) : null;
+    return user ? JSON.parse(user) : defaultUser;
   } catch (e) {
     console.error("Error parsing user from localStorage", e);
     return null;
@@ -15,7 +26,12 @@ const store = createStore({
   state: {
     isLoggedIn: !!localStorage.getItem('token'),
     user: getUserFromLocalStorage(),
-    token: localStorage.getItem('token') || ''
+    token: localStorage.getItem('token') || '',
+    cart: {
+      chocolatesInCart: [],
+      User: null,
+      price: 0
+    }
   },
   mutations: {
     login(state, { token, user }) {
@@ -37,6 +53,30 @@ const store = createStore({
     setUser(state, user) {
       state.user = user;
       console.log('Mutation: User set:', state.user);
+    },
+    addToCart(state, chocolate) {
+      state.cart.chocolatesInCart.push(chocolate);
+      state.cart.price +=chocolate.price;
+      console.log('Increasing quantity of:', chocolate);
+    },
+    clearCart(state) {
+      state.cart.chocolatesInCart = [];
+      state.cart.price = 0;
+      console.log('Mutation: Cart cleared');
+    },
+    decreaseQuantity(state, chocolate){ 
+        const index = state.cart.chocolatesInCart.findIndex(choc => choc.id == chocolate.id);
+        if(index !== -1){
+          state.cart.chocolatesInCart.splice(index,1);
+          state.cart.price -= chocolate.price;
+        }
+    },
+    removeFromCart(state, {chocolate, quantity}){
+      state.cart.chocolatesInCart = state.cart.chocolatesInCart.filter(choco => choco.id != chocolate.id);
+      state.cart.price -= quantity*chocolate.price
+    },
+    updateCartUserId(state){
+      state.cart.user = state.user;
     }
   },
   actions: {
@@ -63,7 +103,8 @@ const store = createStore({
   getters: {
     isLoggedIn: state => state.isLoggedIn,
     user: state => state.user,
-    token: state => state.token
+    token: state => state.token,
+    cart: state => state.cart
   }
 });
 

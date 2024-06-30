@@ -5,6 +5,7 @@ import AddChocolateToFactoryView from '../views/AddChocolateToFactoryView.vue';
 import EditChocolate from '../views/EditChocolateView.vue';
 import CustomerRegistration from '../views/CustomerRegistrationView.vue';
 import LogIn from '../views/LogInView.vue'
+import Cart from '../views/CartView.vue';
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     name: "customerRegistration",
     component: CustomerRegistration,
   },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
+  }
   
 ];
 

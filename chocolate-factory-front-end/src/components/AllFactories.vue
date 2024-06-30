@@ -215,31 +215,7 @@
         }) && (selectedOption.value === "showAll" || (selectedOption.value === "showOpen" && factory.isOpen))
       })
     }
-/*
-    function filterChocolatesByFlavor(){
-      if(selectedFlavor.value !== "Default" && selectedType === "Default"){
-      factories.value = allFactories.value.filter(factory =>
-        factory.chocolates.some(chocolate => chocolate.flavor === selectedFlavor.value)
-      );
-      return;
-      }else if(selectedFlavor.value !== "Default" && selectedType !== "Default"){
-        factories.value = allFactories.value.filter(factory =>
-        factory.chocolates.some(chocolate => chocolate.flavor === selectedFlavor.value && chocolate.type.selectedType)
-      );
-      }
-      factories.value = allFactories.value;
-    }
-
-    function filterFactoriesByFlavor(){
-      if(selectedType.value !== "Default"){
-        factories.value = allFactories.value.filter(factory => factory.chocolates.some(chocolate => chocolate.type === selectedType.value))
-        return;
-      }
-      factories.value = allFactories.value;
-    } */
-
-    
-    
+  
 </script>
 
 <style scoped>

@@ -9,18 +9,20 @@
                     <img src="../images/logo.png" height="200" width="375">
                 </router-link>
             </div>
-            <div class="col-md-3 d-flex justify-content-end">
-                <div v-if="isLoggedIn">
-                    <p>{{ user ? user.username : '' }}</p>
+            <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <div v-if="isLoggedIn" class="d-flex align-items-center">
+                    <button @click="SeeCart" class="btn btn-secondary">See cart</button>
+                    <p class="mb-0 mr-2">{{ user ? user.username : '' }}|</p>
+                    <button @click="logout" class="btn btn-secondary">Logout</button>
                 </div>
-                <div v-if="!isLoggedIn">
-                <router-link :to="{name: 'logIn'}">
-                    <p>Log in | </p>
-                </router-link>
-                <router-link :to="{name: 'customerRegistration'}">
-                    <p>Register</p>
-                </router-link>
-            </div>
+                <div v-else class="d-flex align-items-center">
+        <router-link :to="{name: 'logIn'}" class="mr-2">
+            <p class="mb-0">Log in |</p>
+        </router-link>
+        <router-link :to="{name: 'customerRegistration'}">
+            <p class="mb-0">Register</p>
+        </router-link>
+    </div>
             </div>
         </div>
     </div>
@@ -28,13 +30,25 @@
 <script setup>
     import { computed, watch } from 'vue';
     import { useStore } from 'vuex';
+    import { useRouter } from 'vue-router';
 
     const store = useStore();
+    const router = useRouter();
     const isLoggedIn = computed(() => store.getters.isLoggedIn);
     const user = computed(() => store.getters.user);
     watch(() => isLoggedIn.value, (newValue) => {
     console.log('isLoggedIn changed:', newValue);
     });
+
+    const logout = () => {
+  store.dispatch('logout');
+  router.push({ name: 'logIn' });
+};
+
+function SeeCart(){
+    router.push({name: 'cart'})
+}
+
     
 </script>
 

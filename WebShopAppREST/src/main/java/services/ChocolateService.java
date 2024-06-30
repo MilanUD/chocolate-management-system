@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.PATCH;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -14,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import beans.Cart;
 import beans.Chocolate;
 import beans.ChocolateFactory;
 import dao.ChocolateDAO;
@@ -74,5 +76,13 @@ public class ChocolateService {
 	public Chocolate deleteChocolate(@PathParam("id") String id) {
 		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
 		return dao.deleteChocolate(id);
+	}
+	
+	@POST
+	@Path("/updateQuantity")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void updateChocolateQuantity(Cart cart) {
+		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
+		dao.updateChocolatesQuantity(cart.getChocolatesInCart());
 	}
 }

@@ -38,5 +38,15 @@
     "gender" : "Male",
     "birthDate" : "1995-06-06",
     "userType" : "Customer"
+  },
+  "5" : {
+    "id" : "5",
+    "username" : "user321",
+    "password" : "1",
+    "name" : "Milan",
+    "lastName" : "Milanovic",
+    "gender" : "Male",
+    "birthDate" : "2024-01-22",
+    "userType" : "Customer"
   }
 }
