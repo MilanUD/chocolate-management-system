@@ -3,10 +3,13 @@ package dao;
 import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.io.IOException;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
 import beans.*;
 import dtos.PurchaseDTO;
 
@@ -36,6 +39,16 @@ public class ChocolateFactoryDAO {
         }
     }
 	
+	private void saveChocolateFactory(String fileName) {
+		try {
+            File file = new File(fileName + "/factories.json");
+            ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
+            writer.writeValue(file, chocolateFactoryMap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	
 	public Collection<ChocolateFactory> getAll(){
 		return chocolateFactoryMap.values();
 	}
@@ -50,6 +63,19 @@ public class ChocolateFactoryDAO {
 			return;
 		}
 		chocolateFactoryMap.get(chocolate.getFabricId()).getChocolates().add(chocolate);
+	}
+
+	public void updateScore(String id, List<Integer> scores) {
+		// TODO Auto-generated method stub
+		ChocolateFactory factory = chocolateFactoryMap.get(id);
+		if(factory == null) {
+			return;
+		}
+		int sum = scores.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+		factory.setRating(sum/scores.size());
+		saveChocolateFactory(fileName);
 	}
 	
 	

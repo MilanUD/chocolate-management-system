@@ -40,9 +40,7 @@ public class ChocolateDAO {
         try {
             File file = new File(fileName + "/chocolate.json");
             if (file.exists()) {
-                chocolateMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Chocolate>>() {});
-                System.out.println(fileName + "/chocolate.json");
-                
+                chocolateMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Chocolate>>() {});                
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,8 +51,6 @@ public class ChocolateDAO {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(fileName + "/chocolate.json")) {
             gson.toJson(chocolateMap, writer);
-            System.out.println("Data successfully written to file.");
-            System.out.println(fileName + "chocolate.json");
         } catch (IOException e) {
             e.printStackTrace();
         }

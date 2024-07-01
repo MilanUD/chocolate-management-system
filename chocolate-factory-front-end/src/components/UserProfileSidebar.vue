@@ -5,14 +5,23 @@
       <router-link to="/profile/info" class="list-group-item list-group-item-action mb-2" active-class="active">
         User Information
       </router-link>
-      <router-link to="/profile/orders" class="list-group-item list-group-item-action mb-2" active-class="active">
+      <router-link v-if="user.userType === 'Customer'" to="/profile/orders" class="list-group-item list-group-item-action mb-2" active-class="active">
         My Orders
+      </router-link>
+      <router-link v-if="user.userType === 'Manager'" to="/profile/managerOrders" class="list-group-item list-group-item-action mb-2" active-class="active">
+        Orders in my factory
       </router-link>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
+const store = useStore();
+const user = computed(() => store.getters.user)
+
 </script>
 
 <style scoped>

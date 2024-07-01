@@ -9,6 +9,8 @@ import Cart from '../views/CartView.vue';
 import UserProfile from '@/views/UserProfile.vue';
 import UserOrders from '@/components/UserOrders.vue';
 import EditUserInfo from '@/components/EditUserInfo.vue';
+import ManagerOrders from '@/components/OrdersInFacory.vue';
+import WriteACommentView from '@/views/WriteACommentView.vue'
 
 const routes = [
   {
@@ -60,8 +62,18 @@ const routes = [
         path: 'orders',
         name: 'UserOrders',
         component: UserOrders
+      },
+      {
+        path: 'managerOrders',
+        name: 'ManagerOrders',
+        component: ManagerOrders
       }
     ]
+  },
+  {
+    path: "/comment/:id",
+    name: "writeAComment",
+    component: WriteACommentView,
   }
   
 ];

@@ -39,6 +39,7 @@ import java.util.stream.Collectors;
 
 
 import beans.Purchase;
+import beans.Purchase.Status;
 import beans.User;
 import dtos.PurchaseDTO;
 
@@ -122,6 +123,16 @@ public class PurchaseDAO {
 		forChange.setStatus(purchaseDTO.getStatus());
 		savePurchase(fileName);
 		return forChange;
+	}
+
+	public Collection<Purchase> getByFactoryId(String factoryId) {
+		// TODO Auto-generated method stub
+		return purchaseMap.values().stream().filter(p -> p.getFactoryId().equals(factoryId)).collect(Collectors.toList());
+	}
+
+	public boolean doesAcceptedExistByUser(String userId, String factoryId) {
+		// TODO Auto-generated method stub
+		return purchaseMap.values().stream().anyMatch(p -> p.getUserId().equals(userId) && p.getStatus() == Status.Accepted && p.getFactoryId().equals(factoryId));
 	}
 
 }

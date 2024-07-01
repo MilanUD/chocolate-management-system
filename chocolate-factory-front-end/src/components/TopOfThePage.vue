@@ -1,8 +1,9 @@
 <template>
     <div class="specificFactory">
         <div class="row">
-            <div class="col-md-3">
-
+            <div class="col-md-3 d-flex justify-content-start align-items-center">
+                <button @click="createUser" v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create manager</button>
+                <button v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create factory</button>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <router-link :to="{name: 'allFactoriesView'}">
@@ -49,6 +50,10 @@
 
 function SeeCart(){
     router.push({name: 'cart'})
+}
+
+function createUser(){
+    router.push({name: 'customerRegistration'})
 }
 
     

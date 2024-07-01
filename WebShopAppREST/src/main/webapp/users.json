@@ -1,4 +1,15 @@
 {
+  "11" : {
+    "id" : "11",
+    "username" : "wwe",
+    "password" : "12",
+    "name" : "Filip",
+    "lastName" : "Maksimovic",
+    "gender" : "Male",
+    "birthDate" : "1998-12-28",
+    "userType" : "Manager",
+    "factoryId" : "-1"
+  },
   "1" : {
     "id" : "1",
     "username" : "dark destroyer 123",
@@ -7,7 +18,19 @@
     "lastName" : "Kocic",
     "gender" : "Male",
     "birthDate" : "1999-06-22",
-    "userType" : "Customer"
+    "userType" : "Customer",
+    "factoryId" : null
+  },
+  "12" : {
+    "id" : "12",
+    "username" : "silip",
+    "password" : "1",
+    "name" : "Filip",
+    "lastName" : "markovic",
+    "gender" : "Male",
+    "birthDate" : "2024-06-30",
+    "userType" : "Manager",
+    "factoryId" : "-1"
   },
   "2" : {
     "id" : "2",
@@ -17,7 +40,8 @@
     "lastName" : "Kocic",
     "gender" : "Male",
     "birthDate" : "1999-06-22",
-    "userType" : "Customer"
+    "userType" : "Customer",
+    "factoryId" : null
   },
   "3" : {
     "id" : "3",
@@ -27,7 +51,8 @@
     "lastName" : "lakic",
     "gender" : "Male",
     "birthDate" : "2024-01-22",
-    "userType" : "Customer"
+    "userType" : "Customer",
+    "factoryId" : null
   },
   "4" : {
     "id" : "4",
@@ -37,7 +62,8 @@
     "lastName" : "krstic",
     "gender" : "Male",
     "birthDate" : "1995-06-06",
-    "userType" : "Customer"
+    "userType" : "Customer",
+    "factoryId" : null
   },
   "5" : {
     "id" : "5",
@@ -47,6 +73,62 @@
     "lastName" : "Milanovic",
     "gender" : "Female",
     "birthDate" : "1999-01-22",
-    "userType" : "Customer"
+    "userType" : "Customer",
+    "factoryId" : null
+  },
+  "6" : {
+    "id" : "6",
+    "username" : "milan",
+    "password" : "1",
+    "name" : "Milan",
+    "lastName" : "Keca",
+    "gender" : "Male",
+    "birthDate" : "2002-07-21",
+    "userType" : "Admin",
+    "factoryId" : null
+  },
+  "7" : {
+    "id" : "7",
+    "username" : "lejla",
+    "password" : "123",
+    "name" : "Lejla",
+    "lastName" : "Misic",
+    "gender" : "Female",
+    "birthDate" : "1995-01-02",
+    "userType" : "Manager",
+    "factoryId" : "3"
+  },
+  "8" : {
+    "id" : "8",
+    "username" : "light",
+    "password" : "12",
+    "name" : "Nemanja",
+    "lastName" : "Simic",
+    "gender" : "Male",
+    "birthDate" : "2003-04-01",
+    "userType" : "Manager",
+    "factoryId" : "-1"
+  },
+  "9" : {
+    "id" : "9",
+    "username" : "lasagna",
+    "password" : "123",
+    "name" : "Natasa",
+    "lastName" : "Mitrovic",
+    "gender" : "Female",
+    "birthDate" : "2002-12-29",
+    "userType" : "Manager",
+    "factoryId" : "-1"
+  },
+  "10" : {
+    "id" : "10",
+    "username" : "ada",
+    "password" : "123",
+    "name" : "Ada",
+    "lastName" : "Kuzmanovic",
+    "gender" : "Female",
+    "birthDate" : "1977-02-08",
+    "userType" : "Manager",
+    "factoryId" : "-1"
   }
 }

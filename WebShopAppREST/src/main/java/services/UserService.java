@@ -51,9 +51,11 @@ public class UserService {
 	public void register(User user) {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		dao.addUser(user);
+		if(user.getUserType().equals("Customer")) {
 		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
 		CustomerType customerType = new CustomerType(user.getId());
 		customerTypeDAO.addCustomerType(customerType);
+		}
 	}
 	
 	@POST

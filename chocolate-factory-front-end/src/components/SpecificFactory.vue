@@ -2,60 +2,137 @@
     <div class="specificFactory">
         <div class="d-flex justify-content-center">
             <div class="card custom-card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col d-flex flex-column justify-content-start">
-                        <button @click.prevent="GoToChocolateInsertionForm" class="btn btn-primary buttonStyle">Add chocolate</button>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4 d-flex flex-column justify-content-start">
+                            <button v-if="user.userType === 'Manager'" @click.prevent="GoToChocolateInsertionForm" class="btn btn-primary buttonStyle">Add chocolate</button>
+                        </div>
+                        <div class="col-4 d-flex flex-column justify-content-center">
+                            <h1>{{ factory.name }}</h1>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end">
+                            <div>
+                                <button v-if="canUserComment === true" @click.prevent="GoToCommentWritingForm" class="btn btn-primary">Write a comment</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col d-flex flex-column justify-content-center">
-                        <h1>{{ factory.name }}</h1>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <img :src="factory.picture" :alt="factory.name" width="150" height="150" />
+                        </div>
                     </div>
-                    <div class="col d-flex justify-content-end">
-                        <div>
-
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-clock"></i>
+                            <p>{{ factory.businessHours }}</p>
+                        </div>
+                        <div class="col-6 d-flex flex-column justify-content-center">
+                            <i :class="factory.isOpen ? 'bi bi-door-open' : 'bi bi-door-closed'"></i>
+                            <p>{{ factory.isOpen ? 'Open' : 'Closed' }}</p>
+                        </div>
+                        <div class="col-3 d-flex flex-column justify-content-right">
+                            <i class="bi bi-star-fill"></i>
+                            <p>{{ factory.rating || "No rating" }}</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 d-flex flex-column justify-content-center align-items-center" v-if="factory.location && factory.location.address">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <MapComponent :address="formatAddress(factory.location.address)" />
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <img :src="factory.picture" :alt="factory.name" width="150" height="150" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <i class="bi bi-clock"></i>
-                        <p>{{ factory.businessHours }}</p>
-                    </div>
-                    <div class="col-6 d-flex flex-column justify-content-center">
-                        <i :class="factory.isOpen ? 'bi bi-door-open' : 'bi bi-door-closed'"></i>
-                        <p>{{ factory.isOpen ? 'Open' : 'Closed' }}</p>
-                    </div>
-                    <div class="col-3 d-flex flex-column justify-content-right">
-                        <i class="bi bi-star-fill"></i>
-                        <p>{{ factory.rating || "No rating" }}</p>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-12 d-flex flex-column justify-content-center align-items-center" v-if="factory.location && factory.location.address">
-                        <i class="bi bi-geo-alt-fill"></i>
-                        <MapComponent :address="formatAddress(factory.location.address)" />
-                    </div>
-                </div>
-            </div>
            
-            <div class="row rowStyle">
-                <div class="col">
-                    <div class="d-flex justify-content-start" style="margin-left: 30%;">
-                        <button @click.prevent="ShowAllChocolates" class="btn btn-primary">Show All Chocolates</button>
+                <div class="row rowStyle">
+                    <div class="col">
+                        <div class="d-flex justify-content-start" style="margin-left: 30%;">
+                            <button @click.prevent="ShowAllChocolates" class="btn btn-primary">Show All Chocolates</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="d-flex justify-content-end" style="margin-right: 30%;">
-                        <button @click.prevent="ShowAllChocolates" class="btn btn-primary">Show All Chocolates</button>
+                    <div class="col">
+                        <div class="d-flex justify-content-end" style="margin-right: 30%;">
+                            <button @click.prevent="ShowAllComments" class="btn btn-primary">Show All Comments</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div v-if="isShowAllCommentsButtonPressed && (user.userType=== 'Admin' || user.userType === 'Manager') ">
+            <div v-for="comment in comments" :key="comment.id">
+                <div class="d-flex justify-content-center">
+                    <div class="card chocolate-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-9 d-flex">
+                                    <p>{{ comment.commentText }}</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending'" @click="AcceptComment(comment)" class="btn btn-success mt-2">
+                                        <i class="bi bi-check-circle"></i>
+                                        Accept
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 d-flex flex-column">
+                                    <i class="bi bi-person"></i>
+                                    <p>{{ comment.user.username }}</p>
+                                </div>
+                                <div class="col-md-1 d-flex flex-column">
+                                    <i class="bi bi-star"></i>
+                                    <p>{{ comment.rating }}</p>
+                                </div>
+                                <div class="col-md-1 d-flex flex-column">
+                                    <p class="mb-1">Status: </p>
+                                    <i v-if="comment.status === 'Accepted'" class="bi bi-check-circle"></i>
+                                    <i v-if="comment.status === 'Declined'" class="bi bi-x-circle"></i>
+                                    <i v-if="comment.status === 'Pending'" class="bi bi-hourglass-split"></i>
+                                </div>
+                                <div class="col-6">
+
+                                </div>
+                                <div class="col-md-3">
+                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending'" @click="DeclineComment(comment)" class="btn btn-danger mt-3">
+                                        <i class="bi bi-x-circle"></i>
+                                        Decline
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="isShowAllCommentsButtonPressed && (user.userType=== 'Customer' || user.userType === 'Worker') ">
+            <div v-for="comment in comments" :key="comment.id">
+                <div class="d-flex justify-content-center">
+                    <div class="card chocolate-card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 d-flex d-flex justify-content-center">
+                                    <p>{{ comment.commentText }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+
+                                </div>
+                                <div class="col-md-1 d-flex flex-column">
+                                    <i class="bi bi-person"></i>
+                                    <p>{{ comment.user.username }}</p>
+                                </div>
+                                <div class="col-md-1 d-flex flex-column">
+                                    <i class="bi bi-star"></i>
+                                    <p>{{ comment.rating }}</p>
+                                </div>
+                                <div class="col-md-5">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div v-if="isShowChocolatesButtonPressed">
             <div v-for="chocolate in chocolates" :key="chocolate.id">
@@ -143,13 +220,20 @@
 
     })
 
+    const comments = ref([]);
+
     const quantityToBuy = ref({});
+
+    const isShowAllCommentsButtonPressed = ref(false);
+    const canUserComment = ref(true);
 
     onMounted(() =>{
         loadFactory();
         loadChocolates();
         assingUserIdToCart();
         assignUserType();
+        loadComments();
+        canUserCommentCheck();
     });
 
     const factory = ref({});
@@ -158,10 +242,26 @@
     const router = useRouter();
     const isShowChocolatesButtonPressed = ref(false);
 
+
+    function ShowAllComments(){
+        isShowAllCommentsButtonPressed.value = !isShowAllCommentsButtonPressed.value;
+    }
     
     function GoToChocolateInsertionForm(){
         router.push({name: "addChocolate", params: {id: route.params.id}});
 
+    }
+
+    function canUserCommentCheck(){
+        const factoryId = route.params.id;
+        axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/exists/${user.value.id}/${factoryId}`).then(response => {
+            canUserComment.value = response.data;
+            hasAlreadyCommented();
+        })
+    }
+
+    function hasAlreadyCommented(){
+        
     }
 
     function ShowAllChocolates(){
@@ -172,6 +272,13 @@
         const id = route.params.id;
         axios.get(`http://localhost:8080/WebShopAppREST/rest/chocolateFactory/${id}`).then(response =>{
             factory.value = response.data;          
+        })
+    }
+
+    function loadComments(){
+        const id = route.params.id;
+        axios.get(`http://localhost:8080/WebShopAppREST/rest/comments/${id}`).then(response => {
+            comments.value = response.data
         })
     }
 
@@ -245,6 +352,20 @@
 
     function assingUserIdToCart(){
         store.commit('updateCartUserId');
+    }
+
+    function GoToCommentWritingForm(){
+        router.push({name: "writeAComment", params: {id: factory.value.id}});
+    }
+
+    function AcceptComment(comment){
+        comment.status = 'Accepted';
+        axios.put('http://localhost:8080/WebShopAppREST/rest/comments/', comment);
+    }
+
+    function DeclineComment(comment){
+        comment.status = 'Declined';
+        axios.put('http://localhost:8080/WebShopAppREST/rest/comments/', comment);
     }
 
 </script>

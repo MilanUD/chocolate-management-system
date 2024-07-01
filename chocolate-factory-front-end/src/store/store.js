@@ -9,7 +9,8 @@ const defaultUser = {
   lastName: '',
   gender: '',
   birthDate: '',
-  userType: ''
+  userType: '',
+  factoryId: ''
 };
 
 const getUserFromLocalStorage = () => {
@@ -44,7 +45,7 @@ const store = createStore({
     },
     logout(state) {
       state.isLoggedIn = false;
-      state.user = null;
+      state.user = defaultUser;
       state.token = '';
       localStorage.removeItem('token');
       localStorage.removeItem('user');
@@ -52,7 +53,6 @@ const store = createStore({
     },
     setUser(state, user) {
       state.user = user;
-      console.log('Mutation: User set:', state.user);
     },
     addToCart(state, chocolate) {
       state.cart.chocolatesInCart.push(chocolate);

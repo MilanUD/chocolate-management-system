@@ -36,7 +36,14 @@
 </template>
 <script setup>
     import axios from "axios";
-    import { onMounted, ref } from "vue";
+    import { onMounted, ref, computed } from "vue";
+    import { useStore } from "vuex";
+    import { useRouter } from 'vue-router';
+
+
+    const store = useStore();
+    const user = computed(() => store.getters.user);
+    const router = useRouter();
 
     const userForRegistration = ref({
         username : '',
@@ -45,7 +52,8 @@
         lastName : '',
         gender : '',
         birthDate : '',
-        userType : 'Customer'
+        factoryId: '-1',
+        userType : assignType()
     });
     const users = ref([]);
 
@@ -56,10 +64,22 @@
     }
 
     function registerUser(){
-        axios.post('http://localhost:8080/WebShopAppREST/rest/users/', userForRegistration.value);
+        axios.post('http://localhost:8080/WebShopAppREST/rest/users/', userForRegistration.value).then(() =>{
+            router.push({name: 'allFactoriesView'});
+        });
     }
 
     onMounted(() => {
         loadUsers();
     });
+
+    function assignType(){
+        if(user.value.userType === 'Admin'){
+            return 'Manager';
+        }else if(user.value.userType === 'Manager'){
+            return 'Worker';
+        }else if(user.value.userType === ''){
+            return 'Customer';
+        }
+    }
 </script>

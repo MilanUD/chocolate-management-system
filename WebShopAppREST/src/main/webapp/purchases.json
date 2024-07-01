@@ -1,17 +1,92 @@
 {
   "X1ZPRFO480" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "X1ZPRFO480",
     "chocolateIds" : [ "5", "5", "5" ],
     "date" : "2024-06-30T14:26:07.4618074",
     "factoryId" : "3",
     "price" : 10.5,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Accepted",
     "userId" : "5"
   },
   "9XZ9NXHZIR" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "9XZ9NXHZIR",
     "chocolateIds" : [ "7", "7", "7", "5", "5" ],
     "date" : "2024-06-30T14:40:15.9015096",
@@ -22,18 +97,80 @@
     "userId" : "5"
   },
   "0MWNONGWEB" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "0MWNONGWEB",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T14:57:05.8164847",
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Declined",
     "userId" : "5"
   },
   "0BZGNJGIHC" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "0BZGNJGIHC",
     "chocolateIds" : [ "5", "5", "5" ],
     "date" : "2024-06-30T14:28:51.9445259",
@@ -44,7 +181,38 @@
     "userId" : "5"
   },
   "S4JFKE0QF2" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "S4JFKE0QF2",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T15:15:41.9989413",
@@ -55,7 +223,51 @@
     "userId" : "5"
   },
   "S8MWQ7GZKI" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "S8MWQ7GZKI",
     "chocolateIds" : [ "5", "5", "5", "7", "7" ],
     "date" : "2024-06-30T14:25:34.717622",
@@ -66,7 +278,38 @@
     "userId" : "5"
   },
   "7307S22XBT" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "7307S22XBT",
     "chocolateIds" : [ "5", "5", "5" ],
     "date" : "2024-06-30T15:19:21.305251",
@@ -77,7 +320,51 @@
     "userId" : "5"
   },
   "VC73K88LU9" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "VC73K88LU9",
     "chocolateIds" : [ "5", "5", "7" ],
     "date" : "2024-06-30T14:43:47.682621",
@@ -88,7 +375,51 @@
     "userId" : "5"
   },
   "TPLWR4SGMG" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "TPLWR4SGMG",
     "chocolateIds" : [ "7", "5" ],
     "date" : "2024-06-30T14:54:12.9185505",
@@ -99,7 +430,38 @@
     "userId" : "5"
   },
   "25V1V6M2Q0" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "25V1V6M2Q0",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T15:19:29.132785",
@@ -110,7 +472,38 @@
     "userId" : "5"
   },
   "E1FDOL8V2O" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "E1FDOL8V2O",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T15:04:06.9238907",
@@ -121,7 +514,38 @@
     "userId" : "5"
   },
   "S6POO7VOYF" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "S6POO7VOYF",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T15:08:48.6758252",
@@ -132,7 +556,51 @@
     "userId" : "5"
   },
   "0LL31VL0EI" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "0LL31VL0EI",
     "chocolateIds" : [ "5", "5", "5", "7" ],
     "date" : "2024-06-30T14:50:27.3190649",
@@ -143,7 +611,38 @@
     "userId" : "5"
   },
   "WOII8S99FJ" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "WOII8S99FJ",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-06-30T16:15:27.878856",
@@ -154,7 +653,38 @@
     "userId" : "5"
   },
   "FZO4NXR1Q6" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 33,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "FZO4NXR1Q6",
     "chocolateIds" : [ "5", "5" ],
     "date" : "2024-07-01T02:56:07.620737700",
@@ -165,7 +695,38 @@
     "userId" : "5"
   },
   "6U2DHBLJRP" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 3,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 0.0
+    },
     "id" : "6U2DHBLJRP",
     "chocolateIds" : [ "7", "7" ],
     "date" : "2024-06-30T14:27:38.2382131",

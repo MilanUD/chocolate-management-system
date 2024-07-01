@@ -15,6 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import beans.Cart;
 import beans.Chocolate;
@@ -89,4 +90,29 @@ public class PurchaseService {
 		PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
 		return dao.updateStatus(purchaseDTO, id);
 	}
+	
+	@GET
+	@Path("/factory{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Collection<Purchase> getByFactoryId(@PathParam("id") String factoryId){
+		PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
+		Collection<Purchase> purchases = dao.getByFactoryId(factoryId);
+		ChocolateFactoryDAO factoryDAO = new ChocolateFactoryDAO();
+		ChocolateDAO chocolateDAO = new ChocolateDAO();
+		for(Purchase purchase : purchases) { 
+			purchase.setFactory(factoryDAO.getFactoryDetails(purchase.getFactoryId()));
+			Set<String> chocolateIds = purchase.getChocolateIds().stream().collect(Collectors.toSet());
+			purchase.setChocolates(chocolateDAO.getByIds(chocolateIds));
+		}
+		return purchases;
+	}
+	
+	@GET
+	@Path("/exists/{userId}/{factoryId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response doesAcceptedExistByUser(@PathParam("userId") String userId, @PathParam("factoryId") String factoryId) {
+        PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
+        boolean exists = dao.doesAcceptedExistByUser(userId, factoryId);
+        return Response.ok(exists).build();
+    }
 }

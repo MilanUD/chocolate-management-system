@@ -5,5 +5,47 @@
     "discount": 0.0,
     "pointsUntilNextRank": 223.98299999999992,
     "userId": "5"
+  },
+  "2": {
+    "id": "2",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "7"
+  },
+  "3": {
+    "id": "3",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "8"
+  },
+  "4": {
+    "id": "4",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "9"
+  },
+  "5": {
+    "id": "5",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "10"
+  },
+  "6": {
+    "id": "6",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "11"
+  },
+  "7": {
+    "id": "7",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "12"
   }
 }

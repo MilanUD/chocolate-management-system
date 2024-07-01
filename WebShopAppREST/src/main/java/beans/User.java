@@ -31,11 +31,30 @@ public class User {
 	    @JsonProperty("userType")
 	    private String userType;
 	    
+	    @JsonProperty("factoryId")
+	    private String factoryId;
+	    
 	    @JsonIgnore
 	    private String cart;
 	
 	    
 	    
+
+	public User(String id, String username, String password, String name, String lastName, String gender,
+				LocalDate birthDate, String userType, String factoryId, String cart) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.password = password;
+			this.name = name;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.birthDate = birthDate;
+			this.userType = userType;
+			this.factoryId = factoryId;
+			this.cart = cart;
+		}
+
 
 	public User(String id, String username, String password, String name, String lastName, String gender,
 				LocalDate birthDate, String userType, String cart) {
@@ -65,6 +84,18 @@ public class User {
 			this.userType = userType;
 		}
 	
+	
+	
+
+	public String getFactoryId() {
+		return factoryId;
+	}
+
+
+	public void setFactoryId(String factoryId) {
+		this.factoryId = factoryId;
+	}
+
 
 	public String getCart() {
 		return cart;

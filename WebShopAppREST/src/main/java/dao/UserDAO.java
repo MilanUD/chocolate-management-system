@@ -107,6 +107,10 @@ public class UserDAO {
 		return user;
 	}
 	
+	public User getById(String id) {
+		return userMap.get(id);
+	}
+	
 	
 
 }
