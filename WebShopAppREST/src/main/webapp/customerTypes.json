@@ -1,9 +1,9 @@
 {
   "1": {
     "id": "1",
-    "type": "Silver",
-    "discount": 0.05,
-    "pointsUntilNextRank": 909.6400499999999,
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 223.98299999999992,
     "userId": "5"
   }
 }

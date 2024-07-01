@@ -6,8 +6,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude;	
 
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Purchase {
 	public enum Status {Accepted, Declined, Cancelled, InProgress}
 
@@ -17,7 +18,7 @@ public class Purchase {
     @JsonProperty("chocolateIds")
     private List<String> chocolateIds;
     
-    @JsonIgnore
+    
     private List<Chocolate> chocolates;
 
     @JsonProperty("date")
@@ -26,7 +27,7 @@ public class Purchase {
     @JsonProperty("factoryId")
     private String factoryId;
     
-    @JsonIgnore
+    
     private ChocolateFactory factory;
 
     @JsonProperty("price")

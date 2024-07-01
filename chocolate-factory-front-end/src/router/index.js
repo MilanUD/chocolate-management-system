@@ -6,6 +6,9 @@ import EditChocolate from '../views/EditChocolateView.vue';
 import CustomerRegistration from '../views/CustomerRegistrationView.vue';
 import LogIn from '../views/LogInView.vue'
 import Cart from '../views/CartView.vue';
+import UserProfile from '@/views/UserProfile.vue';
+import UserOrders from '@/components/UserOrders.vue';
+import EditUserInfo from '@/components/EditUserInfo.vue';
 
 const routes = [
   {
@@ -42,6 +45,23 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: Cart,
+  },
+  {
+    path: '/profile',
+    name: 'UserProfile',
+    component: UserProfile,
+    children: [
+      {
+        path: 'info',
+        name: 'EditUserInfo',
+        component: EditUserInfo
+      },
+      {
+        path: 'orders',
+        name: 'UserOrders',
+        component: UserOrders
+      }
+    ]
   }
   
 ];

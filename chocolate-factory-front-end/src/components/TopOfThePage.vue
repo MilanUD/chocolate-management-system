@@ -12,7 +12,9 @@
             <div class="col-md-3 d-flex justify-content-end align-items-center">
                 <div v-if="isLoggedIn" class="d-flex align-items-center">
                     <button @click="SeeCart" class="btn btn-secondary">See cart</button>
-                    <p class="mb-0 mr-2">{{ user ? user.username : '' }}|</p>
+                    <router-link :to="{name: 'EditUserInfo'}">
+                        <p class="mb-0 mr-2">{{ user ? user.username : '' }}|</p>
+                    </router-link>
                     <button @click="logout" class="btn btn-secondary">Logout</button>
                 </div>
                 <div v-else class="d-flex align-items-center">

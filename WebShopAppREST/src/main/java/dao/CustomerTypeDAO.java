@@ -17,6 +17,8 @@ import beans.Cart;
 import beans.Chocolate;
 import beans.ChocolateFactory;
 import beans.CustomerType;
+import beans.Purchase.Status;
+import dtos.PurchaseDTO;
 
 public class CustomerTypeDAO {
 	
@@ -105,6 +107,23 @@ public class CustomerTypeDAO {
 			return result.get();
 		}
 		return null;
+	}
+	
+	public void updateCustomerPoints(PurchaseDTO purchase) {
+		CustomerType customer = getByUserId(purchase.getUserId());
+		if(customer == null) {
+			return;
+		}
+		customer.setPointsUntilNextRank(customer.getPointsUntilNextRank() + calculateGainedPoints(purchase.getPrice()*4));
+		if(customer.getPointsUntilNextRank() > 1000 && customer.getType().equals("Silver")) {
+			customer.setType("Bronze");
+			customer.setPointsUntilNextRank(customer.getPointsUntilNextRank()-1000);
+			customer.setDiscount(0);
+		}else if(customer.getType().equals("Golden")) {
+			customer.setType("Silver");
+			customer.setDiscount(0.05);
+		}
+		saveCustomerType(fileName);
 	}
 	
 

@@ -20,6 +20,7 @@ import beans.Chocolate;
 import beans.ChocolateFactory;
 import dao.ChocolateDAO;
 import dao.ChocolateFactoryDAO;
+import dtos.PurchaseDTO;
 
 @Path("/chocolates")
 public class ChocolateService {
@@ -84,5 +85,13 @@ public class ChocolateService {
 	public void updateChocolateQuantity(Cart cart) {
 		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
 		dao.updateChocolatesQuantity(cart.getChocolatesInCart());
+	}
+	
+	@PATCH
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void revertQuantity(PurchaseDTO dto) {
+		ChocolateDAO dao = (ChocolateDAO) ctx.getAttribute("chocolatesDAO");
+		dao.revertStockQuantities(dto);
 	}
 }

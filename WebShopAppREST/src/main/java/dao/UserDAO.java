@@ -93,6 +93,19 @@ public class UserDAO {
 	    System.out.println("Login endpoint hit with username: " + user.getUsername());
 		return null;
 	}
+
+	public User editUserInfo(User user) {
+		// TODO Auto-generated method stub
+		User selectedUser = userMap.get(user.getId());
+		if(selectedUser == null) {
+			System.out.println("Nesto ne valja");
+			System.out.println(user.getId());
+			return null;
+		}
+		userMap.put(selectedUser.getId(), user);
+		saveUser(fileName);
+		return user;
+	}
 	
 	
 

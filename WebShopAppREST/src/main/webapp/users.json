@@ -34,7 +34,7 @@
     "username" : "tenkotrash",
     "password" : "tenko123",
     "name" : "nikola",
-    "lastName" : "Keča",
+    "lastName" : "krstic",
     "gender" : "Male",
     "birthDate" : "1995-06-06",
     "userType" : "Customer"
@@ -45,8 +45,8 @@
     "password" : "1",
     "name" : "Milan",
     "lastName" : "Milanovic",
-    "gender" : "Male",
-    "birthDate" : "2024-01-22",
+    "gender" : "Female",
+    "birthDate" : "1999-01-22",
     "userType" : "Customer"
   }
 }

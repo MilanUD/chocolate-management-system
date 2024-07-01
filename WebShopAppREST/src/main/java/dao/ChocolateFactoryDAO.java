@@ -8,6 +8,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import beans.*;
+import dtos.PurchaseDTO;
 
 public class ChocolateFactoryDAO {
 
@@ -50,6 +51,7 @@ public class ChocolateFactoryDAO {
 		}
 		chocolateFactoryMap.get(chocolate.getFabricId()).getChocolates().add(chocolate);
 	}
+	
 	
 
 }

@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import beans.Chocolate;
+import dtos.PurchaseDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.File;
@@ -13,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.io.File;
 import java.util.Collection;
@@ -134,6 +137,21 @@ public class ChocolateDAO {
 		}
 		saveChocolates(fileName);
 		loadChocolates(fileName);
+	}
+	
+	public List<Chocolate> getByIds(Set ids){
+		return chocolateMap.values().stream().filter(choco -> ids.contains(choco.getId())).collect(Collectors.toList());
+	}
+	
+	public void revertStockQuantities(PurchaseDTO purchaseDTO) {
+		for(String id: purchaseDTO.getChocolateIds()) {
+			Chocolate chocolateToUpdate = chocolateMap.get(id);
+			chocolateToUpdate.setStockQuantity(chocolateToUpdate.getStockQuantity()+1);
+			if(!chocolateToUpdate.getIsInStock()) {
+				chocolateToUpdate.setIsInStock(true);
+			}
+		}
+		saveChocolates(fileName);
 	}
 	
 

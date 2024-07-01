@@ -8,8 +8,8 @@
     "grams": 250.0,
     "description": "Najukusnija cokolada ikada!!!!!!!!!!!!!!!!!!!!",
     "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
-    "stockQuantity": 0,
-    "isInStock": false,
+    "stockQuantity": 1,
+    "isInStock": true,
     "fabricId": "2",
     "isDeleted": false
   },
@@ -36,8 +36,8 @@
     "grams": 200.0,
     "description": "prelepa cokolada",
     "picture": "21a",
-    "stockQuantity": 0,
-    "isInStock": false,
+    "stockQuantity": 2,
+    "isInStock": true,
     "fabricId": "4",
     "isDeleted": false
   },
@@ -92,8 +92,8 @@
     "grams": 22.0,
     "description": "aaaaaaaa",
     "picture": "aaaaaaaaaaaaaa",
-    "stockQuantity": 0,
-    "isInStock": false,
+    "stockQuantity": 3,
+    "isInStock": true,
     "fabricId": "3",
     "isDeleted": false
   }

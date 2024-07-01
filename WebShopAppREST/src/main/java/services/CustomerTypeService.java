@@ -3,6 +3,7 @@ package services;
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.ws.rs.GET;
+import javax.ws.rs.PATCH;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -12,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 import beans.CustomerType;
 import dao.ChocolateDAO;
 import dao.CustomerTypeDAO;
+import dtos.PurchaseDTO;
 
 @Path("/customerTypes")
 public class CustomerTypeService {
@@ -38,6 +40,14 @@ public class CustomerTypeService {
 		CustomerTypeDAO dao = (CustomerTypeDAO) ctx.getAttribute("customerTypeDAO");
 		return dao.getByUserId(userId);
 		
+	}
+	
+	@PATCH
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void updateCustomerPoints(PurchaseDTO purchase) {
+		CustomerTypeDAO dao = (CustomerTypeDAO) ctx.getAttribute("customerTypeDAO");
+		dao.updateCustomerPoints(purchase);
 	}
 
 }

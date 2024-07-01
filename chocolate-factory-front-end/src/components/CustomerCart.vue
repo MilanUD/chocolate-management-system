@@ -63,17 +63,17 @@
     
     const chocolateCounts = ref(countChocolates(cart.value.chocolatesInCart));
 
-function countChocolates(chocolates) {
-    const countMap = {};
-    chocolates.forEach(chocolate => {
-        if (countMap[chocolate.id]) {
-            countMap[chocolate.id]++;
-        } else {
-            countMap[chocolate.id] = 1;
-        }
-    });
-    return countMap;
-}
+    function countChocolates(chocolates) {
+        const countMap = {};
+        chocolates.forEach(chocolate => {
+            if (countMap[chocolate.id]) {
+                countMap[chocolate.id]++;
+            } else {
+                countMap[chocolate.id] = 1;
+            }
+        });
+        return countMap;
+    }
 
     function decreaseQuantity(chocolate){
         //const chocolateCounts = ref(countChocolates(cart.value.chocolatesInCart));
