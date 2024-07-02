@@ -110,6 +110,23 @@ public class UserDAO {
 	public User getById(String id) {
 		return userMap.get(id);
 	}
+
+	public Collection<User> getAllFreeManagers() {
+		// TODO Auto-generated method stub
+		return userMap.values().stream().filter(u -> u.getUserType().equals("Manager") && u.getFactoryId().equals("-1")).collect(Collectors.toList());
+	}
+
+	public void assignToFactory(User manager) {
+		// TODO Auto-generated method stub
+		User managerToAssign = userMap.get(manager.getId());
+		if(managerToAssign == null) {
+			System.out.println("Nije pronadjen");
+			return;
+		}
+		managerToAssign.setFactoryId(manager.getFactoryId());
+		userMap.put(managerToAssign.getId(), managerToAssign);
+		saveUser(fileName);
+	}
 	
 	
 

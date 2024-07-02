@@ -38,7 +38,7 @@
                     <div class="row mb-3">
                         <div class="col-12 d-flex flex-column justify-content-center align-items-center" v-if="factory.location && factory.location.address">
                             <i class="bi bi-geo-alt-fill"></i>
-                            <MapComponent :address="formatAddress(factory.location.address)" />
+                            <MapComponent mode="view" :address="formatAddress(factory.location.address)" />
                         </div>
                     </div>
                 </div>
@@ -246,6 +246,7 @@
 
     function ShowAllComments(){
         isShowAllCommentsButtonPressed.value = !isShowAllCommentsButtonPressed.value;
+        isShowChocolatesButtonPressed.value = false;
     }
     
     function GoToChocolateInsertionForm(){
@@ -270,6 +271,7 @@
 
     function ShowAllChocolates(){
         isShowChocolatesButtonPressed.value = !isShowChocolatesButtonPressed.value;
+        isShowAllCommentsButtonPressed.value = false;
     }
 
     function loadFactory(){

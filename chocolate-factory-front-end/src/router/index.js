@@ -10,7 +10,9 @@ import UserProfile from '@/views/UserProfile.vue';
 import UserOrders from '@/components/UserOrders.vue';
 import EditUserInfo from '@/components/EditUserInfo.vue';
 import ManagerOrders from '@/components/OrdersInFacory.vue';
-import WriteACommentView from '@/views/WriteACommentView.vue'
+import WriteACommentView from '@/views/WriteACommentView.vue';
+import CreateFactoryView from '../views/CreateFactoryView.vue';
+import ManagersFactory from '../components/ManagersFactory.vue'
 
 const routes = [
   {
@@ -67,6 +69,11 @@ const routes = [
         path: 'managerOrders',
         name: 'ManagerOrders',
         component: ManagerOrders
+      },
+      {
+        path: 'managersFactory',
+        name: 'ManagersFactory',
+        component: ManagersFactory
       }
     ]
   },
@@ -74,6 +81,11 @@ const routes = [
     path: "/comment/:id",
     name: "writeAComment",
     component: WriteACommentView,
+  },
+  {
+    path: "/createFactory",
+    name: "createFactory",
+    component: CreateFactoryView,
   }
   
 ];

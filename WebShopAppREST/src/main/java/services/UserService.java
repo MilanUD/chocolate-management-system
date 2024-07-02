@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.ws.rs.GET;
+import javax.ws.rs.PATCH;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -101,6 +102,22 @@ public class UserService {
 	public User editUserInfo(User user) {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		return dao.editUserInfo(user);
+	}
+	
+	@GET
+	@Path("/managers")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Collection<User> getAllFreeManagers(){
+		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
+		return dao.getAllFreeManagers();
+	}
+	
+	@PATCH
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void assignToFactory(User manager) {
+		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
+		dao.assignToFactory(manager);
 	}
 
 }

@@ -77,7 +77,27 @@ public class ChocolateFactoryDAO {
 		factory.setRating((double)sum/(double)scores.size());
 		saveChocolateFactory(fileName);
 	}
+
+	public ChocolateFactory createFactory(ChocolateFactory factory) {
+		// TODO Auto-generated method stub
+		   String newId = generateNewId();
+		    chocolateFactoryMap.put(newId, factory);
+		    factory.setId(newId);
+		    saveChocolateFactory(fileName);
+		    return factory;
+	}
 	
+
+	private String generateNewId() {
+	    int maxId = 0;
+	    for (String id : chocolateFactoryMap.keySet()) {
+	        int currentId = Integer.parseInt(id);
+	        if (currentId > maxId) {
+	            maxId = currentId;
+	        }
+	    }
+	    return String.valueOf(maxId + 1);
+	}
 	
 
 }

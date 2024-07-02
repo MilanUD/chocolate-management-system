@@ -1,37 +1,46 @@
-package beans;
+package dtos;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ChocolateFactory {
+import beans.Chocolate;
+import beans.ChocolateFactory;
+import beans.Location;
+
+public class ChocolateFactoryDTO {
 	
-	@JsonProperty("id")
 	private String id;
 	
-	@JsonProperty("name")
 	private String name;
 	
-	@JsonIgnore
 	private List<Chocolate> chocolates;
 		
-	@JsonProperty("businessHours")
 	private String businessHours;
 	
-	@JsonProperty("isOpen")
 	private boolean isOpen;
 	
-	@JsonProperty("location")
 	private Location location;
 	
-	@JsonProperty("picture")
 	private String picture;
 	
-	@JsonProperty("rating")
 	private double rating;
 	
+	public ChocolateFactoryDTO(ChocolateFactory factory) {
+        this.id = factory.getId();
+        this.name = factory.getName();
+        this.chocolates = factory.getChocolates();
+        this.businessHours = factory.getBusinessHours();
+        this.isOpen = factory.getIsOpen();
+        this.location = factory.getLocation();
+        this.picture = factory.getPicture();
+        this.rating = factory.getRating();
+    }
+
+	public ChocolateFactoryDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public String getName() {
 		return name;
@@ -112,26 +121,5 @@ public class ChocolateFactory {
 		this.rating = rating;
 	}
 
-
-	public ChocolateFactory() {
-		// TODO Auto-generated constructor stub
-		chocolates = new ArrayList<Chocolate>();
-	}
-
-
-	public ChocolateFactory(String id, String name, List<Chocolate> chocolates, String businessHours, boolean isOpen,
-			Location location, String picture, double rating) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.chocolates = chocolates;
-		this.businessHours = businessHours;
-		this.isOpen = isOpen;
-		this.location = location;
-		this.picture = picture;
-		this.rating = rating;
-	}
-	
-	
 
 }

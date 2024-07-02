@@ -64,7 +64,7 @@
     "grams": 300.0,
     "description": "Najlepsa cokolada na svetu!",
     "picture": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA\u0026s",
-    "stockQuantity": 35,
+    "stockQuantity": 38,
     "isInStock": true,
     "fabricId": "3",
     "isDeleted": false
@@ -78,8 +78,8 @@
     "grams": 421.21,
     "description": "ddddddddddddddd",
     "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
-    "stockQuantity": 0,
-    "isInStock": false,
+    "stockQuantity": 28,
+    "isInStock": true,
     "fabricId": "1",
     "isDeleted": false
   },
@@ -92,7 +92,7 @@
     "grams": 22.0,
     "description": "aaaaaaaa",
     "picture": "aaaaaaaaaaaaaa",
-    "stockQuantity": 3,
+    "stockQuantity": 6,
     "isInStock": true,
     "fabricId": "3",
     "isDeleted": false

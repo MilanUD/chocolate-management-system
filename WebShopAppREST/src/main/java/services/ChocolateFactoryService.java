@@ -1,5 +1,6 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import beans.ChocolateFactory;
 import dao.ChocolateDAO;
 import dao.ChocolateFactoryDAO;
 import dao.CommentDAO;
+import dtos.ChocolateFactoryDTO;
 
 @Path("/chocolateFactory")
 public class ChocolateFactoryService {
@@ -42,7 +44,7 @@ public class ChocolateFactoryService {
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Collection<ChocolateFactory> getAll(){
+	public Collection<ChocolateFactoryDTO> getAll(){
 		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
 		ChocolateDAO chocolateDAO = new ChocolateDAO();
 		Collection<Chocolate> chocolates = chocolateDAO.getAll();
@@ -50,7 +52,12 @@ public class ChocolateFactoryService {
 		for(Chocolate chocolate: chocolates) {
 			dao.connectChocolateToFactory(chocolate);
 		}
-		return dao.getAll();
+		Collection<ChocolateFactory> factories =  dao.getAll();
+		Collection<ChocolateFactoryDTO> factoriesDTO = new ArrayList<>();
+		for(ChocolateFactory factory: factories) {
+			factoriesDTO.add(new ChocolateFactoryDTO(factory));
+		}
+		return factoriesDTO;
 	}
 	
 	@GET
@@ -75,6 +82,15 @@ public class ChocolateFactoryService {
 		CommentDAO commentDAO = new CommentDAO();
 		List<Integer> scores = commentDAO.getScoresByFactoryId(id);
 		dao.updateScore(id, scores);
+	}
+	
+	@POST
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ChocolateFactory createFactory(ChocolateFactory factoryForCreation) {
+		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
+		System.out.println(factoryForCreation.getLocation().getAddress().getCity());
+		 return dao.createFactory(factoryForCreation);
 	}
 	
 	

@@ -2,9 +2,9 @@
     <div class="specificFactory">
         <div class="row">
             <div class="col-md-3 d-flex justify-content-start align-items-center">
-                <button @click="createUser" v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create manager</button>
-                <button v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create factory</button>
-                <button @click="createUser" v-if="user.userType == 'Manager'" class="btn btn-primary ms-3">Create worker</button>
+                <button @click="createUser" v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create a manager</button>
+                <button @click="createFactory" v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create a factory</button>
+                <button @click="createUser" v-if="user.userType == 'Manager'" class="btn btn-primary ms-3">Create a worker</button>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <router-link :to="{name: 'allFactoriesView'}">
@@ -36,6 +36,7 @@
     import { useStore } from 'vuex';
     import { useRouter } from 'vue-router';
 
+
     const store = useStore();
     const router = useRouter();
     const isLoggedIn = computed(() => store.getters.isLoggedIn);
@@ -55,6 +56,10 @@ function SeeCart(){
 
 function createUser(){
     router.push({name: 'customerRegistration'})
+}
+
+function createFactory(){
+    router.push({name: 'createFactory'});
 }
 
     

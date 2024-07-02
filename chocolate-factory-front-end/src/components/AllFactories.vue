@@ -88,7 +88,7 @@
               <i class="bi bi-star-fill"></i>
               <p>{{ factory.rating || "No rating" }}</p>
               <i class="bi bi-geo-alt-fill"></i>
-              <MapComponent :address="formatAddress(factory.location.address)" />
+              <MapComponent style="height: 0px" :address="formatAddress(factory.location.address)" />
             </div>
             <div class="d-flex align-items-center justify-content-center">
               <button @click.prevent="loadInformationAboutSpecificFactory(factory.id)" class="btn btn-primary">More info</button>

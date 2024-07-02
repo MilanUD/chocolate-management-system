@@ -38,7 +38,17 @@
     "status" : "Accepted"
   },
   "3" : {
-    "user" : null,
+    "user" : {
+      "id" : "3",
+      "username" : "DiligentPianist3855",
+      "password" : "violin321",
+      "name" : "nikola",
+      "lastName" : "lakic",
+      "gender" : "Male",
+      "birthDate" : "2024-01-22",
+      "userType" : "Customer",
+      "factoryId" : null
+    },
     "id" : "3",
     "userId" : "3",
     "factoryId" : "4",
@@ -64,5 +74,14 @@
     "commentText" : "Such an amazing factory! Love it! I will definitely Buy from them! They were extremely professional! And chocolate was so delicious!",
     "rating" : 5,
     "status" : "Pending"
+  },
+  "5" : {
+    "user" : null,
+    "id" : "5",
+    "userId" : "3",
+    "factoryId" : "1",
+    "commentText" : "They were average. Not a big fan tbh.",
+    "rating" : 3,
+    "status" : "Accepted"
   }
 }
