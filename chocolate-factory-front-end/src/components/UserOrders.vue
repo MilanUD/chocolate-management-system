@@ -1,6 +1,67 @@
 <template>
     <div>
       <h2>My Orders</h2>
+      <div class="row">
+        <form @submit.prevent="searchOrders">
+    <fieldset class="border p-4">
+      <legend class="w-auto px-2">Search</legend>
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="form-group">
+            <label for="fabricName">Fabric name:</label>
+            <input type="text" class="form-control" id="fabricName" name="fabricName" v-model="ordersForSearch.factoryName" placeholder="Enter factory name">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="priceFrom">Price from:</label>
+            <input step="0.01" type="number" class="form-control" id="priceFrom" name="priceFrom" v-model="ordersForSearch.priceFrom" placeholder="Enter price from">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="priceTo">Price to:</label>
+            <input type="number" step="0.01" class="form-control" id="priceTo" name="priceTo" v-model="ordersForSearch.priceTo" placeholder="Enter price to">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="dateFrom">Date from:</label>
+            <input type="date" class="form-control" id="dateFrom" name="dateFrom" v-model="ordersForSearch.dateFrom" placeholder="Enter date from">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="rating">Date to:</label>
+            <input type="date" class="form-control" id="rating" name="rating" v-model="ordersForSearch.dateTo" placeholder="Enter date to">
+          </div>
+        </div>
+        <div class="col-auto mt-4">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+      </div>
+      <div class="row">
+        <div class="col-9"></div>
+        <div class="col-3 d-flex flex-column">
+          <div class="form-group">
+            <label for="sort">Sort by: </label>
+            <select class="form-control" id="sort" name="sort" @change="sortOrders($event)">
+              <option value="Default">Default</option>
+              <option value="Sort by factory name asc">Factory name asc</option>
+              <option value="Sort by factory name desc">Factory name desc</option>
+              <option value="Sort by price asc">Price asc</option>
+              <option value="Sort by price desc">Price desc</option>
+              <option value="Sort by date asc">Date asc</option>
+              <option value="Sort by date desc">Date desc</option>
+            </select>
+    </div>
+        </div>
+      </div>
        <div class="card" v-for="userPurchase in userPurchases" :key="userPurchase.id">
         <div class="card-body">
           <div class="row">
@@ -117,11 +178,19 @@
 
 
     const userPurchases = ref([]);
+    const originalUserPurchases = ref([]);
     const store = useStore();
     const user = computed(() => store.getters.user);
     const isShowAllChocosOpen = ref({});
     onMounted(() => {
       getUserOrders();
+    });
+    const ordersForSearch = ref({
+      factoryName: '',
+      priceFrom: null,
+      priceTo: null,
+      dateFrom: null,
+      dateTo: null
     })
 
     function initializeMap(){
@@ -148,6 +217,12 @@
     function getUserOrders(){
       axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/${user.value.id}`).then(response =>{
         userPurchases.value = response.data;
+        originalUserPurchases.value = response.data;
+        userPurchases.value.sort((a, b) =>{
+          if(a.status === 'InProgress' && b.status !== 'InProgress') return -1;
+          if(a.status !== 'InProgress' && b.status === 'InProgress') return 1;
+          return 0;
+        });
         isShowAllChocosOpen.value = initializeMap();
         //userPurchases.value.sort((a, b) => )
       })
@@ -164,6 +239,56 @@
       axios.patch('http://localhost:8080/WebShopAppREST/rest/customerTypes/', order).then(() =>{
         getUserOrders();
       })
+    }
+
+    function searchOrders(){
+      userPurchases.value = originalUserPurchases.value.filter(purchase => {
+        const matchingFactoryName = ordersForSearch.value.factoryName ? purchase.factory.name.toLowerCase().includes(ordersForSearch.value.factoryName.toLowerCase()) : true;
+        const matchingPriceFrom = (ordersForSearch.value.priceFrom !== null && ordersForSearch.value.priceFrom !== undefined && ordersForSearch.value.priceFrom !== '')  ? ordersForSearch.value.priceFrom <= purchase.price : true;
+        const matchingPriceTo = (ordersForSearch.value.priceTo !== null && ordersForSearch.value.priceTo !== undefined && ordersForSearch.value.priceTo !== '') ? ordersForSearch.value.priceTo >= purchase.price : true;
+        const matchingDateFrom =  ordersForSearch.value.dateFrom ? new Date(purchase.date).toISOString().split('T')[0] >= new Date(ordersForSearch.value.dateFrom).toISOString().split('T')[0] : true;
+        const matchingDateTo =  ordersForSearch.value.dateTo ? new Date(purchase.date).toISOString().split('T')[0] <= new Date(ordersForSearch.value.dateTo).toISOString().split('T')[0] : true;
+        return matchingFactoryName && matchingPriceFrom && matchingPriceTo && matchingDateFrom && matchingDateTo;
+      })
+    }
+
+    function sortOrders(event){
+      const selectedOption = event.target.value;
+      switch(selectedOption){
+      case "Sort by factory name asc":
+        userPurchases.value.sort((a, b) =>{
+          if(a.factory.name.toLowerCase() < b.factory.name.toLowerCase()) return -1;
+          if(a.factory.name.toLowerCase() > b.factory.name.toLowerCase()) return 1;
+          return 0;
+        });
+        break;
+        case "Sort by factory name desc":
+        userPurchases.value.sort((a, b) =>{
+          if(a.factory.name.toLowerCase() > b.factory.name.toLowerCase()) return -1;
+          if(a.factory.name.toLowerCase() < b.factory.name.toLowerCase()) return 1;
+          return 0;
+        });
+        break;
+        case "Sort by price asc":
+          userPurchases.value.sort((a, b) => a.price - b.price);
+          break;
+        case "Sort by price desc":
+          userPurchases.value.sort((a, b) => b.price - a.price);
+          break;
+        case "Sort by date asc":
+          userPurchases.value.sort((a, b) => new Date(a.date) - new Date(b.date));
+          break;
+        case "Sort by date desc":
+          userPurchases.value.sort((a, b) => new Date(b.date) - new Date(a.date));
+          break;
+        default:
+        userPurchases.value.sort((a, b) =>{
+          if(a.status === 'InProgress' && b.status !== 'InProgress') return -1;
+          if(a.status !== 'InProgress' && b.status === 'InProgress') return 1;
+          return 0;
+        });
+      }
+
     }
 
 

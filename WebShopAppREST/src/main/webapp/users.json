@@ -8,18 +8,7 @@
     "gender" : "Male",
     "birthDate" : "1998-12-28",
     "userType" : "Manager",
-    "factoryId" : "-1"
-  },
-  "1" : {
-    "id" : "1",
-    "username" : "dark destroyer 123",
-    "password" : "darklord123",
-    "name" : "Petar",
-    "lastName" : "Kocic",
-    "gender" : "Male",
-    "birthDate" : "1999-06-22",
-    "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : "4"
   },
   "12" : {
     "id" : "12",
@@ -31,6 +20,28 @@
     "birthDate" : "2024-06-30",
     "userType" : "Manager",
     "factoryId" : "-1"
+  },
+  "13" : {
+    "id" : "13",
+    "username" : "ya",
+    "password" : "123",
+    "name" : "Sanja",
+    "lastName" : "Dekic",
+    "gender" : "Female",
+    "birthDate" : "2010-06-01",
+    "userType" : "Worker",
+    "factoryId" : "3"
+  },
+  "1" : {
+    "id" : "1",
+    "username" : "dark destroyer 123",
+    "password" : "darklord123",
+    "name" : "Petar",
+    "lastName" : "Kocic",
+    "gender" : "Male",
+    "birthDate" : "1999-06-22",
+    "userType" : "Customer",
+    "factoryId" : null
   },
   "2" : {
     "id" : "2",

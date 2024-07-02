@@ -8,10 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.ws.rs.core.Response;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,8 +23,10 @@ import beans.Comments;
 
 public class CommentDAO {
 	
-	private ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
-    private HashMap<String, Comments> commentMap = new HashMap<String, Comments>();
+	private ObjectMapper objectMapper = new ObjectMapper()
+	            .registerModule(new JavaTimeModule())
+	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	
+	private HashMap<String, Comments> commentMap = new HashMap<String, Comments>();
 	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
 	
 	public CommentDAO() {
@@ -54,6 +59,7 @@ public class CommentDAO {
 	public void addComment(Comments comment) {
 		// TODO Auto-generated method stub
 		 String newId = generateNewId();
+		 comment.setUser(null);
 		    commentMap.put(newId, comment);
 		    comment.setId(newId);
 		    saveComments(fileName);	
@@ -85,9 +91,15 @@ public class CommentDAO {
 		if(oldComment == null) {
 			return null;
 		}
+		newComment.setUser(null);
 		commentMap.put(newComment.getId(), newComment);
 		saveComments(fileName);
 		return newComment;
+	}
+
+	public boolean hasCommented(String userId, String factoryId) {
+		// TODO Auto-generated method stub
+		return commentMap.values().stream().anyMatch(c -> c.getUserId().equals(userId) && c.getFactoryId().equals(factoryId));
 	}
 
 

@@ -74,7 +74,7 @@ public class ChocolateFactoryDAO {
 		int sum = scores.stream()
                 .mapToInt(Integer::intValue)
                 .sum();
-		factory.setRating(sum/scores.size());
+		factory.setRating((double)sum/(double)scores.size());
 		saveChocolateFactory(fileName);
 	}
 	

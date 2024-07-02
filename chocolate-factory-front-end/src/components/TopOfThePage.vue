@@ -4,6 +4,7 @@
             <div class="col-md-3 d-flex justify-content-start align-items-center">
                 <button @click="createUser" v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create manager</button>
                 <button v-if="user.userType == 'Admin'" class="btn btn-primary ms-3">Create factory</button>
+                <button @click="createUser" v-if="user.userType == 'Manager'" class="btn btn-primary ms-3">Create worker</button>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <router-link :to="{name: 'allFactoriesView'}">

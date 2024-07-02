@@ -52,7 +52,7 @@
         lastName : '',
         gender : '',
         birthDate : '',
-        factoryId: '-1',
+        factoryId: assignFactoryId(),
         userType : assignType()
     });
     const users = ref([]);
@@ -81,5 +81,12 @@
         }else if(user.value.userType === ''){
             return 'Customer';
         }
+    }
+
+    function assignFactoryId(){
+        if(user.value.userType === 'Manager'){
+            return user.value.factoryId;
+        }
+        return '-1';
     }
 </script>

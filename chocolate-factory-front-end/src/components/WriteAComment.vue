@@ -52,9 +52,7 @@
     function postAComment(){
         const factoryId = route.params.id;
         axios.post(`http://localhost:8080/WebShopAppREST/rest/comments/`, comment.value).then(() =>{
-            axios.patch(`http://localhost:8080/WebShopAppREST/rest/chocolateFactory/${factoryId}`).then(() =>{
-                router.push({name: "FactoryDetails", params: {id: factoryId}});
-            })
+            router.push({name: "FactoryDetails", params: {id: factoryId}});
         })
     }
 </script>

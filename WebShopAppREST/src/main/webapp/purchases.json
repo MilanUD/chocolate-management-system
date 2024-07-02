@@ -9,7 +9,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -30,7 +30,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "X1ZPRFO480",
     "chocolateIds" : [ "5", "5", "5" ],
@@ -51,7 +51,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -85,7 +85,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "9XZ9NXHZIR",
     "chocolateIds" : [ "7", "7", "7", "5", "5" ],
@@ -106,7 +106,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -127,7 +127,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "0MWNONGWEB",
     "chocolateIds" : [ "5", "5" ],
@@ -148,7 +148,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -169,7 +169,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "0BZGNJGIHC",
     "chocolateIds" : [ "5", "5", "5" ],
@@ -190,7 +190,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -211,7 +211,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "S4JFKE0QF2",
     "chocolateIds" : [ "5", "5" ],
@@ -232,7 +232,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -266,13 +266,24 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "S8MWQ7GZKI",
     "chocolateIds" : [ "5", "5", "5", "7", "7" ],
     "date" : "2024-06-30T14:25:34.717622",
     "factoryId" : "3",
     "price" : 210.5,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "F6J5BAB4VI" : {
+    "chocolates" : [ ],
+    "id" : "F6J5BAB4VI",
+    "chocolateIds" : [ "1" ],
+    "date" : "2024-07-02T02:00:01.332502000",
+    "factoryId" : "2",
+    "price" : 2.99,
     "customer" : "Milan Milanovic",
     "status" : "InProgress",
     "userId" : "5"
@@ -287,7 +298,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -308,7 +319,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "7307S22XBT",
     "chocolateIds" : [ "5", "5", "5" ],
@@ -329,7 +340,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -363,7 +374,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "VC73K88LU9",
     "chocolateIds" : [ "5", "5", "7" ],
@@ -384,7 +395,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -418,7 +429,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "TPLWR4SGMG",
     "chocolateIds" : [ "7", "5" ],
@@ -439,7 +450,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -460,7 +471,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "25V1V6M2Q0",
     "chocolateIds" : [ "5", "5" ],
@@ -481,7 +492,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -502,7 +513,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "E1FDOL8V2O",
     "chocolateIds" : [ "5", "5" ],
@@ -512,6 +523,48 @@
     "customer" : "Milan Milanovic",
     "status" : "InProgress",
     "userId" : "5"
+  },
+  "8T50OKHWZN" : {
+    "chocolates" : [ {
+      "id" : "3",
+      "name" : "Milicina Cokolada",
+      "price" : 21.25,
+      "type" : "cokolada za kuvanje",
+      "flavor" : "gorka",
+      "grams" : 200.0,
+      "description" : "prelepa cokolada",
+      "picture" : "21a",
+      "stockQuantity" : 0,
+      "isInStock" : false,
+      "fabricId" : "4",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "chocolates" : [ ],
+      "id" : "4",
+      "name" : "Milka",
+      "businessHours" : "09:00 - 20:00",
+      "isOpen" : false,
+      "location" : {
+        "longitude" : 74.1234512,
+        "latitude" : 54.7841234,
+        "address" : {
+          "street" : "Bulevar Oslobodjenja 12",
+          "city" : "Novi Sad",
+          "postalCode" : "21000"
+        }
+      },
+      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "rating" : 2.2
+    },
+    "id" : "8T50OKHWZN",
+    "chocolateIds" : [ "3", "3" ],
+    "date" : "2024-07-02T01:13:01.91645300",
+    "factoryId" : "4",
+    "price" : 42.5,
+    "customer" : "nikola lakic",
+    "status" : "Accepted",
+    "userId" : "3"
   },
   "S6POO7VOYF" : {
     "chocolates" : [ {
@@ -523,7 +576,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -544,7 +597,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "S6POO7VOYF",
     "chocolateIds" : [ "5", "5" ],
@@ -565,7 +618,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -599,7 +652,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "0LL31VL0EI",
     "chocolateIds" : [ "5", "5", "5", "7" ],
@@ -620,7 +673,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -641,7 +694,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "WOII8S99FJ",
     "chocolateIds" : [ "5", "5" ],
@@ -662,7 +715,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 33,
+      "stockQuantity" : 35,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -683,7 +736,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "FZO4NXR1Q6",
     "chocolateIds" : [ "5", "5" ],
@@ -725,7 +778,7 @@
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-      "rating" : 0.0
+      "rating" : 3.1666666666666665
     },
     "id" : "6U2DHBLJRP",
     "chocolateIds" : [ "7", "7" ],

@@ -1,11 +1,68 @@
 {
   "1" : {
-    "user" : null,
+    "user" : {
+      "id" : "3",
+      "username" : "DiligentPianist3855",
+      "password" : "violin321",
+      "name" : "nikola",
+      "lastName" : "lakic",
+      "gender" : "Male",
+      "birthDate" : "2024-01-22",
+      "userType" : "Customer",
+      "factoryId" : null
+    },
     "id" : "1",
     "userId" : "3",
     "factoryId" : "3",
     "commentText" : "Pretty unprofessional factory. Will never buy from them again!",
     "rating" : 1,
     "status" : "Accepted"
+  },
+  "2" : {
+    "user" : {
+      "id" : "5",
+      "username" : "user321",
+      "password" : "1",
+      "name" : "Milan",
+      "lastName" : "Milanovic",
+      "gender" : "Female",
+      "birthDate" : "1999-01-22",
+      "userType" : "Customer",
+      "factoryId" : null
+    },
+    "id" : "2",
+    "userId" : "5",
+    "factoryId" : "3",
+    "commentText" : "Such an amazing factory! Love it! I will definitely Buy from them! They were extremely professional! And chocolate was so delicious!",
+    "rating" : 5,
+    "status" : "Accepted"
+  },
+  "3" : {
+    "user" : null,
+    "id" : "3",
+    "userId" : "3",
+    "factoryId" : "4",
+    "commentText" : "Such an amazing factory! Love it! I will definitely Buy from them! They were extremely professional! And chocolate was so delicious!",
+    "rating" : 5,
+    "status" : "Accepted"
+  },
+  "4" : {
+    "user" : {
+      "id" : "3",
+      "username" : "DiligentPianist3855",
+      "password" : "violin321",
+      "name" : "nikola",
+      "lastName" : "lakic",
+      "gender" : "Male",
+      "birthDate" : "2024-01-22",
+      "userType" : "Customer",
+      "factoryId" : null
+    },
+    "id" : "4",
+    "userId" : "3",
+    "factoryId" : "4",
+    "commentText" : "Such an amazing factory! Love it! I will definitely Buy from them! They were extremely professional! And chocolate was so delicious!",
+    "rating" : 5,
+    "status" : "Pending"
   }
 }

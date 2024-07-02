@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import beans.Comments;
 import dao.ChocolateDAO;
@@ -42,6 +43,7 @@ public class CommentsService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public void addComment(Comments comment) {
 		CommentDAO dao = (CommentDAO) ctx.getAttribute("commentDAO");
+		comment.setUser(null);
 		dao.addComment(comment);
 	}
 	
@@ -66,6 +68,15 @@ public class CommentsService {
 		return dao.updateStatus(comment);
 	}
 	
+	@GET
+	@Path("/{userId}/{factoryId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response hasCommented(@PathParam("userId") String userId, @PathParam("factoryId") String factoryId) {
+		CommentDAO dao = (CommentDAO) ctx.getAttribute("commentDAO");
+		 boolean exists =  dao.hasCommented(userId, factoryId);
+	     return Response.ok(exists).build();
+		 
+	}
 
 	
 

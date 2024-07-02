@@ -12,7 +12,7 @@
                         </div>
                         <div class="col-4 d-flex justify-content-end">
                             <div>
-                                <button v-if="canUserComment === true" @click.prevent="GoToCommentWritingForm" class="btn btn-primary">Write a comment</button>
+                                <button v-if="doesUserHaveOrdersInSpecificFactory === true && hasCommented !== true" @click.prevent="GoToCommentWritingForm" class="btn btn-primary">Write a comment</button>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                                     <p>{{ comment.commentText }}</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending'" @click="AcceptComment(comment)" class="btn btn-success mt-2">
+                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending' || comment.factoryId != user.factoryId" @click="AcceptComment(comment)" class="btn btn-success mt-2">
                                         <i class="bi bi-check-circle"></i>
                                         Accept
                                     </button>
@@ -92,7 +92,7 @@
 
                                 </div>
                                 <div class="col-md-3">
-                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending'" @click="DeclineComment(comment)" class="btn btn-danger mt-3">
+                                    <button v-if="user.userType === 'Manager'" :disabled="comment.status != 'Pending' || comment.factoryId != user.factoryId" @click="DeclineComment(comment)" class="btn btn-danger mt-3">
                                         <i class="bi bi-x-circle"></i>
                                         Decline
                                     </button>
@@ -104,9 +104,9 @@
             </div>
         </div>
         <div v-if="isShowAllCommentsButtonPressed && (user.userType=== 'Customer' || user.userType === 'Worker') ">
-            <div v-for="comment in comments" :key="comment.id">
+            <div  v-for="comment in comments" :key="comment.id">
                 <div class="d-flex justify-content-center">
-                    <div class="card chocolate-card">
+                    <div v-if="comment.status === 'Accepted'" class="card chocolate-card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 d-flex d-flex justify-content-center">
@@ -225,7 +225,7 @@
     const quantityToBuy = ref({});
 
     const isShowAllCommentsButtonPressed = ref(false);
-    const canUserComment = ref(true);
+    const doesUserHaveOrdersInSpecificFactory = ref(true);
 
     onMounted(() =>{
         loadFactory();
@@ -241,6 +241,7 @@
     const chocolates = ref([]);
     const router = useRouter();
     const isShowChocolatesButtonPressed = ref(false);
+    const hasCommented = ref(false);
 
 
     function ShowAllComments(){
@@ -255,13 +256,16 @@
     function canUserCommentCheck(){
         const factoryId = route.params.id;
         axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/exists/${user.value.id}/${factoryId}`).then(response => {
-            canUserComment.value = response.data;
+            doesUserHaveOrdersInSpecificFactory.value = response.data;
             hasAlreadyCommented();
         })
     }
 
     function hasAlreadyCommented(){
-        
+        const factoryId = route.params.id;
+        axios.get(`http://localhost:8080/WebShopAppREST/rest/comments/${user.value.id}/${factoryId}`).then(response => {
+            hasCommented.value = response.data;
+        })
     }
 
     function ShowAllChocolates(){
@@ -360,7 +364,12 @@
 
     function AcceptComment(comment){
         comment.status = 'Accepted';
-        axios.put('http://localhost:8080/WebShopAppREST/rest/comments/', comment);
+        const factoryId = route.params.id;
+        axios.put('http://localhost:8080/WebShopAppREST/rest/comments/', comment).then(() =>{
+            axios.patch(`http://localhost:8080/WebShopAppREST/rest/chocolateFactory/${factoryId}`).then(() => {
+                loadFactory();
+            })
+        });
     }
 
     function DeclineComment(comment){
