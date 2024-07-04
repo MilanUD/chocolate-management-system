@@ -12,7 +12,8 @@ import EditUserInfo from '@/components/EditUserInfo.vue';
 import ManagerOrders from '@/components/OrdersInFacory.vue';
 import WriteACommentView from '@/views/WriteACommentView.vue';
 import CreateFactoryView from '../views/CreateFactoryView.vue';
-import ManagersFactory from '../components/ManagersFactory.vue'
+import ManagersFactory from '../components/ManagersFactory.vue';
+import AllUsers from '../components/AllUsers.vue';
 
 const routes = [
   {
@@ -74,6 +75,11 @@ const routes = [
         path: 'managersFactory',
         name: 'ManagersFactory',
         component: ManagersFactory
+      },
+      {
+        path: 'allUsers',
+        name: 'AllUsers',
+        component: AllUsers
       }
     ]
   },

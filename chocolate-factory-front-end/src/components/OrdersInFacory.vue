@@ -70,7 +70,7 @@
                 <p>{{ formatDateTime(userPurchase.date) }}</p>
               </div>
               <div class="col-3 d-flex">
-                <button :disabled="userPurchase.status === 'InProgress' ? false : true" @click.prevent="declineOrder(userPurchase)" class="btn btn-danger mt-12 ms-3 buttonsStyle" >
+                <button :disabled="userPurchase.status === 'InProgress' ? false : true" @click.prevent="showDeclineReasonArea(userPurchase.id)" class="btn btn-danger mt-12 ms-3 buttonsStyle" >
                   <i class="bi bi-x-circle"></i>
                 </button>
                 <button :disabled="userPurchase.status === 'InProgress' ? false : true" @click.prevent="acceptOrder(userPurchase)" class="btn btn-success mt-12 ms-4 buttonsStyle">
@@ -109,6 +109,17 @@
               <div class="col-3">
                 <button @click.prevent="showAllChocos(userPurchase.id)" class="btn btn-primary buttonStyle ">Show all chocolates in order</button>
               </div>
+            </div>
+            <div class="row" v-if="isDeclineButtonPressed && isDeclineButtonPressed[userPurchase.id]">
+              <label for="declineReason" class="form-label">Reason for Decline:</label>
+              <textarea
+                class="form-control"
+                id="declineReason"
+                v-model="userPurchase.declineReason"
+                rows="4"
+                placeholder="Enter reason for decline">
+              </textarea>
+              <button type="button" class="btn btn-danger" @click.prevent="declineOrder(userPurchase)">Decline</button>
             </div>
             <div class="row" v-if="isShowAllChocosOpen && isShowAllChocosOpen[userPurchase.id]">
               <div class="card" v-for="chocolate in userPurchase.chocolates" :key="chocolate.id">
@@ -178,7 +189,9 @@
     const isShowAllChocosOpen = ref({});
     onMounted(() => {
       getUserOrders();
-    })
+    });
+
+    const isDeclineButtonPressed = ref({});
 
     const ordersForSearch = ref({
       priceFrom: null,
@@ -212,6 +225,12 @@
       }
     }
 
+    function showDeclineReasonArea(id){
+      for (const key in isDeclineButtonPressed.value) {
+        isDeclineButtonPressed.value[key] = (key === id);
+      }
+    }
+
     function calculateQunatity(chocolate, chocolates){
       return chocolates.filter(c => c === chocolate.id).length;
     }
@@ -222,12 +241,14 @@
       axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/factory${user.value.factoryId}`).then(response =>{
         userPurchases.value = response.data;
         isShowAllChocosOpen.value = initializeMap();
+        isDeclineButtonPressed.value = initializeMap();
         originalUserPurchases.value = userPurchases.value;
         userPurchases.value.sort((a, b) =>{
           if(a.status === 'InProgress' && b.status !== 'InProgress') return -1;
           if(a.status !== 'InProgress' && b.status === 'InProgress') return 1;
           return 0;
         });
+        
       })
     }
 
@@ -239,14 +260,13 @@
       order.status = "Declined";
       axios.patch(`http://localhost:8080/WebShopAppREST/rest/purchases/${order.id}`, order);
       axios.patch('http://localhost:8080/WebShopAppREST/rest/chocolates/', order).then(() =>{
-        getUserOrders();
       });
+      isDeclineButtonPressed.value[order.id] = false;
     }
 
     function acceptOrder(order){
       order.status = "Accepted";
       axios.patch(`http://localhost:8080/WebShopAppREST/rest/purchases/${order.id}`, order).then(() =>{
-        getUserOrders();
       });
     }
 

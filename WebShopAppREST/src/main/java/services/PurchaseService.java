@@ -64,7 +64,7 @@ public class PurchaseService {
 		newPurchase.setStatus(Status.InProgress);
 		dao.addPurchase(newPurchase);
 		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
-		customerTypeDAO.updateCustomerType(cart);
+		customerTypeDAO.addPoints(cart);
 	}
 	
 	@GET

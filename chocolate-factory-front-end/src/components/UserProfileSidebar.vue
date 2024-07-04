@@ -14,6 +14,9 @@
       <router-link v-if="user.userType === 'Manager'" to="/profile/managersFactory" class="list-group-item list-group-item-action mb-2" active-class="active">
         My factory
       </router-link>
+      <router-link v-if="user.userType === 'Admin'" to="/profile/allUsers" class="list-group-item list-group-item-action mb-2" active-class="active">
+        All users
+      </router-link>
     </div>
   </div>
 </template>

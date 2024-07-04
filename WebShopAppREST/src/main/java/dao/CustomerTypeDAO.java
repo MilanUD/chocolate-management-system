@@ -72,14 +72,14 @@ public class CustomerTypeDAO {
 	    return String.valueOf(maxId + 1);
 	}
 	
-	public void updateCustomerType(Cart cart) {
+	public void addPoints(Cart cart) {
 		Optional<CustomerType> result = customerTypeMap.values().stream().filter(c -> c.getUserId().equals(cart.getUser().getId())).findFirst();
 		if(result.isPresent()){
-			System.out.println("User found");
             CustomerType oldCustomerType = result.get();
+            oldCustomerType.setPoints(calculateGainedPoints(cart.getPrice()));
             oldCustomerType.setPointsUntilNextRank(oldCustomerType.getPointsUntilNextRank()-calculateGainedPoints(cart.getPrice()));
             if(oldCustomerType.getPointsUntilNextRank() <=0) {
-            	updateRank(oldCustomerType);
+            	upgradeRank(oldCustomerType);
             }
         	saveCustomerType(fileName);
 		}
@@ -89,7 +89,7 @@ public class CustomerTypeDAO {
 		return (price/1000)*133;
 	}
 	
-	private void updateRank(CustomerType oldCustomerType) {
+	private void upgradeRank(CustomerType oldCustomerType) {
 		if(oldCustomerType.getType().equals("Bronze")) {
 			oldCustomerType.setDiscount(0.05);
 			oldCustomerType.setPointsUntilNextRank(1000+oldCustomerType.getPointsUntilNextRank());
@@ -109,10 +109,14 @@ public class CustomerTypeDAO {
 		return null;
 	}
 	
-	public void updateCustomerPoints(PurchaseDTO purchase) {
+	public void subtractPoints(PurchaseDTO purchase) {
 		CustomerType customer = getByUserId(purchase.getUserId());
 		if(customer == null) {
 			return;
+		}
+		customer.setPoints(customer.getPoints()-calculateGainedPoints(purchase.getPrice()*4));
+		if(customer.getPoints()<0) {
+			customer.setPoints(0);
 		}
 		customer.setPointsUntilNextRank(customer.getPointsUntilNextRank() + calculateGainedPoints(purchase.getPrice()*4));
 		if(customer.getPointsUntilNextRank() > 1000 && customer.getType().equals("Silver")) {

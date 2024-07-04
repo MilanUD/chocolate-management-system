@@ -36,9 +36,95 @@ public class User {
 	    
 	    @JsonIgnore
 	    private String cart;
+	    
+	    @JsonIgnore
+	    private CustomerType customerType;
+
+	    @JsonProperty("isSuspicious")
+	    private boolean isSuspicious;
+	    
+	    @JsonProperty("isBlocked")
+	    private boolean isBlocked;
+	    
+	    
+
+	public User(String id, String username, String password, String name, String lastName, String gender,
+				LocalDate birthDate, String userType, String factoryId, String cart, CustomerType customerType,
+				boolean isSuspicious, boolean isBlocked) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.password = password;
+			this.name = name;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.birthDate = birthDate;
+			this.userType = userType;
+			this.factoryId = factoryId;
+			this.cart = cart;
+			this.customerType = customerType;
+			this.isSuspicious = isSuspicious;
+			this.isBlocked = isBlocked;
+		}
+
+
+
+
+	public User(String id, String username, String password, String name, String lastName, String gender,
+				LocalDate birthDate, String userType, String factoryId, String cart, CustomerType customerType) {
+			super();
+			this.id = id;
+			this.username = username;
+			this.password = password;
+			this.name = name;
+			this.lastName = lastName;
+			this.gender = gender;
+			this.birthDate = birthDate;
+			this.userType = userType;
+			this.factoryId = factoryId;
+			this.cart = cart;
+			this.customerType = customerType;
+		}
 	
-	    
-	    
+	
+
+
+	public boolean getIsSuspicious() {
+		return isSuspicious;
+	}
+
+
+
+
+	public void setIsSuspicious(boolean isSuspicious) {
+		this.isSuspicious = isSuspicious;
+	}
+
+
+
+
+	public boolean getIsBlocked() {
+		return isBlocked;
+	}
+
+
+
+
+	public void setIsBlocked(boolean isBlocked) {
+		this.isBlocked = isBlocked;
+	}
+
+
+
+	public CustomerType getCustomerType() {
+			return customerType;
+		}
+
+
+		public void setCustomerType(CustomerType customerType) {
+			this.customerType = customerType;
+		}
+
 
 	public User(String id, String username, String password, String name, String lastName, String gender,
 				LocalDate birthDate, String userType, String factoryId, String cart) {

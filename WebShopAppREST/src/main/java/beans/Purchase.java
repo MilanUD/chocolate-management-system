@@ -42,7 +42,34 @@ public class Purchase {
     @JsonProperty("userId")
     private String userId;
     
+    @JsonProperty("declineReason")
+    private String declineReason;
     
+   
+    
+    
+    
+
+	public Purchase(String id, List<String> chocolateIds, List<Chocolate> chocolates, LocalDateTime date,
+			String factoryId, ChocolateFactory factory, double price, String customer, Status status, String userId,
+			String declineReason) {
+		super();
+		this.id = id;
+		this.chocolateIds = chocolateIds;
+		this.chocolates = chocolates;
+		this.date = date;
+		this.factoryId = factoryId;
+		this.factory = factory;
+		this.price = price;
+		this.customer = customer;
+		this.status = status;
+		this.userId = userId;
+		this.declineReason = declineReason;
+	}
+
+
+
+
 
 	public Purchase(String id, List<String> chocolateIds, List<Chocolate> chocolates, LocalDateTime date,
 			String factoryId, ChocolateFactory factory, double price, String customer, Status status) {
@@ -75,6 +102,22 @@ public class Purchase {
 		this.customer = customer;
 		this.status = status;
 		this.userId = userId;
+	}
+
+
+
+
+
+	public String getDeclineReason() {
+		return declineReason;
+	}
+
+
+
+
+
+	public void setDeclineReason(String declineReason) {
+		this.declineReason = declineReason;
 	}
 
 

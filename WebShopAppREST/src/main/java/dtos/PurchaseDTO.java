@@ -13,8 +13,27 @@ public class PurchaseDTO {
 	private String userId;
 	private List<String> chocolateIds;
 	private double price;
+	private String declineReason;
 	
 	
+	
+	
+	
+	public PurchaseDTO(String id, Status status, String userId, List<String> chocolateIds, double price,
+			String declineReason) {
+		super();
+		this.id = id;
+		this.status = status;
+		this.userId = userId;
+		this.chocolateIds = chocolateIds;
+		this.price = price;
+		this.declineReason = declineReason;
+	}
+
+
+
+
+
 	public PurchaseDTO(String id, Status status, String userId, List<String> chocolateIds, double price) {
 		super();
 		this.id = id;
@@ -23,6 +42,24 @@ public class PurchaseDTO {
 		this.chocolateIds = chocolateIds;
 		this.price = price;
 	}
+	
+	
+
+
+
+	public String getDeclineReason() {
+		return declineReason;
+	}
+
+
+
+
+
+	public void setDeclineReason(String declineReason) {
+		this.declineReason = declineReason;
+	}
+
+
 
 
 

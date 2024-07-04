@@ -9,7 +9,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -23,7 +23,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -37,7 +37,7 @@
     "factoryId" : "3",
     "price" : 10.5,
     "customer" : "Milan Milanovic",
-    "status" : "Accepted",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "9XZ9NXHZIR" : {
@@ -50,7 +50,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -63,7 +63,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -77,7 +77,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -91,7 +91,7 @@
     "factoryId" : "3",
     "price" : 307.0,
     "customer" : "Milan Milanovic",
-    "status" : "Declined",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "0MWNONGWEB" : {
@@ -104,7 +104,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -118,7 +118,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -132,7 +132,7 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "Declined",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "0BZGNJGIHC" : {
@@ -145,7 +145,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -159,7 +159,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -173,7 +173,7 @@
     "factoryId" : "3",
     "price" : 10.5,
     "customer" : "Milan Milanovic",
-    "status" : "Declined",
+    "status" : "InProgress",
     "userId" : "5"
   },
   "S4JFKE0QF2" : {
@@ -186,7 +186,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -200,7 +200,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -214,7 +214,7 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "Accepted",
+    "status" : "InProgress",
     "userId" : "5"
   },
   "S8MWQ7GZKI" : {
@@ -227,7 +227,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -240,7 +240,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -254,7 +254,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -268,11 +268,42 @@
     "factoryId" : "3",
     "price" : 210.5,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
-    "userId" : "5"
+    "status" : "Declined",
+    "userId" : "5",
+    "declineReason" : "It's too expensive"
   },
   "F6J5BAB4VI" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "1",
+      "name" : "Milanova Cokolada",
+      "price" : 2.99,
+      "type" : "cokolada za kuvanje",
+      "flavor" : "bela cokolada",
+      "grams" : 250.0,
+      "description" : "Najukusnija cokolada ikada!!!!!!!!!!!!!!!!!!!!",
+      "picture" : "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg/800px-Milka_Alpine_Milk_Chocolate_bar_100g_with_chunks_broken_off.jpg",
+      "stockQuantity" : 67,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "Chocolate rush",
+      "businessHours" : "06:00 - 23:00",
+      "isOpen" : false,
+      "location" : {
+        "longitude" : 35.1234512,
+        "latitude" : 75.7841234,
+        "address" : {
+          "street" : "Krajiska 7",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "http://localhost:8080/images/chocolate-rush.png",
+      "rating" : 4.8
+    },
     "id" : "F6J5BAB4VI",
     "chocolateIds" : [ "1" ],
     "date" : "2024-07-02T02:00:01.332502000",
@@ -292,7 +323,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -306,7 +337,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -321,7 +352,8 @@
     "price" : 10.5,
     "customer" : "Milan Milanovic",
     "status" : "InProgress",
-    "userId" : "5"
+    "userId" : "5",
+    "declineReason" : "aaaaaaaaaaaaaaaaaaaa"
   },
   "1EBH9PJKKI" : {
     "chocolates" : [ {
@@ -333,7 +365,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -347,7 +379,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -361,10 +393,11 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
-    "userId" : "5"
+    "status" : "Cancelled",
+    "userId" : "5",
+    "declineReason" : "wwwwwwwwwwww"
   },
-  "VC73K88LU9" : {
+  "WOJQRBQBPF" : {
     "chocolates" : [ {
       "id" : "5",
       "name" : "Milka cokolada",
@@ -374,7 +407,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -387,7 +420,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -401,7 +434,61 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
+          "city" : "Beocin",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "http://localhost:8080/images/chocolate-rush.png",
+      "rating" : 3.2
+    },
+    "id" : "WOJQRBQBPF",
+    "chocolateIds" : [ "5", "5", "7", "7", "5" ],
+    "date" : "2024-07-03T23:31:43.839340600",
+    "factoryId" : "3",
+    "price" : 210.5,
+    "customer" : "nikola lakic",
+    "status" : "Cancelled",
+    "userId" : "3"
+  },
+  "VC73K88LU9" : {
+    "chocolates" : [ {
+      "id" : "5",
+      "name" : "Milka cokolada",
+      "price" : 3.5,
+      "type" : "Cokolada za jelo",
+      "flavor" : "mlecna",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
+      "stockQuantity" : 16,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    }, {
+      "id" : "7",
+      "name" : "daadad",
+      "price" : 100.0,
+      "type" : "aaaaaaaa",
+      "flavor" : "aaaaaaaaa",
+      "grams" : 22.0,
+      "description" : "aaaaaaaa",
+      "picture" : "aaaaaaaaaaaaaa",
+      "stockQuantity" : 50,
+      "isInStock" : true,
+      "fabricId" : "3",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "3",
+      "name" : "The best",
+      "businessHours" : "08:00 - 22:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 21.3254,
+        "latitude" : 25.7841234,
+        "address" : {
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -415,7 +502,7 @@
     "factoryId" : "3",
     "price" : 107.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "TPLWR4SGMG" : {
@@ -428,7 +515,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -441,7 +528,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -455,7 +542,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -469,7 +556,7 @@
     "factoryId" : "3",
     "price" : 103.5,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "25V1V6M2Q0" : {
@@ -482,7 +569,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -496,7 +583,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -510,7 +597,7 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Accepted",
     "userId" : "5"
   },
   "E1FDOL8V2O" : {
@@ -523,7 +610,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -537,7 +624,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -551,8 +638,9 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
-    "userId" : "5"
+    "status" : "Declined",
+    "userId" : "5",
+    "declineReason" : "AAAAAAAAA"
   },
   "8T50OKHWZN" : {
     "chocolates" : [ {
@@ -583,7 +671,7 @@
           "postalCode" : "21000"
         }
       },
-      "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
+      "picture" : "http://localhost:8080/images/chocolate-rush.png",
       "rating" : 2.2
     },
     "id" : "8T50OKHWZN",
@@ -605,7 +693,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -619,7 +707,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -633,7 +721,7 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Cancelled",
     "userId" : "5"
   },
   "0LL31VL0EI" : {
@@ -646,7 +734,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -659,7 +747,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -673,7 +761,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -700,7 +788,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -714,7 +802,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -728,7 +816,7 @@
     "factoryId" : "3",
     "price" : 6.65,
     "customer" : "Milan Milanovic",
-    "status" : "Declined",
+    "status" : "InProgress",
     "userId" : "5"
   },
   "FZO4NXR1Q6" : {
@@ -741,7 +829,7 @@
       "grams" : 300.0,
       "description" : "Najlepsa cokolada na svetu!",
       "picture" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM1bjLuveRZ6g0nUu_L_XeaMdK3oiyDk_HwA&s",
-      "stockQuantity" : 38,
+      "stockQuantity" : 16,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -755,7 +843,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -769,8 +857,9 @@
     "factoryId" : "3",
     "price" : 7.0,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
-    "userId" : "5"
+    "status" : "Declined",
+    "userId" : "5",
+    "declineReason" : "I'm too lazy to ship it"
   },
   "6U2DHBLJRP" : {
     "chocolates" : [ {
@@ -782,7 +871,7 @@
       "grams" : 22.0,
       "description" : "aaaaaaaa",
       "picture" : "aaaaaaaaaaaaaa",
-      "stockQuantity" : 6,
+      "stockQuantity" : 50,
       "isInStock" : true,
       "fabricId" : "3",
       "isDeleted" : false
@@ -796,7 +885,7 @@
         "longitude" : 21.3254,
         "latitude" : 25.7841234,
         "address" : {
-          "street" : "Miroslava Antica13",
+          "street" : "Miroslava Antica 13",
           "city" : "Beocin",
           "postalCode" : "21300"
         }
@@ -810,7 +899,18 @@
     "factoryId" : "3",
     "price" : 200.0,
     "customer" : "Milan Milanovic",
-    "status" : "Accepted",
+    "status" : "InProgress",
+    "userId" : "5"
+  },
+  "7KV6AUP2UF" : {
+    "chocolates" : [ ],
+    "id" : "7KV6AUP2UF",
+    "chocolateIds" : [ "7", "7", "7", "7" ],
+    "date" : "2024-07-03T23:42:03.842463400",
+    "factoryId" : "3",
+    "price" : 400.0,
+    "customer" : "Milan Milanovic",
+    "status" : "InProgress",
     "userId" : "5"
   },
   "2BN10I4VDH" : {
@@ -834,12 +934,12 @@
       "businessHours" : "12:00 - 21:00",
       "isOpen" : true,
       "location" : {
-        "longitude" : 20.4568,
-        "latitude" : 44.8176,
+        "longitude" : 35.1234512,
+        "latitude" : 75.7841234,
         "address" : {
-          "street" : "Factory Street 1",
-          "city" : "Belgrade",
-          "postalCode" : "11000"
+          "street" : "Krajiska 7",
+          "city" : "Beocin",
+          "postalCode" : "21300"
         }
       },
       "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",

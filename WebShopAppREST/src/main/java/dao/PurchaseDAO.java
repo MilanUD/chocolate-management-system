@@ -52,10 +52,8 @@ public class PurchaseDAO {
 	
 	public PurchaseDAO() {
 		// TODO Auto-generated constructor stub
-		 // Kreirajte prilagođeni format za LocalDateTime
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.n");
         
-        // Kreirajte i registrujte modul za serijalizaciju i de-serijalizaciju LocalDateTime sa prilagođenim formatom
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(formatter));
         javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(formatter));
@@ -121,6 +119,7 @@ public class PurchaseDAO {
 			return null;
 		}
 		forChange.setStatus(purchaseDTO.getStatus());
+		forChange.setDeclineReason(purchaseDTO.getDeclineReason());
 		savePurchase(fileName);
 		return forChange;
 	}

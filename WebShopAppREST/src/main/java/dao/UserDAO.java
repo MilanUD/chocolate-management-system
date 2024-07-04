@@ -85,12 +85,11 @@ public class UserDAO {
 
 	public User logIn(User user) {
 		// TODO Auto-generated method stub
-			Optional<User> userToLogIn = userMap.values().stream().filter(u -> u.getUsername().equals(user.getUsername()) && u.getPassword().equals(user.getPassword())).findAny();
+			Optional<User> userToLogIn = userMap.values().stream().filter(u -> u.getUsername().equals(user.getUsername()) && !u.getIsBlocked() && u.getPassword().equals(user.getPassword())).findAny();
 			if(userToLogIn.isPresent()) {
 				return userToLogIn.get();
 			}
 		
-	    System.out.println("Login endpoint hit with username: " + user.getUsername());
 		return null;
 	}
 
@@ -125,6 +124,26 @@ public class UserDAO {
 		}
 		managerToAssign.setFactoryId(manager.getFactoryId());
 		userMap.put(managerToAssign.getId(), managerToAssign);
+		saveUser(fileName);
+	}
+
+	public void setToSuspicious(String userId) {
+		// TODO Auto-generated method stub
+		User suspiciousUser = userMap.get(userId);
+		if(suspiciousUser == null) {
+			return;
+		}
+		suspiciousUser.setIsSuspicious(true);
+		saveUser(fileName);
+	}
+
+	public void block(String userId) {
+		// TODO Auto-generated method stub
+		User userToBlock = userMap.get(userId);
+		if(userToBlock == null) {
+			return;
+		}
+		userToBlock.setIsBlocked(true);
 		saveUser(fileName);
 	}
 	

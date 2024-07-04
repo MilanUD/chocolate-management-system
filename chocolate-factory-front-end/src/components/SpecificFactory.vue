@@ -165,7 +165,12 @@
                                     <button class="btn btn-outline-secondary" type="button" @click="decreaseQuantity(chocolate.id)">-</button>
                                     <input @input="validateQuantity(chocolate)" :max="chocolate.stockQuantity" type="number" class="form-control" id="quantity-input" v-model="quantityToBuy[chocolate.id]">
                                     <button class="btn btn-outline-secondary" type="button" @click="increaseQuantity(chocolate)">+</button>
-                                </div>    
+                                </div>
+                                <div v-if="user.userType == 'Worker' && user.factoryId === factory.id" class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" @click="decreaseQuantityByWorker(chocolate)">-</button>
+                                    <input @input="validateQuantityByWorker(chocolate)" type="number" class="form-control" id="quantity-input" v-model="quantityToChange[chocolate.id]">
+                                    <button class="btn btn-outline-secondary" type="button" @click="increaseQuantityByWorker(chocolate.id)">+</button>
+                                </div>  
                         </div>
                     </div>
                     <div class="row">
@@ -187,7 +192,8 @@
                                 <button v-if="user.userType == 'Manager'" class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
                                 <button v-if="user.userType == 'Customer' && chocolate.isInStock" class="btn btn-success mt-2" @click="addToCart(chocolate)">
                                     <i class="bi bi-cart"></i> Add to Cart
-                                </button>                             
+                                </button>
+                                <button v-if="user.userType == 'Worker' && user.factoryId === factory.id" class="btn btn-success mt-2" @click="changeStockQuantityByWorker(chocolate)">Change quantity</button>                               
                         </div>
                     </div>
                 </div>
@@ -242,6 +248,15 @@
     const router = useRouter();
     const isShowChocolatesButtonPressed = ref(false);
     const hasCommented = ref(false);
+    const quantityToChange = ref({})
+
+
+    function changeStockQuantityByWorker(chocolate){
+        chocolate.stockQuantity = quantityToChange.value[chocolate.id]
+        axios.patch(`http://localhost:8080/WebShopAppREST/rest/chocolates/${chocolate.id}`, chocolate).then(() =>{
+            loadChocolates();
+        })
+    }
 
 
     function ShowAllComments(){
@@ -294,6 +309,7 @@
             chocolates.value = response.data;
             chocolates.value.forEach(chocolate => {
                 quantityToBuy.value[chocolate.id]= 1;
+                quantityToChange.value[chocolate.id] = 0;
             })          
         })
     }
@@ -377,6 +393,22 @@
     function DeclineComment(comment){
         comment.status = 'Declined';
         axios.put('http://localhost:8080/WebShopAppREST/rest/comments/', comment);
+    }
+
+    function decreaseQuantityByWorker(chocolate){
+        if((chocolate.stockQuantity + (quantityToChange.value[chocolate.id] -1)) >= 0){
+            quantityToChange.value[chocolate.id] -= 1;
+        }
+    }
+
+    function increaseQuantityByWorker(id){
+        quantityToChange.value[id] += 1;
+    }
+
+    function validateQuantityByWorker(chocolate){
+        if((chocolate.stockQuantity + (quantityToChange.value[chocolate.id] -1)) < 0){
+            quantityToChange.value[chocolate.id] = -1 * chocolate.stockQuantity;
+        }
     }
 
 </script>

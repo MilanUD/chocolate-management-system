@@ -18,6 +18,9 @@ public class CustomerType {
 
     @JsonProperty("userId")
     private String userId;
+    
+    @JsonProperty("points")
+    private double points;
 	
     public CustomerType(String userId) {
 		super();
@@ -25,8 +28,23 @@ public class CustomerType {
 		this.discount = 0;
 		this.pointsUntilNextRank = 100;
 		this.userId = userId;
+		this.points = 0;
 	}
     
+    
+
+	public CustomerType(String id, String type, double discount, double pointsUntilNextRank, String userId,
+			double points) {
+		super();
+		this.id = id;
+		this.type = type;
+		this.discount = discount;
+		this.pointsUntilNextRank = pointsUntilNextRank;
+		this.userId = userId;
+		this.points = points;
+	}
+
+
 
 	public CustomerType(String id, String type, double discount, double pointsUntilNextRank, String userId) {
 		super();
@@ -37,6 +55,17 @@ public class CustomerType {
 		this.userId = userId;
 	}
 
+
+	
+
+	public double getPoints() {
+		return points;
+	}
+
+
+	public void setPoints(double points) {
+		this.points = points;
+	}
 
 
 	public String getId() {

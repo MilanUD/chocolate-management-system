@@ -47,7 +47,7 @@ public class CustomerTypeService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public void updateCustomerPoints(PurchaseDTO purchase) {
 		CustomerTypeDAO dao = (CustomerTypeDAO) ctx.getAttribute("customerTypeDAO");
-		dao.updateCustomerPoints(purchase);
+		dao.subtractPoints(purchase);
 	}
 
 }

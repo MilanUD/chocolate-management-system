@@ -8,7 +8,9 @@
     "gender" : "Male",
     "birthDate" : "1998-12-28",
     "userType" : "Manager",
-    "factoryId" : "4"
+    "factoryId" : "4",
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "12" : {
     "id" : "12",
@@ -19,7 +21,9 @@
     "gender" : "Male",
     "birthDate" : "2024-06-30",
     "userType" : "Manager",
-    "factoryId" : "1"
+    "factoryId" : "1",
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "13" : {
     "id" : "13",
@@ -30,7 +34,9 @@
     "gender" : "Female",
     "birthDate" : "2010-06-01",
     "userType" : "Worker",
-    "factoryId" : "3"
+    "factoryId" : "3",
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "1" : {
     "id" : "1",
@@ -41,7 +47,9 @@
     "gender" : "Male",
     "birthDate" : "1999-06-22",
     "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : false,
+    "isBlocked" : true
   },
   "2" : {
     "id" : "2",
@@ -52,7 +60,9 @@
     "gender" : "Male",
     "birthDate" : "1999-06-22",
     "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : false,
+    "isBlocked" : true
   },
   "3" : {
     "id" : "3",
@@ -63,7 +73,9 @@
     "gender" : "Male",
     "birthDate" : "2024-01-22",
     "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "4" : {
     "id" : "4",
@@ -74,7 +86,9 @@
     "gender" : "Male",
     "birthDate" : "1995-06-06",
     "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : true,
+    "isBlocked" : false
   },
   "5" : {
     "id" : "5",
@@ -85,7 +99,9 @@
     "gender" : "Female",
     "birthDate" : "1999-01-22",
     "userType" : "Customer",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : true,
+    "isBlocked" : false
   },
   "6" : {
     "id" : "6",
@@ -96,7 +112,9 @@
     "gender" : "Male",
     "birthDate" : "2002-07-21",
     "userType" : "Admin",
-    "factoryId" : null
+    "factoryId" : null,
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "7" : {
     "id" : "7",
@@ -107,7 +125,9 @@
     "gender" : "Female",
     "birthDate" : "1995-01-02",
     "userType" : "Manager",
-    "factoryId" : "3"
+    "factoryId" : "3",
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "8" : {
     "id" : "8",
@@ -118,7 +138,9 @@
     "gender" : "Male",
     "birthDate" : "2003-04-01",
     "userType" : "Manager",
-    "factoryId" : "-1"
+    "factoryId" : "-1",
+    "isSuspicious" : false,
+    "isBlocked" : false
   },
   "9" : {
     "id" : "9",
@@ -129,7 +151,9 @@
     "gender" : "Female",
     "birthDate" : "2002-12-29",
     "userType" : "Manager",
-    "factoryId" : "7"
+    "factoryId" : "7",
+    "isSuspicious" : false,
+    "isBlocked" : true
   },
   "10" : {
     "id" : "10",
@@ -140,6 +164,8 @@
     "gender" : "Female",
     "birthDate" : "1977-02-08",
     "userType" : "Manager",
-    "factoryId" : "-1"
+    "factoryId" : "-1",
+    "isSuspicious" : false,
+    "isBlocked" : false
   }
 }

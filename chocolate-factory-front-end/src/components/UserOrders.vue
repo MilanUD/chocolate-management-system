@@ -59,7 +59,7 @@
               <option value="Sort by date asc">Date asc</option>
               <option value="Sort by date desc">Date desc</option>
             </select>
-    </div>
+          </div>
         </div>
       </div>
        <div class="card" v-for="userPurchase in userPurchases" :key="userPurchase.id">
@@ -213,7 +213,6 @@
     }
 
 
-
     function getUserOrders(){
       axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/${user.value.id}`).then(response =>{
         userPurchases.value = response.data;
@@ -234,10 +233,15 @@
 
     function cancelOrder(order){
       order.status = "Cancelled";
+      let trackedCancellation = null;
       axios.patch(`http://localhost:8080/WebShopAppREST/rest/purchases/${order.id}`, order);
       axios.patch('http://localhost:8080/WebShopAppREST/rest/chocolates/', order);
-      axios.patch('http://localhost:8080/WebShopAppREST/rest/customerTypes/', order).then(() =>{
-        getUserOrders();
+      axios.patch('http://localhost:8080/WebShopAppREST/rest/customerTypes/', order)
+      axios.post('http://localhost:8080/WebShopAppREST/rest/purchaseCancellationHistory/', user.value).then(response => {
+        trackedCancellation = response.data;
+        if(trackedCancellation.cancellationCounter === 5){
+          axios.patch(`http://localhost:8080/WebShopAppREST/rest/users/${user.value.id}`);
+        }
       })
     }
 

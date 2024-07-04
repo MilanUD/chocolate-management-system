@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import beans.Chocolate;
+import dtos.ChocolateDTO;
 import dtos.PurchaseDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -146,6 +147,21 @@ public class ChocolateDAO {
 			if(!chocolateToUpdate.getIsInStock()) {
 				chocolateToUpdate.setIsInStock(true);
 			}
+		}
+		saveChocolates(fileName);
+	}
+
+	public void changeQuantityByWorker(String id, ChocolateDTO chocolateDTO) {
+		// TODO Auto-generated method stub
+		Chocolate chocolateToChange = chocolateMap.get(id);
+		if(chocolateToChange == null) {
+			return;
+		}
+		chocolateToChange.setStockQuantity(chocolateDTO.getStockQuantity() + chocolateToChange.getStockQuantity());
+		if(chocolateToChange.getStockQuantity() == 0) {
+			chocolateToChange.setIsInStock(false);
+		} else {
+			chocolateToChange.setIsInStock(true);
 		}
 		saveChocolates(fileName);
 	}

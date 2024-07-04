@@ -1,5 +1,6 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +10,7 @@ import javax.ws.rs.PATCH;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -25,6 +27,8 @@ import beans.User;
 import dao.ChocolateFactoryDAO;
 import dao.CustomerTypeDAO;
 import dao.UserDAO;
+import dtos.ChocolateFactoryDTO;
+import dtos.UserDTO;
 
 @Path("/users")
 public class UserService {
@@ -91,9 +95,16 @@ public class UserService {
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Collection<User> getAllUsers() {
+	public Collection<UserDTO> getAllUsers() {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
-		return dao.getAll();
+		Collection<User> users =  dao.getAll();
+		Collection<UserDTO> usersDTO = new ArrayList<>();
+		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
+		for(User user: users) {
+			user.setCustomerType(customerTypeDAO.getByUserId(user.getId()));
+			usersDTO.add(new UserDTO(user));
+		}
+		return usersDTO;
 	}
 	
 	@PUT
@@ -119,5 +130,20 @@ public class UserService {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		dao.assignToFactory(manager);
 	}
-
+	
+	@PATCH
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void setToSuspicious(@PathParam("id") String userId) {
+		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
+		dao.setToSuspicious(userId);
+	}
+	
+	@PATCH
+	@Path("/block{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void block(@PathParam("id") String userId) {
+		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
+		dao.block(userId);
+	}
 }
