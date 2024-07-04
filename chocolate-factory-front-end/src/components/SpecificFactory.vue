@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-4 d-flex flex-column justify-content-start">
-                            <button v-if="user.userType === 'Manager'" @click.prevent="GoToChocolateInsertionForm" class="btn btn-primary buttonStyle">Add chocolate</button>
+                            <button v-if="user.userType === 'Manager' && user.factoryId === factory.id" @click.prevent="GoToChocolateInsertionForm" class="btn btn-primary buttonStyle">Add chocolate</button>
                         </div>
                         <div class="col-4 d-flex flex-column justify-content-center">
                             <h1>{{ factory.name }}</h1>
@@ -160,7 +160,7 @@
                             <p>{{ chocolate.stockQuantity }}</p>
                         </div>
                         <div class="col-md-2 d-flex flex-column">
-                            <button v-if="user.userType == 'Manager'" class="btn btn-primary" @click.prevent="editChocolate(chocolate)">Edit</button>
+                            <button v-if="user.userType == 'Manager' && user.factoryId === chocolate.fabricId" class="btn btn-primary" @click.prevent="editChocolate(chocolate)">Edit</button>
                             <div v-if="user.userType == 'Customer' && chocolate.isInStock" class="input-group">
                                     <button class="btn btn-outline-secondary" type="button" @click="decreaseQuantity(chocolate.id)">-</button>
                                     <input @input="validateQuantity(chocolate)" :max="chocolate.stockQuantity" type="number" class="form-control" id="quantity-input" v-model="quantityToBuy[chocolate.id]">
@@ -189,7 +189,7 @@
                             <p> {{ chocolate.isInStock ? 'In stock' : 'Out of stock' }}</p>
                         </div>
                         <div class="col-md-2">
-                                <button v-if="user.userType == 'Manager'" class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
+                                <button v-if="user.userType == 'Manager' && user.factoryId === chocolate.fabricId" class="btn btn-primary" @click.prevent="deleteChocolate(chocolate)">Delete</button>
                                 <button v-if="user.userType == 'Customer' && chocolate.isInStock" class="btn btn-success mt-2" @click="addToCart(chocolate)">
                                     <i class="bi bi-cart"></i> Add to Cart
                                 </button>
@@ -235,9 +235,10 @@
 
     onMounted(() =>{
         loadFactory();
+        /*
         loadChocolates();
         assingUserIdToCart();
-        assignUserType();
+        assignUserType(); */
         loadComments();
         canUserCommentCheck();
     });
@@ -292,7 +293,8 @@
     function loadFactory(){
         const id = route.params.id;
         axios.get(`http://localhost:8080/WebShopAppREST/rest/chocolateFactory/${id}`).then(response =>{
-            factory.value = response.data;          
+            factory.value = response.data;
+            loadChocolates();          
         })
     }
 
@@ -310,12 +312,13 @@
             chocolates.value.forEach(chocolate => {
                 quantityToBuy.value[chocolate.id]= 1;
                 quantityToChange.value[chocolate.id] = 0;
-            })          
+            })
+            assingUserIdToCart();          
         })
     }
 
     function assignUserType(){
-        if(isLoggedIn.value){
+        if(isLoggedIn.value && user.value.userType === 'Customer'){
             axios.get(`http://localhost:8080/WebShopAppREST/rest/customerTypes/${user.value.id}`).then(response => {
                 customerType.value = response.data;
                 applyDiscounts();
@@ -326,6 +329,7 @@
     function applyDiscounts(){
         console.log('Vrednost customer type je: ', customerType.value)
         if(customerType.value !== 'Bronze'){
+            console.log('LUDOST: ', customerType.value)
             chocolates.value.forEach(choco => choco.price -= choco.price*customerType.value.discount)
         }
     }
@@ -374,6 +378,7 @@
 
     function assingUserIdToCart(){
         store.commit('updateCartUserId');
+        assignUserType();
     }
 
     function GoToCommentWritingForm(){

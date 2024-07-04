@@ -310,7 +310,7 @@
     "factoryId" : "2",
     "price" : 2.99,
     "customer" : "Milan Milanovic",
-    "status" : "InProgress",
+    "status" : "Accepted",
     "userId" : "5"
   },
   "7307S22XBT" : {
@@ -641,6 +641,17 @@
     "status" : "Declined",
     "userId" : "5",
     "declineReason" : "AAAAAAAAA"
+  },
+  "ILOOFM2MX9" : {
+    "chocolates" : [ ],
+    "id" : "ILOOFM2MX9",
+    "chocolateIds" : [ "6", "6" ],
+    "date" : "2024-07-05T01:41:35.479047900",
+    "factoryId" : "1",
+    "price" : 434.8999999999999,
+    "customer" : "nikola lakic",
+    "status" : "InProgress",
+    "userId" : "3"
   },
   "8T50OKHWZN" : {
     "chocolates" : [ {

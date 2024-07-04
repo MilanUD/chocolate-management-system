@@ -9,7 +9,9 @@
       "gender" : "Male",
       "birthDate" : "2024-01-22",
       "userType" : "Customer",
-      "factoryId" : null
+      "factoryId" : null,
+      "isSuspicious" : false,
+      "isBlocked" : false
     },
     "id" : "1",
     "userId" : "3",
@@ -28,7 +30,9 @@
       "gender" : "Female",
       "birthDate" : "1999-01-22",
       "userType" : "Customer",
-      "factoryId" : null
+      "factoryId" : null,
+      "isSuspicious" : false,
+      "isBlocked" : false
     },
     "id" : "2",
     "userId" : "5",
@@ -47,7 +51,9 @@
       "gender" : "Male",
       "birthDate" : "2024-01-22",
       "userType" : "Customer",
-      "factoryId" : null
+      "factoryId" : null,
+      "isSuspicious" : false,
+      "isBlocked" : false
     },
     "id" : "3",
     "userId" : "3",
@@ -66,7 +72,9 @@
       "gender" : "Male",
       "birthDate" : "2024-01-22",
       "userType" : "Customer",
-      "factoryId" : null
+      "factoryId" : null,
+      "isSuspicious" : false,
+      "isBlocked" : false
     },
     "id" : "4",
     "userId" : "3",
@@ -82,6 +90,15 @@
     "factoryId" : "1",
     "commentText" : "They were average. Not a big fan tbh.",
     "rating" : 3,
+    "status" : "Accepted"
+  },
+  "6" : {
+    "user" : null,
+    "id" : "6",
+    "userId" : "5",
+    "factoryId" : "2",
+    "commentText" : "BES.FACTORY.EVER",
+    "rating" : 5,
     "status" : "Accepted"
   }
 }

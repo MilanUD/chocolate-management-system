@@ -7,7 +7,8 @@
           <div class="row">
             <div class="col-3"></div>
                 <div class="col-6 d-flex justify-content-center">
-                    <input type="text" id="commentText" v-model="comment.commentText" class="form-control" style="height: 100px;" required>
+                    <textarea type="text" rows="4" placeholder="Enter a comment" id="commentText" v-model="comment.commentText" class="form-control" style="height: 100px;">
+                    </textarea>
                 </div>
             </div>
         </div>
@@ -23,6 +24,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Post a comment</button>
+        <p v-if="!areAllFieldsFilled" class="text-danger">All fields are required!</p>
         </form>
     </div>
 </template>
@@ -39,6 +41,7 @@
     const route = useRoute();
     const router = useRouter();
     const scores = ref([1,2,3,4,5])
+    const areAllFieldsFilled = computed(() => comment.value.commentText && comment.value.rating)
 
     const comment = ref({
         userId: user.value.id,
@@ -50,9 +53,12 @@
     })
 
     function postAComment(){
+        if(comment.value.commentText && comment.value.rating){  
         const factoryId = route.params.id;
         axios.post(`http://localhost:8080/WebShopAppREST/rest/comments/`, comment.value).then(() =>{
             router.push({name: "FactoryDetails", params: {id: factoryId}});
         })
+    }
+    areAllFieldsFilled.value = false;
     }
 </script>

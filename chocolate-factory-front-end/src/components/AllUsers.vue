@@ -238,58 +238,6 @@ import {ref, onMounted} from 'vue'
       }
     }
 
-    /*
-    function filterByUserType(event){
-      const selectedOption = event.target.value;
-      switch(selectedOption){
-        case "Customer":
-          users.value = users.value.filter(u => 
-            u.userType === 'Customer'
-          );
-            break;
-            case "Worker":
-          users.value = users.value.filter(u => 
-            u.userType === 'Worker'
-          );
-            break;
-            case "Manager":
-          users.value = users.value.filter(u => 
-            u.userType === 'Manager'
-          );
-            break;
-            case "Admin":
-          users.value = users.value.filter(u => 
-            u.userType === 'Admin'
-          );
-            break;
-          default:
-            users.value = originalUsers.value;
-      }
-    }
-
-    
-    function filterByCustomerRank(event){
-      const selectedOption = event.target.value;
-      switch(selectedOption){
-        case "Bronze":
-          users.value = users.value.filter(u => 
-            u.type && u.type.type === 'Bronze'
-          );
-            break;
-            case "Silver":
-          users.value = users.value.filter(u => 
-            u.type && u.type.type === 'Silver'
-          );
-            break;
-            case "Golden":
-          users.value = users.value.filter(u => 
-            u.type && u.type.type === 'Golden'
-          );
-            break;
-          default:
-            users.value = originalUsers.value;
-      }
-    } */
 
     function filterUsers(){
       users.value = originalUsers.value.filter(u => {

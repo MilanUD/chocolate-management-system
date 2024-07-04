@@ -33,7 +33,7 @@
       }
     },
     "picture" : "http://localhost:8080/images/chocolate-rush.png",
-    "rating" : 4.8
+    "rating" : 5.0
   },
   "3" : {
     "id" : "3",
@@ -87,6 +87,60 @@
       }
     },
     "picture" : "aa",
+    "rating" : 0.0
+  },
+  "6" : {
+    "id" : "6",
+    "name" : "Miki maus",
+    "businessHours" : "12:00 - 18:00",
+    "isOpen" : true,
+    "location" : {
+      "id" : null,
+      "longitude" : 19.717690725680125,
+      "latitude" : 45.20999995620775,
+      "address" : {
+        "street" : "Карађорђева",
+        "city" : "Beocin Municipality",
+        "postalCode" : "21300"
+      }
+    },
+    "picture" : "aaa",
+    "rating" : 0.0
+  },
+  "7" : {
+    "id" : "7",
+    "name" : "MONOMI'S CHOCOLATE FACTTORY",
+    "businessHours" : "14:00 - 20:00",
+    "isOpen" : true,
+    "location" : {
+      "id" : null,
+      "longitude" : 19.8506003741986,
+      "latitude" : 45.25787305625366,
+      "address" : {
+        "street" : "Trg republike",
+        "city" : "Novi Sad",
+        "postalCode" : "21101"
+      }
+    },
+    "picture" : "aa",
+    "rating" : 0.0
+  },
+  "8" : {
+    "id" : "8",
+    "name" : "IMAGINATION",
+    "businessHours" : "15:00 - 23:00",
+    "isOpen" : true,
+    "location" : {
+      "id" : null,
+      "longitude" : 19.850753860017225,
+      "latitude" : 45.256305947761376,
+      "address" : {
+        "street" : "Dunavska",
+        "city" : "Novi Sad",
+        "postalCode" : "21101"
+      }
+    },
+    "picture" : "AAAA",
     "rating" : 0.0
   }
 }

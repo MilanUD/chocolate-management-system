@@ -88,7 +88,15 @@
               <i class="bi bi-star-fill"></i>
               <p>{{ factory.rating || "No rating" }}</p>
               <i class="bi bi-geo-alt-fill"></i>
-              <MapComponent style="height: 0px" :address="formatAddress(factory.location.address)" />
+              <p>
+                <strong>{{ factory.location.address.street }}</strong>
+              </p>
+              <p>
+                {{ factory.location.address.city }}, {{ factory.location.address.postalCode }}
+              </p>
+              <p class="text-muted">
+                Latitude: {{ factory.location.latitude }}, Longitude: {{ factory.location.longitude }}
+              </p>
             </div>
             <div class="d-flex align-items-center justify-content-center">
               <button @click.prevent="loadInformationAboutSpecificFactory(factory.id)" class="btn btn-primary">More info</button>
@@ -105,7 +113,6 @@
     import axios from "axios";
     import {onMounted, ref} from "vue";
     import { useRouter } from "vue-router";
-    import MapComponent from './MapComponent.vue';
 
     const factories = ref([""]);
     const allFactories = ref([""]);
@@ -142,9 +149,6 @@
        router.push({name: "FactoryDetails", params: {id: factoryId}});
     }
 
-    function formatAddress(address) {
-        return `${address.street}, ${address.city}, ${address.postalCode}`;
-    }
 
     function loadFactories(){
         axios.get('http://localhost:8080/WebShopAppREST/rest/chocolateFactory/').then(response => {

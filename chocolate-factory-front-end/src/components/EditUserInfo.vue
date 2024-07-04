@@ -9,7 +9,7 @@
     <form>
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
-        <input :disabled="isDisabled" id="username" name="username" type="text" v-model="user.username" class="form-control">
+        <input :disabled="isDisabled" id="username" name="username" type="text" v-model="user.username" class="form-control" required>
       </div>
 
       <div class="mb-3">
@@ -18,17 +18,17 @@
 
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input :disabled="isDisabled" id="password" name="password" type="text" v-model="user.password" class="form-control">
+        <input :disabled="isDisabled" id="password" name="password" type="text" v-model="user.password" class="form-control" required>
       </div>
 
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input :disabled="isDisabled" type="text" id="name" name="name" v-model="user.name" class="form-control">
+        <input :disabled="isDisabled" type="text" id="name" name="name" v-model="user.name" class="form-control" required>
       </div>
 
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
-        <input :disabled="isDisabled" type="text" id="lastName" name="lastName" v-model="user.lastName" class="form-control">
+        <input :disabled="isDisabled" type="text" id="lastName" name="lastName" v-model="user.lastName" class="form-control" required>
       </div>
 
       <div class="mb-3">
@@ -42,7 +42,7 @@
 
       <div class="mb-3">
         <label for="birthDate" class="form-label">Date of Birth</label>
-        <input :disabled="isDisabled" type="date" id="birthDate" name="birthDate" v-model="user.birthDate" class="form-control">
+        <input :disabled="isDisabled" type="date" id="birthDate" name="birthDate" v-model="user.birthDate" class="form-control" required>
       </div>
 
       <div class="mb-3">

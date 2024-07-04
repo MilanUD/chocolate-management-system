@@ -58,6 +58,7 @@
             <div>
                 <label for="username">Username: </label>
                 <input id="username" name="username" type="text" v-model="managerForCreation.username">
+                <p v-if="isUsernameTaken" class="text-danger">Username is taken!</p>
             </div>
             <div>
                 <label for="password">Password: </label>
@@ -65,7 +66,8 @@
             </div>
             <div>
                 <label for="confirmPass">Confirm password: </label>
-                <input id="confirmPass" name="confirmPass" type="text" v-model="managerForCreation.password">
+                <input id="confirmPass" name="confirmPass" type="text" v-model="confirmPassword">
+                <p v-if="!doPasswordsMatch" class="text-danger">Passwords do not match!</p>
             </div>
             <div>
                 <label for="name">Name: </label>
@@ -88,6 +90,7 @@
                 <input type="date" id="birthDate" name="birthDate" v-model="managerForCreation.birthDate">
             </div>
         </div>
+        <p class="text-danger" v-if="!areAllFieldsFilled">All fields are mandatory!</p>
         <button type="submit">Create Factory</button>
       </form>
     </div>
@@ -116,6 +119,8 @@
     picture: ''
   });
 
+  const users = ref([]);
+
   const router = useRouter();
   const areManagersEmpty = computed(() => {
         return managers.value.length === 0;
@@ -125,9 +130,13 @@
     factoryId: ''
   });
   const managers = ref([]);
+  const confirmPassword = ref('');
+  const isUsernameTaken = computed(() => users.value.some(u => u.username === managerForCreation.value.username))
+  const areAllFieldsFilled = ref(true);
 
   onMounted(() => {
     loadFreeManagers();
+    loadUsers();
   });
 
   const managerForCreation = ref({
@@ -139,7 +148,9 @@
         birthDate : '',
         factoryId: '',
         userType : 'Manager'
-  })
+  });
+
+  const doPasswordsMatch = computed(() => managerForCreation.value.password === confirmPassword.value);
 
   function loadFreeManagers(){
     axios.get('http://localhost:8080/WebShopAppREST/rest/users/managers').then(response => {
@@ -149,6 +160,14 @@
         }
     })
   }
+
+  function loadUsers(){
+        axios.get('http://localhost:8080/WebShopAppREST/rest/users/').then(response => {
+            users.value = response.data;
+        })
+    }
+
+
   
   const updateLocation = (newLocation) => {
     console.log('New Location:', newLocation); // Log the new location to debug
@@ -166,13 +185,12 @@
   }
   
   const createFactory = () => {
-    console.log('Creating Factory with Data:', factoryForCreation.value); // Log the data being sent
-    axios.post('http://localhost:8080/WebShopAppREST/rest/chocolateFactory/', factoryForCreation.value)
+    if(checkAreAllFieldsFilled()){
+      axios.post('http://localhost:8080/WebShopAppREST/rest/chocolateFactory/', factoryForCreation.value)
       .then(response => {
         factoryForCreation.value = response.data;
         manager.value.factoryId = factoryForCreation.value.id;
         managerForCreation.value.factoryId = factoryForCreation.value.id;
-        console.log('ID USERA JE:', manager.value.id )
         if(!areManagersEmpty.value){
             axios.patch('http://localhost:8080/WebShopAppREST/rest/users/', manager.value).then(() =>{
             router.push({name: 'allFactoriesView'});
@@ -186,7 +204,25 @@
       .catch(error => {
         console.error('Error creating factory:', error);
       });
+      return;
+    }
+    areAllFieldsFilled.value = false;
   };
+
+  function checkAreAllFieldsFilled(){
+    if(areManagersEmpty.value){
+      return factoryForCreation.value.name &&
+               factoryForCreation.value.businessHours &&
+               factoryForCreation.value.picture &&
+               managerForCreation.value.username &&
+               managerForCreation.value.password &&
+               managerForCreation.value.name &&
+               managerForCreation.value.lastName &&
+               managerForCreation.value.gender &&
+               managerForCreation.value.birthDate && doPasswordsMatch.value && !isUsernameTaken.value
+    }
+    return factoryForCreation.value.name && factoryForCreation.value.businessHours && factoryForCreation.value.picture; 
+  }
   </script>
   
   <style scoped>

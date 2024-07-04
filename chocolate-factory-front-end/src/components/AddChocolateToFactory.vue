@@ -2,25 +2,25 @@
     <div>
         <form @submit.prevent="AddChocolate">
             <label>Name:</label>
-            <input type="text" v-model="newChocolate.name">
+            <input type="text" v-model="newChocolate.name" required>
             <br/>
             <label>price:</label>
-            <input type="number" step="0.01" v-model="newChocolate.price">
+            <input type="number" step="0.01" v-model="newChocolate.price" required>
             <br/>
             <label>type:</label>
-            <input type="text" v-model="newChocolate.type"/>
+            <input type="text" v-model="newChocolate.type" required />
             <br/>
             <label>flavor:</label>
-            <input type="text" v-model="newChocolate.flavor"/>
+            <input type="text" v-model="newChocolate.flavor" required />
             <br/>
             <label>grams:</label>
-            <input type="nubmer" step="0.01" v-model="newChocolate.grams"/>
+            <input type="nubmer" step="0.01" v-model="newChocolate.grams" required />
             <br/>
             <label>description:</label>
-            <input type="text" v-model="newChocolate.description"/>
+            <input type="text" v-model="newChocolate.description" required />
             <br/>
             <label>picture:</label>
-            <input type="text" v-model="newChocolate.picture"/>
+            <input type="text" v-model="newChocolate.picture" required />
             <br/>
             <button type="submit">Add </button>
 

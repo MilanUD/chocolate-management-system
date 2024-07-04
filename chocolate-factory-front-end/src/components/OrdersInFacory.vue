@@ -119,6 +119,7 @@
                 rows="4"
                 placeholder="Enter reason for decline">
               </textarea>
+              <p v-if="!isDeclineReasonFilled" class="text-danger">This field is required!</p>
               <button type="button" class="btn btn-danger" @click.prevent="declineOrder(userPurchase)">Decline</button>
             </div>
             <div class="row" v-if="isShowAllChocosOpen && isShowAllChocosOpen[userPurchase.id]">
@@ -190,6 +191,7 @@
     onMounted(() => {
       getUserOrders();
     });
+    const isDeclineReasonFilled = ref(true)
 
     const isDeclineButtonPressed = ref({});
 
@@ -257,15 +259,19 @@
     };
 
     function declineOrder(order){
+      if(order.declineReason){
       order.status = "Declined";
       axios.patch(`http://localhost:8080/WebShopAppREST/rest/purchases/${order.id}`, order);
       axios.patch('http://localhost:8080/WebShopAppREST/rest/chocolates/', order).then(() =>{
       });
       isDeclineButtonPressed.value[order.id] = false;
+      }
+      isDeclineReasonFilled.value = false;
     }
 
     function acceptOrder(order){
       order.status = "Accepted";
+      isDeclineButtonPressed.value[order.id] = false;
       axios.patch(`http://localhost:8080/WebShopAppREST/rest/purchases/${order.id}`, order).then(() =>{
       });
     }

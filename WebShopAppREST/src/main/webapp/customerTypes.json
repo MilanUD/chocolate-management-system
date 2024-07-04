@@ -5,7 +5,7 @@
     "discount": 0.05,
     "pointsUntilNextRank": 751.27081,
     "userId": "5",
-    "points": 249
+    "points": 249.0
   },
   "2": {
     "id": "2",
@@ -27,9 +27,9 @@
     "id": "4",
     "type": "Bronze",
     "discount": 0.0,
-    "pointsUntilNextRank": 100.0,
+    "pointsUntilNextRank": 42.15830000000001,
     "userId": "3",
-    "points": 46.0
+    "points": 57.84169999999999
   },
   "5": {
     "id": "5",
@@ -54,5 +54,13 @@
     "pointsUntilNextRank": 100.0,
     "userId": "6",
     "points": 53.0
+  },
+  "8": {
+    "id": "8",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 100.0,
+    "userId": "14",
+    "points": 0.0
   }
 }

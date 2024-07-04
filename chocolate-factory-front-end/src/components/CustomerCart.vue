@@ -46,7 +46,7 @@
             </div>
         </div>
         <p>Total price: {{ cart.price }}</p>
-        <button @click="makePurchase" class="btn btn-primary">Make a purchase</button>
+        <button :disabled="isCartEmpty" @click="makePurchase" class="btn btn-primary">Make a purchase</button>
     </div>
 </template>
 
@@ -59,9 +59,19 @@
     const router = useRouter()
     const store = useStore();
     const cart = computed(() => store.getters.cart);
-    const chocolates = computed(() => Array.from(new Set(cart.value.chocolatesInCart)))
-    
+    const chocolates = computed(() => {
+  const uniqueChocolatesMap = new Map();
+  cart.value.chocolatesInCart.forEach(chocolate => {
+    if (uniqueChocolatesMap.has(chocolate.id)) {
+      uniqueChocolatesMap.get(chocolate.id).quantity += chocolate.quantity;
+    } else {
+      uniqueChocolatesMap.set(chocolate.id, { ...chocolate });
+    }
+  });
+  return Array.from(uniqueChocolatesMap.values());
+});    
     const chocolateCounts = ref(countChocolates(cart.value.chocolatesInCart));
+    const isCartEmpty = computed(() => chocolates.value.length === 0)
 
     function countChocolates(chocolates) {
         const countMap = {};
