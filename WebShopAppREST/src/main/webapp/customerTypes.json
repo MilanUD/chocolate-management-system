@@ -3,64 +3,24 @@
     "id": "1",
     "type": "Silver",
     "discount": 0.05,
-    "pointsUntilNextRank": 751.27081,
+    "pointsUntilNextRank": 63.175,
     "userId": "5",
-    "points": 249.0
+    "points": 0.0
   },
   "2": {
     "id": "2",
-    "type": "Silver",
-    "discount": 0.05,
-    "pointsUntilNextRank": 100.0,
-    "userId": "1",
-    "points": 297.0
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 96.675,
+    "userId": "6",
+    "points": 3.325
   },
   "3": {
     "id": "3",
-    "type": "Golden",
-    "discount": 0.1,
-    "pointsUntilNextRank": 100.0,
-    "userId": "2",
-    "points": 1214.0
-  },
-  "4": {
-    "id": "4",
-    "type": "Bronze",
-    "discount": 0.0,
-    "pointsUntilNextRank": 42.15830000000001,
-    "userId": "3",
-    "points": 57.84169999999999
-  },
-  "5": {
-    "id": "5",
-    "type": "Bronze",
-    "discount": 0.0,
-    "pointsUntilNextRank": 100.0,
-    "userId": "4",
-    "points": 14.0
-  },
-  "6": {
-    "id": "6",
-    "type": "Bronze",
-    "discount": 0.0,
-    "pointsUntilNextRank": 100.0,
+    "type": "Silver",
+    "discount": 0.05,
+    "pointsUntilNextRank": 977.64,
     "userId": "7",
-    "points": 10.0
-  },
-  "7": {
-    "id": "7",
-    "type": "Bronze",
-    "discount": 0.0,
-    "pointsUntilNextRank": 100.0,
-    "userId": "6",
-    "points": 53.0
-  },
-  "8": {
-    "id": "8",
-    "type": "Bronze",
-    "discount": 0.0,
-    "pointsUntilNextRank": 100.0,
-    "userId": "14",
-    "points": 0.0
+    "points": 79.8
   }
 }

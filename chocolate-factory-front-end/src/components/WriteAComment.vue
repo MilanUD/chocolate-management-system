@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Write a comment </h2>
-        <form @submit="postAComment">
+        <form @submit.prevent="postAComment">
         <div class="form-group">
           <label for="commentText">Write a comment</label>
           <div class="row">

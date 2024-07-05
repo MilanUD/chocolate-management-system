@@ -34,7 +34,7 @@
             </div>
             <div>
                 <label for="birthDate">Date of birth: </label>
-                <input type="date" id="birthDate" name="birthDate" v-model="userForRegistration.birthDate">
+                <input :max="maxDate" type="date" id="birthDate" name="birthDate" v-model="userForRegistration.birthDate">
             </div>
             <div>
                 <p class="text-danger" v-if="!areAllFieldsFilled">All fields are mandatory!</p>
@@ -69,6 +69,16 @@
 
     const doPasswordsMatch = computed(() => verifyPassword.value === userForRegistration.value.password)
     const areAllFieldsFilled = ref(true)
+function getYesterdayDate() {
+  const today = new Date();
+  today.setDate(today.getDate() - 1); // Smanjujemo datum za 1 dan da dobijemo jučerašnji datum
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2); // Dodavanje vodeće nule mesecu
+  const day = ('0' + today.getDate()).slice(-2); // Dodavanje vodeće nule danu
+  return `${year}-${month}-${day}`;
+}
+
+const maxDate = ref(getYesterdayDate()); // Postavljanje maksimalnog datuma na jučerašnji
 
     function loadUsers(){
         axios.get('http://localhost:8080/WebShopAppREST/rest/users/').then(result => {

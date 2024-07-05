@@ -1,44 +1,9 @@
 {
   "1" : {
     "id" : "1",
-    "userId" : "1",
-    "cancellationCounter" : 3,
-    "firstCancellation" : "2024-07-03",
-    "endDateForRecording" : "2024-08-03"
-  },
-  "2" : {
-    "id" : "2",
-    "userId" : "2",
-    "cancellationCounter" : 1,
-    "firstCancellation" : "2024-07-03",
-    "endDateForRecording" : "2024-08-03"
-  },
-  "3" : {
-    "id" : "3",
     "userId" : "5",
-    "cancellationCounter" : 9,
-    "firstCancellation" : "2024-07-03",
-    "endDateForRecording" : "2024-08-03"
-  },
-  "4" : {
-    "id" : "4",
-    "userId" : "7",
     "cancellationCounter" : 5,
-    "firstCancellation" : "2024-05-03",
-    "endDateForRecording" : "2024-06-03"
-  },
-  "5" : {
-    "id" : "5",
-    "userId" : "7",
-    "cancellationCounter" : 2,
-    "firstCancellation" : "2024-07-03",
-    "endDateForRecording" : "2024-08-03"
-  },
-  "6" : {
-    "id" : "6",
-    "userId" : "3",
-    "cancellationCounter" : 1,
-    "firstCancellation" : "2024-07-03",
-    "endDateForRecording" : "2024-08-03"
+    "firstCancellation" : "2024-07-05",
+    "endDateForRecording" : "2024-08-05"
   }
 }

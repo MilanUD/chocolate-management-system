@@ -104,7 +104,15 @@
     }
 
     function validateQuantity(chocolate){
-        chocolate;
+        if(chocolateCounts.value[chocolate.id] > chocolate.stockQuantity){
+            chocolateCounts.value[chocolate.id] = chocolate.stockQuantity;
+        }else if(chocolateCounts.value[chocolate.id] <= 0){
+            chocolateCounts.value[chocolate.id] = 1;
+        }
+        store.commit('removeSpecificChocolateFromCart', chocolate);
+        for(let i = 0; i < chocolateCounts.value[chocolate.id]; i++){
+            store.commit('addToCart', chocolate);
+        }
     }
 
     function removeFromCart(chocolate){

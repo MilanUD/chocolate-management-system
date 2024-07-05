@@ -67,8 +67,7 @@
     function EditChocolate(){
         axios.put('http://localhost:8080/WebShopAppREST/rest/chocolates/', newChocolate.value).then(()=>{
             router.push({name: "FactoryDetails", params: {id: newChocolate.value.fabricId}})
-        }
-    )
+        })
     }
 
 

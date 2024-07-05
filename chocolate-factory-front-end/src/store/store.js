@@ -77,6 +77,10 @@ const store = createStore({
     },
     updateCartUserId(state){
       state.cart.user = state.user;
+    },
+    removeSpecificChocolateFromCart(state, chocolate){
+      state.cart.price -= chocolate.price * state.cart.chocolatesInCart.filter(c => c.id === chocolate.id).length
+      state.cart.chocolatesInCart =  state.cart.chocolatesInCart.filter(c => c.id !== chocolate.id)
     }
   },
   actions: {

@@ -10,10 +10,11 @@
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input :disabled="isDisabled" id="username" name="username" type="text" v-model="user.username" class="form-control" required>
+        <p v-if="isUsernameTaken" class="text-danger">Username is taken!</p>
       </div>
 
       <div class="mb-3">
-        <p><strong>Rank: </strong>{{ customerType.type }}</p>
+        <p v-if="customerType.type"><strong>Rank: </strong>{{ customerType.type }}</p>
       </div>
 
       <div class="mb-3">
@@ -46,13 +47,18 @@
       </div>
 
       <div class="mb-3">
-        <p><strong>Points until next rank: </strong>{{ customerType.pointsUntilNextRank }}</p>
+        <p v-if="customerType.type"><strong>Points until next rank: </strong>{{ customerType.pointsUntilNextRank }}</p>
       </div>
 
       <div class="mb-3">
-        <p><strong>Discount: </strong>{{ customerType.discount }}</p>
+        <p v-if="customerType.type"><strong>Discount: </strong>{{ customerType.discount }}</p>
       </div>
-
+      <div class="mb-3">
+        <p v-if="customerType.type"><strong>Points: </strong>{{ customerType.points }}</p>
+      </div>
+      <div>
+        <p v-if="!areAllFieldsFilled" class="text-danger">All fields are mandatory!</p>
+      </div>
       <div class="d-flex justify-content-between mt-4" v-if="!isDisabled">
         <button class="btn btn-secondary" @click="cancelChanges">Cancel</button>
         <button class="btn btn-primary" @click.prevent="editUser">Confirm</button>
@@ -76,12 +82,17 @@ import { computed, ref, watchEffect, onMounted } from 'vue';
         type: '',
         discount: 0.00,
         pointsUntilNextRank: 0.00,
-        userId: ''
+        userId: '',
+        points: 0.0
 
     });
+    const users = ref([])
     onMounted(() =>{
       loadCustomerType();
+      loadUsers();
     })
+    const originalUsername = ref(user.value.username);
+    const areAllFieldsFilled = ref(true);
 
     // Sync local user with the store user on component mount and updates
     watchEffect(() => {
@@ -91,6 +102,14 @@ import { computed, ref, watchEffect, onMounted } from 'vue';
     function enableEditingUserInfo(){
       isDisabled.value = false;
     }
+
+    function loadUsers(){
+        axios.get('http://localhost:8080/WebShopAppREST/rest/users/').then(result => {
+            users.value = result.data;
+        })
+    }
+
+    const isUsernameTaken = computed(() => users.value.some(u => u.username === user.value.username && originalUsername.value !== user.value.username));
 
     function cancelChanges(){
       user.value = { ...userFromStore.value };
@@ -104,11 +123,17 @@ import { computed, ref, watchEffect, onMounted } from 'vue';
     }
 
     function editUser(){
-      console.log("User id", user.value.id)
+      if(user.value.username && user.value.password && user.value.name && user.value.lastName && user.value.gender && user.value.birthDate && !isUsernameTaken.value){
       axios.put('http://localhost:8080/WebShopAppREST/rest/users/', user.value).then(response => {
-        store.commit('setUser', response.data);
+        const userResult = response.data
+        console.log('USER JE', userResult.username)
+        store.commit('setUser', userResult);
         isDisabled.value = true;
+        originalUsername.value = userFromStore.value.username;
       })
+    }else{
+      areAllFieldsFilled.value = false;
     }
+  }
 
   </script>

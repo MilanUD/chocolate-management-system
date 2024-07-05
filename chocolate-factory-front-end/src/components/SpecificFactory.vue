@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="isShowAllCommentsButtonPressed && (user.userType=== 'Customer' || user.userType === 'Worker') ">
+        <div v-if="isShowAllCommentsButtonPressed && (user.userType=== 'Customer' || user.userType === 'Worker' || user.userType === '') ">
             <div  v-for="comment in comments" :key="comment.id">
                 <div class="d-flex justify-content-center">
                     <div v-if="comment.status === 'Accepted'" class="card chocolate-card">
@@ -272,10 +272,12 @@
 
     function canUserCommentCheck(){
         const factoryId = route.params.id;
+        if(user.value.id){  
         axios.get(`http://localhost:8080/WebShopAppREST/rest/purchases/exists/${user.value.id}/${factoryId}`).then(response => {
             doesUserHaveOrdersInSpecificFactory.value = response.data;
             hasAlreadyCommented();
         })
+    }
     }
 
     function hasAlreadyCommented(){
@@ -313,7 +315,9 @@
                 quantityToBuy.value[chocolate.id]= 1;
                 quantityToChange.value[chocolate.id] = 0;
             })
-            assingUserIdToCart();          
+            if(user.value.id){
+                assingUserIdToCart();          
+            }
         })
     }
 
@@ -327,9 +331,8 @@
     }
 
     function applyDiscounts(){
-        console.log('Vrednost customer type je: ', customerType.value)
-        if(customerType.value !== 'Bronze'){
-            console.log('LUDOST: ', customerType.value)
+        console.log('Vrednost customer type je: ', customerType.value.type)
+        if(customerType.value.type !== 'Bronze'){
             chocolates.value.forEach(choco => choco.price -= choco.price*customerType.value.discount)
         }
     }
@@ -373,6 +376,8 @@
     function validateQuantity(chocolate){
         if(quantityToBuy.value[chocolate.id] > chocolate.stockQuantity){
             quantityToBuy.value[chocolate.id] = chocolate.stockQuantity;
+        }else if(quantityToBuy.value[chocolate.id] <= 0){
+            quantityToBuy.value[chocolate.id] = 0;
         }
     }
 

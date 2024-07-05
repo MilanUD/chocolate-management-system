@@ -1,146 +1,38 @@
 {
   "1" : {
     "id" : "1",
-    "name" : "Monokuma's chocolate factory",
-    "businessHours" : "12:00 - 21:00",
+    "name" : "Milanova fabrika",
+    "businessHours" : "10:00 - 18:00",
     "isOpen" : true,
     "location" : {
       "id" : null,
-      "longitude" : 35.1234512,
-      "latitude" : 75.7841234,
+      "longitude" : 9.186854051144175,
+      "latitude" : 45.46448324828114,
       "address" : {
-        "street" : "Krajiska 7",
-        "city" : "Beocin",
-        "postalCode" : "21300"
+        "street" : "Via Orefici",
+        "city" : "Milan",
+        "postalCode" : "20123"
       }
     },
-    "picture" : "https://w7.pngwing.com/pngs/12/661/png-transparent-danganronpa-trigger-happy-havoc-danganronpa-2-goodbye-despair-monokuma-1-t-shirt-manga-t-shirt-white-carnivoran-manga-thumbnail.png",
-    "rating" : 5.0
+    "picture" : "https://i.etsystatic.com/22360457/r/il/2166ba/2685499598/il_570xN.2685499598_nshm.jpg",
+    "rating" : 4.5
   },
   "2" : {
     "id" : "2",
-    "name" : "Chocolate rush",
-    "businessHours" : "06:00 - 23:00",
-    "isOpen" : false,
-    "location" : {
-      "id" : null,
-      "longitude" : 35.1234512,
-      "latitude" : 75.7841234,
-      "address" : {
-        "street" : "Krajiska 7",
-        "city" : "Beocin",
-        "postalCode" : "21300"
-      }
-    },
-    "picture" : "http://localhost:8080/images/chocolate-rush.png",
-    "rating" : 5.0
-  },
-  "3" : {
-    "id" : "3",
-    "name" : "The best",
-    "businessHours" : "08:00 - 22:00",
-    "isOpen" : true,
-    "location" : {
-      "id" : null,
-      "longitude" : 21.3254,
-      "latitude" : 25.7841234,
-      "address" : {
-        "street" : "Miroslava Antica 13",
-        "city" : "Beocin",
-        "postalCode" : "21300"
-      }
-    },
-    "picture" : "http://localhost:8080/images/chocolate-rush.png",
-    "rating" : 3.2
-  },
-  "4" : {
-    "id" : "4",
-    "name" : "Milka",
-    "businessHours" : "09:00 - 20:00",
-    "isOpen" : false,
-    "location" : {
-      "id" : null,
-      "longitude" : 74.1234512,
-      "latitude" : 54.7841234,
-      "address" : {
-        "street" : "Bulevar Oslobodjenja 12",
-        "city" : "Novi Sad",
-        "postalCode" : "21000"
-      }
-    },
-    "picture" : "http://localhost:8080/images/chocolate-rush.png",
-    "rating" : 2.2
-  },
-  "5" : {
-    "id" : "5",
-    "name" : "Milanova fabrika",
-    "businessHours" : "12:00 - 13:00",
-    "isOpen" : false,
-    "location" : {
-      "id" : null,
-      "longitude" : 19.847527236702444,
-      "latitude" : 45.255887025311836,
-      "address" : {
-        "street" : "Ilije Ognjanovica Abukazema",
-        "city" : "Novi Sad",
-        "postalCode" : "21000"
-      }
-    },
-    "picture" : "aa",
-    "rating" : 0.0
-  },
-  "6" : {
-    "id" : "6",
-    "name" : "Miki maus",
+    "name" : "MAR",
     "businessHours" : "12:00 - 18:00",
     "isOpen" : true,
     "location" : {
       "id" : null,
-      "longitude" : 19.717690725680125,
-      "latitude" : 45.20999995620775,
+      "longitude" : 19.7398361,
+      "latitude" : 45.2082803,
       "address" : {
-        "street" : "Карађорђева",
+        "street" : "Krajiska",
         "city" : "Beocin Municipality",
         "postalCode" : "21300"
       }
     },
-    "picture" : "aaa",
-    "rating" : 0.0
-  },
-  "7" : {
-    "id" : "7",
-    "name" : "MONOMI'S CHOCOLATE FACTTORY",
-    "businessHours" : "14:00 - 20:00",
-    "isOpen" : true,
-    "location" : {
-      "id" : null,
-      "longitude" : 19.8506003741986,
-      "latitude" : 45.25787305625366,
-      "address" : {
-        "street" : "Trg republike",
-        "city" : "Novi Sad",
-        "postalCode" : "21101"
-      }
-    },
-    "picture" : "aa",
-    "rating" : 0.0
-  },
-  "8" : {
-    "id" : "8",
-    "name" : "IMAGINATION",
-    "businessHours" : "15:00 - 23:00",
-    "isOpen" : true,
-    "location" : {
-      "id" : null,
-      "longitude" : 19.850753860017225,
-      "latitude" : 45.256305947761376,
-      "address" : {
-        "street" : "Dunavska",
-        "city" : "Novi Sad",
-        "postalCode" : "21101"
-      }
-    },
-    "picture" : "AAAA",
+    "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
     "rating" : 0.0
   }
 }

@@ -212,11 +212,14 @@
 
     function filterFactories(){
       factories.value = allFactories.value.filter(factory =>{
-        return factory.chocolates.some(chocolate =>{
+        
+        const matchingFactoryWithChocolates =  factory.chocolates.some(chocolate =>{
           const matchingFlavor = selectedFlavor.value === "Default" || selectedFlavor.value === chocolate.flavor;
           const matchingType = selectedType.value === "Default" || selectedType.value === chocolate.type;
           return matchingFlavor && matchingType;
-        }) && (selectedOption.value === "showAll" || (selectedOption.value === "showOpen" && factory.isOpen))
+        }) 
+        const matchingFactoryWithoutChocolates = (selectedFlavor.value === 'Default' && selectedType.value ==='Default') ? true : false;
+       return (matchingFactoryWithChocolates || matchingFactoryWithoutChocolates) && (selectedOption.value === "showAll" || (selectedOption.value === "showOpen" && factory.isOpen))
       })
     }
   
