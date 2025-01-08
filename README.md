@@ -31,7 +31,7 @@ The application supports four distinct roles, each with specific permissions and
 ### **1. Clone the Repository**
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/MilanUD/chocolate-management-system.git ```
+git clone https://github.com/MilanUD/chocolate-management-system.git
 
 ### **2. Run the Frontend**
 -Navigate to the frontend directory:
