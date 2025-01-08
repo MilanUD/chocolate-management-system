@@ -25,12 +25,12 @@ public class PurchaseCancellationHistoryService {
 
 		if (ctx.getAttribute("purchaseCancellationHistoryDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("purchaseCancellationHistoryDAO", new PurchaseCancellationHistoryDAO());
+			ctx.setAttribute("purchaseCancellationHistoryDAO", new PurchaseCancellationHistoryDAO(contextPath));
 		}
 	}
 	
 	public PurchaseCancellationHistoryService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@POST

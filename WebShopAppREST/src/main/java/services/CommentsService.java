@@ -26,14 +26,14 @@ public class CommentsService {
 	ServletContext ctx;
 	
 	public CommentsService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@PostConstruct
 	public void init() {
 		if (ctx.getAttribute("commentDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("commentDAO", new CommentDAO());
+			ctx.setAttribute("commentDAO", new CommentDAO(contextPath));
 		}
 	}
 	
@@ -53,7 +53,7 @@ public class CommentsService {
 	public Collection<Comments> getAllByFactoryId(@PathParam("id") String id){
 		CommentDAO dao = (CommentDAO) ctx.getAttribute("commentDAO");
 		Collection<Comments> comments = dao.getByFactoryId(id);
-		UserDAO userDAO = new UserDAO();
+		UserDAO userDAO = new UserDAO(ctx.getRealPath(""));
 		for(Comments comment: comments) {
 			comment.setUser(userDAO.getById(comment.getUserId()));
 		}

@@ -22,5 +22,13 @@
     "pointsUntilNextRank": 977.64,
     "userId": "7",
     "points": 79.8
+  },
+  "4": {
+    "id": "4",
+    "type": "Bronze",
+    "discount": 0.0,
+    "pointsUntilNextRank": 132.984,
+    "userId": "8",
+    "points": 0.0
   }
 }

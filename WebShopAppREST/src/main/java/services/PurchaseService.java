@@ -39,12 +39,12 @@ public class PurchaseService {
 
 		if (ctx.getAttribute("purchaseDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("purchaseDAO", new PurchaseDAO());
+			ctx.setAttribute("purchaseDAO", new PurchaseDAO(contextPath));
 		}
 	}
 	
 	public PurchaseService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@POST
@@ -53,17 +53,15 @@ public class PurchaseService {
 	public void addPurchase(Cart cart) {
 		PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
 		Purchase newPurchase = new Purchase();
-		//newPurchase.setChocolates(cart.getChocolatesInCart());
 		newPurchase.setChocolateIds(cart.getChocolatesInCart().stream().map(Chocolate::getId).collect(Collectors.toList()));
 		newPurchase.setFactoryId(cart.getChocolatesInCart().get(0).getFabricId());
-		//newPurchase.setFactoryId(newPurchase.getFactory().getId());
 		newPurchase.setDate(LocalDateTime.now());
 		newPurchase.setPrice(cart.getPrice());
 		newPurchase.setCustomer(cart.getUser().getName() + " " + cart.getUser().getLastName());
 		newPurchase.setUserId(cart.getUser().getId());
 		newPurchase.setStatus(Status.InProgress);
 		dao.addPurchase(newPurchase);
-		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
+		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO(ctx.getRealPath(""));
 		customerTypeDAO.addPoints(cart);
 	}
 	
@@ -73,8 +71,8 @@ public class PurchaseService {
 	public Collection<Purchase> getByUserId(@PathParam("id") String userId){
 		PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
 		Collection<Purchase> purchases = dao.getByUserId(userId);
-		ChocolateFactoryDAO factoryDAO = new ChocolateFactoryDAO();
-		ChocolateDAO chocolateDAO = new ChocolateDAO();
+		ChocolateFactoryDAO factoryDAO = new ChocolateFactoryDAO(ctx.getRealPath(""));
+		ChocolateDAO chocolateDAO = new ChocolateDAO(ctx.getRealPath(""));
 		for(Purchase purchase : purchases) { 
 			purchase.setFactory(factoryDAO.getFactoryDetails(purchase.getFactoryId()));
 			Set<String> chocolateIds = purchase.getChocolateIds().stream().collect(Collectors.toSet());
@@ -97,8 +95,8 @@ public class PurchaseService {
 	public Collection<Purchase> getByFactoryId(@PathParam("id") String factoryId){
 		PurchaseDAO dao = (PurchaseDAO) ctx.getAttribute("purchaseDAO");
 		Collection<Purchase> purchases = dao.getByFactoryId(factoryId);
-		ChocolateFactoryDAO factoryDAO = new ChocolateFactoryDAO();
-		ChocolateDAO chocolateDAO = new ChocolateDAO();
+		ChocolateFactoryDAO factoryDAO = new ChocolateFactoryDAO(ctx.getRealPath(""));
+		ChocolateDAO chocolateDAO = new ChocolateDAO(ctx.getRealPath(""));
 		for(Purchase purchase : purchases) { 
 			purchase.setFactory(factoryDAO.getFactoryDetails(purchase.getFactoryId()));
 			Set<String> chocolateIds = purchase.getChocolateIds().stream().collect(Collectors.toSet());

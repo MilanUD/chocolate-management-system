@@ -5,5 +5,12 @@
     "cancellationCounter" : 5,
     "firstCancellation" : "2024-07-05",
     "endDateForRecording" : "2024-08-05"
+  },
+  "2" : {
+    "id" : "2",
+    "userId" : "8",
+    "cancellationCounter" : 1,
+    "firstCancellation" : "2024-07-08",
+    "endDateForRecording" : "2024-08-08"
   }
 }

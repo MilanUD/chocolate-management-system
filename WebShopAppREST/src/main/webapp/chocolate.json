@@ -8,7 +8,7 @@
     "grams": 100.0,
     "description": "Taste one of the best chocolates in the world!",
     "picture": "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
-    "stockQuantity": 25,
+    "stockQuantity": 75,
     "isInStock": true,
     "fabricId": "1",
     "isDeleted": false
@@ -22,7 +22,7 @@
     "grams": 300.0,
     "description": "Najlepsa cokolada na svetu!",
     "picture": "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
-    "stockQuantity": 60,
+    "stockQuantity": 56,
     "isInStock": true,
     "fabricId": "2",
     "isDeleted": false

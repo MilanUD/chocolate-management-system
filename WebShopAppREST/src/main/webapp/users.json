@@ -17,7 +17,7 @@
     "username" : "DiligentPianist3855",
     "password" : "1",
     "name" : "Sara",
-    "lastName" : "Kostic",
+    "lastName" : "Keca",
     "gender" : "Female",
     "birthDate" : "2024-07-01",
     "userType" : "Manager",
@@ -75,7 +75,7 @@
     "userType" : "Customer",
     "factoryId" : "-1",
     "isSuspicious" : false,
-    "isBlocked" : false
+    "isBlocked" : true
   },
   "7" : {
     "id" : "7",
@@ -87,6 +87,32 @@
     "birthDate" : "2024-06-30",
     "userType" : "Customer",
     "factoryId" : "-1",
+    "isSuspicious" : false,
+    "isBlocked" : false
+  },
+  "8" : {
+    "id" : "8",
+    "username" : "klm",
+    "password" : "1",
+    "name" : "milan",
+    "lastName" : "keca",
+    "gender" : "Male",
+    "birthDate" : "2024-05-22",
+    "userType" : "Customer",
+    "factoryId" : "-1",
+    "isSuspicious" : false,
+    "isBlocked" : false
+  },
+  "9" : {
+    "id" : "9",
+    "username" : "aw",
+    "password" : "1",
+    "name" : "nevena",
+    "lastName" : "rakic",
+    "gender" : "Female",
+    "birthDate" : "2024-06-04",
+    "userType" : "Manager",
+    "factoryId" : "3",
     "isSuspicious" : false,
     "isBlocked" : false
   }

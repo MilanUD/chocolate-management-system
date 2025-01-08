@@ -30,16 +30,16 @@ public class ChocolateDAO {
 
 	private ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
     private HashMap<String, Chocolate> chocolateMap = new HashMap<String, Chocolate>();
-	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	private String fileName;
 	
-	public ChocolateDAO() {
-		
+	public ChocolateDAO(String contextPath) {
+        this.fileName = contextPath + "/chocolate.json";
 		loadChocolates(fileName);
 	}	
 	
 	private void loadChocolates(String fileName) {
         try {
-            File file = new File(fileName + "/chocolate.json");
+            File file = new File(fileName);
             if (file.exists()) {
                 chocolateMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Chocolate>>() {});                
             }
@@ -50,7 +50,7 @@ public class ChocolateDAO {
 	
 	private void saveChocolates(String fileName) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter(fileName + "/chocolate.json")) {
+        try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(chocolateMap, writer);
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,12 +99,10 @@ public class ChocolateDAO {
 	        chocolateToEdit.setStockQuantity(chocolate.getStockQuantity());
 	        chocolateToEdit.setIsInStock(chocolate.getIsInStock());
 
-	        // Ako želiš da sačuvaš promene u fajl, pozovi saveChocolates() ovde
 	        saveChocolates(fileName);
 
 	        return chocolateToEdit;
 	    } else {
-	        // Ako čokolada sa datim ID-jem ne postoji, možeš vratiti null ili baciti izuzetak
 	        return null;
 	    }
 	}
@@ -152,7 +150,6 @@ public class ChocolateDAO {
 	}
 
 	public void changeQuantityByWorker(String id, ChocolateDTO chocolateDTO) {
-		// TODO Auto-generated method stub
 		Chocolate chocolateToChange = chocolateMap.get(id);
 		if(chocolateToChange == null) {
 			return;
@@ -165,6 +162,4 @@ public class ChocolateDAO {
 		}
 		saveChocolates(fileName);
 	}
-	
-
 }

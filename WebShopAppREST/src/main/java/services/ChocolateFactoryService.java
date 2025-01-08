@@ -29,7 +29,6 @@ public class ChocolateFactoryService {
 	ServletContext ctx;
 		
 	public ChocolateFactoryService() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@PostConstruct
@@ -37,7 +36,7 @@ public class ChocolateFactoryService {
 
 		if (ctx.getAttribute("chocolateFactoryDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("chocolateFactoryDAO", new ChocolateFactoryDAO());
+			ctx.setAttribute("chocolateFactoryDAO", new ChocolateFactoryDAO(contextPath));
 		}
 	}
 	
@@ -46,9 +45,8 @@ public class ChocolateFactoryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Collection<ChocolateFactoryDTO> getAll(){
 		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
-		ChocolateDAO chocolateDAO = new ChocolateDAO();
+		ChocolateDAO chocolateDAO = new ChocolateDAO(ctx.getRealPath(""));
 		Collection<Chocolate> chocolates = chocolateDAO.getAll();
-		//Collection<ChocolateFactory> chocolateFactories = dao.getAll();
 		for(Chocolate chocolate: chocolates) {
 			dao.connectChocolateToFactory(chocolate);
 		}
@@ -66,12 +64,6 @@ public class ChocolateFactoryService {
 	public ChocolateFactory getFactoryDetails(@PathParam("id") String id) {
 		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
 		return dao.getFactoryDetails(id);
-		/*
-		String contextPath = ctx.getRealPath("");
-		ChocolateDAO chocolateDAO = new ChocolateDAO(contextPath);
-		factory.setChocolates((List<Chocolate>) chocolateDAO.getByFabricId(id));
-	    System.out.println(factory.getChocolates()); // Dodato za debugging
-		return factory; */
 	}
 	
 	@PATCH
@@ -79,7 +71,7 @@ public class ChocolateFactoryService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public void updateFactoryScore(@PathParam("id") String id) {
 		ChocolateFactoryDAO dao = (ChocolateFactoryDAO) ctx.getAttribute("chocolateFactoryDAO");
-		CommentDAO commentDAO = new CommentDAO();
+		CommentDAO commentDAO = new CommentDAO(ctx.getRealPath(""));
 		List<Integer> scores = commentDAO.getScoresByFactoryId(id);
 		dao.updateScore(id, scores);
 	}

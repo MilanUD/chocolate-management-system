@@ -25,12 +25,12 @@ public class CustomerTypeService {
 	public void init() {
 		if (ctx.getAttribute("customerTypeDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("customerTypeDAO", new CustomerTypeDAO());
+			ctx.setAttribute("customerTypeDAO", new CustomerTypeDAO(contextPath));
 		}
 	}
 
 	public CustomerTypeService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@GET

@@ -33,6 +33,24 @@
       }
     },
     "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+    "rating" : 5.0
+  },
+  "3" : {
+    "id" : "3",
+    "name" : "fabrika1",
+    "businessHours" : "12:00 - 20:00",
+    "isOpen" : true,
+    "location" : {
+      "id" : null,
+      "longitude" : 19.8369612,
+      "latitude" : 45.2521809,
+      "address" : {
+        "street" : "Bulevar oslobodjenja",
+        "city" : "Novi Sad",
+        "postalCode" : "21101"
+      }
+    },
+    "picture" : "https://i.etsystatic.com/22360457/r/il/2166ba/2685499598/il_570xN.2685499598_nshm.jpg",
     "rating" : 0.0
   }
 }

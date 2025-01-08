@@ -41,13 +41,13 @@ public class UserService {
 
 		if (ctx.getAttribute("userDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("userDAO", new UserDAO());
+			ctx.setAttribute("userDAO", new UserDAO(contextPath));
 		}
 	}
 	
 	
 	public UserService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@POST
@@ -57,7 +57,7 @@ public class UserService {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		dao.addUser(user);
 		if(user.getUserType().equals("Customer")) {
-		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
+		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO(ctx.getRealPath(""));
 		CustomerType customerType = new CustomerType(user.getId());
 		customerTypeDAO.addCustomerType(customerType);
 		}
@@ -68,7 +68,6 @@ public class UserService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response logIn(User user) {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
-	    System.out.println("Login endpoint hit with username: " + user.getUsername());
 	    User foundUser = dao.logIn(user);
 
 	    if (foundUser != null) {
@@ -80,7 +79,7 @@ public class UserService {
 	            .signWith(SignatureAlgorithm.HS256, "your_secret_key")
 	            .compact();
 
-	        // Kreiraj objekat koji sadrži token i korisničke podatke
+	        
 	        Map<String, Object> responseMap = new HashMap<>();
 	        responseMap.put("token", token);
 	        responseMap.put("user", foundUser);
@@ -99,7 +98,7 @@ public class UserService {
 		UserDAO dao = (UserDAO) ctx.getAttribute("userDAO");
 		Collection<User> users =  dao.getAll();
 		Collection<UserDTO> usersDTO = new ArrayList<>();
-		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO();
+		CustomerTypeDAO customerTypeDAO = new CustomerTypeDAO(ctx.getRealPath(""));
 		for(User user: users) {
 			user.setCustomerType(customerTypeDAO.getByUserId(user.getId()));
 			usersDTO.add(new UserDTO(user));

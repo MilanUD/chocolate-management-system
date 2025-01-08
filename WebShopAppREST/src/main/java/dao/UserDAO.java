@@ -27,17 +27,17 @@ public class UserDAO {
 	 private ObjectMapper objectMapper = new ObjectMapper()
 	            .registerModule(new JavaTimeModule())
 	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	
-	 private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	 private String fileName;
 	
 
-	public UserDAO() {
-		// TODO Auto-generated constructor stub
+	public UserDAO(String contextPath) {
+		this.fileName = contextPath + "/users.json";
 		loadUsers(fileName);
 	}
 	
 	private void loadUsers(String fileName) {
 		try {
-            File file = new File(fileName + "/users.json");
+            File file = new File(fileName);
             if (file.exists()) {
             	userMap = objectMapper.readValue(file, new TypeReference<HashMap<String, User>>() {});
                 
@@ -71,7 +71,7 @@ public class UserDAO {
 	
 	private void saveUser(String fileName) {
 		try {
-            File file = new File(fileName + "/users.json");
+            File file = new File(fileName);
             ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
             writer.writeValue(file, userMap);
         } catch (IOException e) {
@@ -84,7 +84,6 @@ public class UserDAO {
 	}
 
 	public User logIn(User user) {
-		// TODO Auto-generated method stub
 			Optional<User> userToLogIn = userMap.values().stream().filter(u -> u.getUsername().equals(user.getUsername()) && !u.getIsBlocked() && u.getPassword().equals(user.getPassword())).findAny();
 			if(userToLogIn.isPresent()) {
 				return userToLogIn.get();
@@ -94,11 +93,8 @@ public class UserDAO {
 	}
 
 	public User editUserInfo(User user) {
-		// TODO Auto-generated method stub
 		User selectedUser = userMap.get(user.getId());
 		if(selectedUser == null) {
-			System.out.println("Nesto ne valja");
-			System.out.println(user.getId());
 			return null;
 		}
 		userMap.put(selectedUser.getId(), user);
@@ -111,15 +107,12 @@ public class UserDAO {
 	}
 
 	public Collection<User> getAllFreeManagers() {
-		// TODO Auto-generated method stub
 		return userMap.values().stream().filter(u -> u.getUserType().equals("Manager") && u.getFactoryId().equals("-1")).collect(Collectors.toList());
 	}
 
 	public void assignToFactory(User manager) {
-		// TODO Auto-generated method stub
 		User managerToAssign = userMap.get(manager.getId());
 		if(managerToAssign == null) {
-			System.out.println("Nije pronadjen");
 			return;
 		}
 		managerToAssign.setFactoryId(manager.getFactoryId());
@@ -128,7 +121,6 @@ public class UserDAO {
 	}
 
 	public void setToSuspicious(String userId) {
-		// TODO Auto-generated method stub
 		User suspiciousUser = userMap.get(userId);
 		if(suspiciousUser == null) {
 			return;
@@ -138,7 +130,6 @@ public class UserDAO {
 	}
 
 	public void block(String userId) {
-		// TODO Auto-generated method stub
 		User userToBlock = userMap.get(userId);
 		if(userToBlock == null) {
 			return;

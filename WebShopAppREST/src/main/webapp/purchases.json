@@ -1,45 +1,4 @@
 {
-  "Z2Y5I2UUF5" : {
-    "chocolates" : [ {
-      "id" : "1",
-      "name" : "Sugar rush",
-      "price" : 5.0,
-      "type" : "White chocolate",
-      "flavor" : "Milk",
-      "grams" : 100.0,
-      "description" : "Taste one of the best chocolates in the world!",
-      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
-      "stockQuantity" : 25,
-      "isInStock" : true,
-      "fabricId" : "1",
-      "isDeleted" : false
-    } ],
-    "factory" : {
-      "id" : "1",
-      "name" : "Milanova fabrika",
-      "businessHours" : "10:00 - 18:00",
-      "isOpen" : true,
-      "location" : {
-        "longitude" : 9.186854051144175,
-        "latitude" : 45.46448324828114,
-        "address" : {
-          "street" : "Via Orefici",
-          "city" : "Milan",
-          "postalCode" : "20123"
-        }
-      },
-      "picture" : "aaaa",
-      "rating" : 4.5
-    },
-    "id" : "Z2Y5I2UUF5",
-    "chocolateIds" : [ "1", "1", "1", "1" ],
-    "date" : "2024-07-05T20:46:14.413453600",
-    "factoryId" : "1",
-    "price" : 20.0,
-    "customer" : "Nikola Sokola",
-    "status" : "Accepted",
-    "userId" : "7"
-  },
   "0J1W7UVQ5S" : {
     "chocolates" : [ {
       "id" : "1",
@@ -82,7 +41,37 @@
     "userId" : "5"
   },
   "NCWNBGOPLZ" : {
-    "chocolates" : [ ],
+    "chocolates" : [ {
+      "id" : "2",
+      "name" : "BOMB!!!",
+      "price" : 10.0,
+      "type" : "Mlecna",
+      "flavor" : "Lesnici i suvo grozdje",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
+      "stockQuantity" : 56,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "MAR",
+      "businessHours" : "12:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 19.7398361,
+        "latitude" : 45.2082803,
+        "address" : {
+          "street" : "Krajiska",
+          "city" : "Beocin Municipality",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+      "rating" : 0.0
+    },
     "id" : "NCWNBGOPLZ",
     "chocolateIds" : [ "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" ],
     "date" : "2024-07-05T21:28:45.259476200",
@@ -175,6 +164,293 @@
     "userId" : "5",
     "declineReason" : "Reason for decline"
   },
+  "UVPESH28OY" : {
+    "chocolates" : [ {
+      "id" : "2",
+      "name" : "BOMB!!!",
+      "price" : 10.0,
+      "type" : "Mlecna",
+      "flavor" : "Lesnici i suvo grozdje",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
+      "stockQuantity" : 56,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "MAR",
+      "businessHours" : "12:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 19.7398361,
+        "latitude" : 45.2082803,
+        "address" : {
+          "street" : "Krajiska",
+          "city" : "Beocin Municipality",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+      "rating" : 0.0
+    },
+    "id" : "UVPESH28OY",
+    "chocolateIds" : [ "2", "2", "2", "2" ],
+    "date" : "2024-07-08T10:13:03.748933300",
+    "factoryId" : "2",
+    "price" : 40.0,
+    "customer" : "milan keca",
+    "status" : "Accepted",
+    "userId" : "8"
+  },
+  "3BLZP9VIZU" : {
+    "chocolates" : [ {
+      "id" : "1",
+      "name" : "Sugar rush",
+      "price" : 5.0,
+      "type" : "White chocolate",
+      "flavor" : "Milk",
+      "grams" : 100.0,
+      "description" : "Taste one of the best chocolates in the world!",
+      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
+      "stockQuantity" : 25,
+      "isInStock" : true,
+      "fabricId" : "1",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "1",
+      "name" : "Milanova fabrika",
+      "businessHours" : "10:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 9.186854051144175,
+        "latitude" : 45.46448324828114,
+        "address" : {
+          "street" : "Via Orefici",
+          "city" : "Milan",
+          "postalCode" : "20123"
+        }
+      },
+      "picture" : "aaaa",
+      "rating" : 4.5
+    },
+    "id" : "3BLZP9VIZU",
+    "chocolateIds" : [ "1", "1", "1", "1", "1" ],
+    "date" : "2024-07-05T20:37:27.416823400",
+    "factoryId" : "1",
+    "price" : 25.0,
+    "customer" : "Vanja Petrovic",
+    "status" : "Accepted",
+    "userId" : "6"
+  },
+  "2TAV3SGYNL" : {
+    "chocolates" : [ {
+      "id" : "2",
+      "name" : "BOMB!!!",
+      "price" : 10.0,
+      "type" : "Mlecna",
+      "flavor" : "Lesnici i suvo grozdje",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
+      "stockQuantity" : 56,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "MAR",
+      "businessHours" : "12:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 19.7398361,
+        "latitude" : 45.2082803,
+        "address" : {
+          "street" : "Krajiska",
+          "city" : "Beocin Municipality",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+      "rating" : 0.0
+    },
+    "id" : "2TAV3SGYNL",
+    "chocolateIds" : [ "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" ],
+    "date" : "2024-07-05T21:26:57.814621600",
+    "factoryId" : "2",
+    "price" : 300.0,
+    "customer" : "Nikola Sokola",
+    "status" : "InProgress",
+    "userId" : "7"
+  },
+  "CJ8RMJTQWK" : {
+    "chocolates" : [ {
+      "id" : "1",
+      "name" : "Sugar rush",
+      "price" : 5.0,
+      "type" : "White chocolate",
+      "flavor" : "Milk",
+      "grams" : 100.0,
+      "description" : "Taste one of the best chocolates in the world!",
+      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
+      "stockQuantity" : 0,
+      "isInStock" : false,
+      "fabricId" : "1",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "1",
+      "name" : "Milanova fabrika",
+      "businessHours" : "10:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 9.186854051144175,
+        "latitude" : 45.46448324828114,
+        "address" : {
+          "street" : "Via Orefici",
+          "city" : "Milan",
+          "postalCode" : "20123"
+        }
+      },
+      "picture" : "aaaa",
+      "rating" : 4.5
+    },
+    "id" : "CJ8RMJTQWK",
+    "chocolateIds" : [ "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
+    "date" : "2024-07-05T18:43:00.728043900",
+    "factoryId" : "1",
+    "price" : 45.0,
+    "customer" : "Carli Caplin",
+    "status" : "Cancelled",
+    "userId" : "5"
+  },
+  "TI7PS9M0VU" : {
+    "chocolates" : [ {
+      "id" : "2",
+      "name" : "BOMB!!!",
+      "price" : 10.0,
+      "type" : "Mlecna",
+      "flavor" : "Lesnici i suvo grozdje",
+      "grams" : 300.0,
+      "description" : "Najlepsa cokolada na svetu!",
+      "picture" : "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
+      "stockQuantity" : 56,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "MAR",
+      "businessHours" : "12:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 19.7398361,
+        "latitude" : 45.2082803,
+        "address" : {
+          "street" : "Krajiska",
+          "city" : "Beocin Municipality",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+      "rating" : 0.0
+    },
+    "id" : "TI7PS9M0VU",
+    "chocolateIds" : [ "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" ],
+    "date" : "2024-07-05T21:26:37.417519000",
+    "factoryId" : "2",
+    "price" : 300.0,
+    "customer" : "Nikola Sokola",
+    "status" : "Accepted",
+    "userId" : "7"
+  },
+  "Z2Y5I2UUF5" : {
+    "chocolates" : [ {
+      "id" : "1",
+      "name" : "Sugar rush",
+      "price" : 5.0,
+      "type" : "White chocolate",
+      "flavor" : "Milk",
+      "grams" : 100.0,
+      "description" : "Taste one of the best chocolates in the world!",
+      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
+      "stockQuantity" : 25,
+      "isInStock" : true,
+      "fabricId" : "1",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "1",
+      "name" : "Milanova fabrika",
+      "businessHours" : "10:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 9.186854051144175,
+        "latitude" : 45.46448324828114,
+        "address" : {
+          "street" : "Via Orefici",
+          "city" : "Milan",
+          "postalCode" : "20123"
+        }
+      },
+      "picture" : "aaaa",
+      "rating" : 4.5
+    },
+    "id" : "Z2Y5I2UUF5",
+    "chocolateIds" : [ "1", "1", "1", "1" ],
+    "date" : "2024-07-05T20:46:14.413453600",
+    "factoryId" : "1",
+    "price" : 20.0,
+    "customer" : "Nikola Sokola",
+    "status" : "Accepted",
+    "userId" : "7"
+  },
+  "S1XVTFALBV" : {
+    "chocolates" : [ {
+      "id" : "3",
+      "name" : "YUMMY!!!",
+      "price" : 8.0,
+      "type" : "Mlecna",
+      "flavor" : "Jagoda",
+      "grams" : 250.0,
+      "description" : "Onaj ko voli jagode ne sme da propusti ovu cokoladu!",
+      "picture" : "https://online.idea.rs/images/products/011/011001656_1l.jpg?1697645718",
+      "stockQuantity" : 60,
+      "isInStock" : true,
+      "fabricId" : "2",
+      "isDeleted" : false
+    } ],
+    "factory" : {
+      "id" : "2",
+      "name" : "MAR",
+      "businessHours" : "12:00 - 18:00",
+      "isOpen" : true,
+      "location" : {
+        "longitude" : 19.7398361,
+        "latitude" : 45.2082803,
+        "address" : {
+          "street" : "Krajiska",
+          "city" : "Beocin Municipality",
+          "postalCode" : "21300"
+        }
+      },
+      "picture" : "https://img.freepik.com/free-vector/chocolate_24908-53998.jpg",
+      "rating" : 0.0
+    },
+    "id" : "S1XVTFALBV",
+    "chocolateIds" : [ "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3" ],
+    "date" : "2024-07-08T10:13:38.4547600",
+    "factoryId" : "2",
+    "price" : 96.0,
+    "customer" : "milan keca",
+    "status" : "Cancelled",
+    "userId" : "8"
+  },
   "9OYPYT7JLL" : {
     "chocolates" : [ {
       "id" : "1",
@@ -256,109 +532,5 @@
     "customer" : "Carli Caplin",
     "status" : "Accepted",
     "userId" : "5"
-  },
-  "3BLZP9VIZU" : {
-    "chocolates" : [ {
-      "id" : "1",
-      "name" : "Sugar rush",
-      "price" : 5.0,
-      "type" : "White chocolate",
-      "flavor" : "Milk",
-      "grams" : 100.0,
-      "description" : "Taste one of the best chocolates in the world!",
-      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
-      "stockQuantity" : 25,
-      "isInStock" : true,
-      "fabricId" : "1",
-      "isDeleted" : false
-    } ],
-    "factory" : {
-      "id" : "1",
-      "name" : "Milanova fabrika",
-      "businessHours" : "10:00 - 18:00",
-      "isOpen" : true,
-      "location" : {
-        "longitude" : 9.186854051144175,
-        "latitude" : 45.46448324828114,
-        "address" : {
-          "street" : "Via Orefici",
-          "city" : "Milan",
-          "postalCode" : "20123"
-        }
-      },
-      "picture" : "aaaa",
-      "rating" : 4.5
-    },
-    "id" : "3BLZP9VIZU",
-    "chocolateIds" : [ "1", "1", "1", "1", "1" ],
-    "date" : "2024-07-05T20:37:27.416823400",
-    "factoryId" : "1",
-    "price" : 25.0,
-    "customer" : "Vanja Petrovic",
-    "status" : "Accepted",
-    "userId" : "6"
-  },
-  "2TAV3SGYNL" : {
-    "chocolates" : [ ],
-    "id" : "2TAV3SGYNL",
-    "chocolateIds" : [ "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" ],
-    "date" : "2024-07-05T21:26:57.814621600",
-    "factoryId" : "2",
-    "price" : 300.0,
-    "customer" : "Nikola Sokola",
-    "status" : "InProgress",
-    "userId" : "7"
-  },
-  "CJ8RMJTQWK" : {
-    "chocolates" : [ {
-      "id" : "1",
-      "name" : "Sugar rush",
-      "price" : 5.0,
-      "type" : "White chocolate",
-      "flavor" : "Milk",
-      "grams" : 100.0,
-      "description" : "Taste one of the best chocolates in the world!",
-      "picture" : "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate-branco-2.webp",
-      "stockQuantity" : 0,
-      "isInStock" : false,
-      "fabricId" : "1",
-      "isDeleted" : false
-    } ],
-    "factory" : {
-      "id" : "1",
-      "name" : "Milanova fabrika",
-      "businessHours" : "10:00 - 18:00",
-      "isOpen" : true,
-      "location" : {
-        "longitude" : 9.186854051144175,
-        "latitude" : 45.46448324828114,
-        "address" : {
-          "street" : "Via Orefici",
-          "city" : "Milan",
-          "postalCode" : "20123"
-        }
-      },
-      "picture" : "aaaa",
-      "rating" : 4.5
-    },
-    "id" : "CJ8RMJTQWK",
-    "chocolateIds" : [ "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
-    "date" : "2024-07-05T18:43:00.728043900",
-    "factoryId" : "1",
-    "price" : 45.0,
-    "customer" : "Carli Caplin",
-    "status" : "Cancelled",
-    "userId" : "5"
-  },
-  "TI7PS9M0VU" : {
-    "chocolates" : [ ],
-    "id" : "TI7PS9M0VU",
-    "chocolateIds" : [ "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2" ],
-    "date" : "2024-07-05T21:26:37.417519000",
-    "factoryId" : "2",
-    "price" : 300.0,
-    "customer" : "Nikola Sokola",
-    "status" : "InProgress",
-    "userId" : "7"
   }
 }

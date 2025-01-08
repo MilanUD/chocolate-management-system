@@ -27,16 +27,17 @@ public class CommentDAO {
 	            .registerModule(new JavaTimeModule())
 	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	
 	private HashMap<String, Comments> commentMap = new HashMap<String, Comments>();
-	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	private String fileName;
 	
-	public CommentDAO() {
+	public CommentDAO(String contextPath) {
 		// TODO Auto-generated constructor stub
+		this.fileName = contextPath + "/comments.json";
 		loadComments(fileName);
 	}
 	
 	private void loadComments(String fileName) {
         try {
-            File file = new File(fileName + "/comments.json");
+            File file = new File(fileName);
             if (file.exists()) {
             	commentMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Comments>>() {});                
             }
@@ -47,7 +48,7 @@ public class CommentDAO {
 	
 	 private void saveComments(String fileName) {
 	        try {
-	            File file = new File(fileName + "/comments.json");
+	            File file = new File(fileName);
 	            ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
 	            writer.writeValue(file, commentMap);
 	        } catch (IOException e) {

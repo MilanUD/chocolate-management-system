@@ -10,8 +10,8 @@
       "birthDate" : "2012-01-02",
       "userType" : "Customer",
       "factoryId" : "-1",
-      "isSuspicious" : false,
-      "isBlocked" : false
+      "isSuspicious" : true,
+      "isBlocked" : true
     },
     "id" : "1",
     "userId" : "5",
@@ -42,12 +42,33 @@
     "status" : "Accepted"
   },
   "3" : {
-    "user" : null,
+    "user" : {
+      "id" : "7",
+      "username" : "LASAGNA",
+      "password" : "1",
+      "name" : "Nikola",
+      "lastName" : "Sokola",
+      "gender" : "Male",
+      "birthDate" : "2024-06-30",
+      "userType" : "Customer",
+      "factoryId" : "-1",
+      "isSuspicious" : false,
+      "isBlocked" : false
+    },
     "id" : "3",
     "userId" : "7",
     "factoryId" : "1",
     "commentText" : "Mid",
     "rating" : 3,
     "status" : "Declined"
+  },
+  "4" : {
+    "user" : null,
+    "id" : "4",
+    "userId" : "8",
+    "factoryId" : "2",
+    "commentText" : "it was amazing",
+    "rating" : 5,
+    "status" : "Accepted"
   }
 }

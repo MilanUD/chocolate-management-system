@@ -48,10 +48,10 @@ public class PurchaseDAO {
 	
 	private HashMap<String, Purchase> purchaseMap = new HashMap<String, Purchase>();
 	private ObjectMapper objectMapper;
-	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	private String fileName;
 	
-	public PurchaseDAO() {
-		// TODO Auto-generated constructor stub
+	public PurchaseDAO(String contextPath) {
+		this.fileName = contextPath + "/purchases.json";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.n");
         
         JavaTimeModule javaTimeModule = new JavaTimeModule();
@@ -67,7 +67,7 @@ public class PurchaseDAO {
 	
 	private void loadPurchases(String fileName) {
 		try {
-            File file = new File(fileName + "/purchases.json");
+            File file = new File(fileName);
             if (file.exists()) {
             	purchaseMap = objectMapper.readValue(file, new TypeReference<HashMap<String, Purchase>>() {});
                 
@@ -99,7 +99,7 @@ public class PurchaseDAO {
 	
 	private void savePurchase(String fileName) {
 		try {
-            File file = new File(fileName + "/purchases.json");
+            File file = new File(fileName);
             ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
             writer.writeValue(file, purchaseMap);
         } catch (IOException e) {
@@ -108,12 +108,10 @@ public class PurchaseDAO {
 	}
 
 	public Collection<Purchase> getByUserId(String userId) {
-		// TODO Auto-generated method stub
 		return purchaseMap.values().stream().filter(p -> p.getUserId().equals(userId)).collect(Collectors.toList());
 	}
 
 	public Purchase updateStatus(PurchaseDTO purchaseDTO, String id) {
-		// TODO Auto-generated method stub
 		Purchase forChange = purchaseMap.get(id);
 		if(forChange == null) {
 			return null;
@@ -125,12 +123,10 @@ public class PurchaseDAO {
 	}
 
 	public Collection<Purchase> getByFactoryId(String factoryId) {
-		// TODO Auto-generated method stub
 		return purchaseMap.values().stream().filter(p -> p.getFactoryId().equals(factoryId)).collect(Collectors.toList());
 	}
 
 	public boolean doesAcceptedExistByUser(String userId, String factoryId) {
-		// TODO Auto-generated method stub
 		return purchaseMap.values().stream().anyMatch(p -> p.getUserId().equals(userId) && p.getStatus() == Status.Accepted && p.getFactoryId().equals(factoryId));
 	}
 

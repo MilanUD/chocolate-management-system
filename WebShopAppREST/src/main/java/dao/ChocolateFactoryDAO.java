@@ -17,22 +17,22 @@ public class ChocolateFactoryDAO {
 
 	private HashMap<String, ChocolateFactory> chocolateFactoryMap = new HashMap<String, ChocolateFactory>();
 	private ObjectMapper objectMapper = new ObjectMapper();     
-	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	private String fileName;
 	
 	
 
 	
 	
-	public ChocolateFactoryDAO() {
+	public ChocolateFactoryDAO(String contextPath) {
+		this.fileName = contextPath + "/factories.json";
         loadChocolateFactories(fileName);
 	}
 	
 	private void loadChocolateFactories(String fileName) {
         try {
-            File file = new File(fileName + "/factories.json");
+            File file = new File(fileName);
             if (file.exists()) {
-                chocolateFactoryMap = objectMapper.readValue(file, new TypeReference<HashMap<String, ChocolateFactory>>() {});
-                
+                chocolateFactoryMap = objectMapper.readValue(file, new TypeReference<HashMap<String, ChocolateFactory>>() {});            
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,7 +41,7 @@ public class ChocolateFactoryDAO {
 	
 	private void saveChocolateFactory(String fileName) {
 		try {
-            File file = new File(fileName + "/factories.json");
+            File file = new File(fileName);
             ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
             writer.writeValue(file, chocolateFactoryMap);
         } catch (IOException e) {
@@ -66,7 +66,6 @@ public class ChocolateFactoryDAO {
 	}
 
 	public void updateScore(String id, List<Integer> scores) {
-		// TODO Auto-generated method stub
 		ChocolateFactory factory = chocolateFactoryMap.get(id);
 		if(factory == null) {
 			return;
@@ -79,7 +78,6 @@ public class ChocolateFactoryDAO {
 	}
 
 	public ChocolateFactory createFactory(ChocolateFactory factory) {
-		// TODO Auto-generated method stub
 		   String newId = generateNewId();
 		    chocolateFactoryMap.put(newId, factory);
 		    factory.setId(newId);

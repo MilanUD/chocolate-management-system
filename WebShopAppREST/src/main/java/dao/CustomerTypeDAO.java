@@ -24,19 +24,18 @@ public class CustomerTypeDAO {
 	
 	private HashMap<String, CustomerType> customerTypeMap = new HashMap<String, CustomerType>();
 	private ObjectMapper objectMapper = new ObjectMapper();     
-	private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	private String fileName;
 
-	public CustomerTypeDAO() {
-		// TODO Auto-generated constructor stub
+	public CustomerTypeDAO(String contextPath) {
+		this.fileName = contextPath + "/customerTypes.json";
 		loadCustomerTypes(fileName);
 	}
 	
 	private void saveCustomerType(String fileName) {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        try (FileWriter writer = new FileWriter(fileName + "/customerTypes.json")) {
+        try (FileWriter writer = new FileWriter(fileName)) {
+    	    System.out.println("da li se pozivaaaaaaaaaa?");
             gson.toJson(customerTypeMap, writer);
-            System.out.println("Data successfully written to file.");
-            System.out.println(fileName + "chocolate.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,7 +43,7 @@ public class CustomerTypeDAO {
 	
 	private void loadCustomerTypes(String fileName) {
         try {
-            File file = new File(fileName + "/customerTypes.json");
+            File file = new File(fileName);
             if (file.exists()) {
             	customerTypeMap = objectMapper.readValue(file, new TypeReference<HashMap<String, CustomerType>>() {});
             }

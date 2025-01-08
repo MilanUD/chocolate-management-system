@@ -29,14 +29,14 @@ public class ChocolateService {
 	@Context
 	ServletContext ctx;
 	public ChocolateService() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	@PostConstruct
 	public void init() {
 		if (ctx.getAttribute("chocolatesDAO") == null) {
 	    	String contextPath = ctx.getRealPath("");
-			ctx.setAttribute("chocolatesDAO", new ChocolateDAO());
+			ctx.setAttribute("chocolatesDAO", new ChocolateDAO(contextPath));
 		}
 	}
 	

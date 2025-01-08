@@ -1,18 +1,21 @@
 <template>
   <div>
     <div>
-      <input 
-        v-if="mode === 'edit'" 
-        type="text" 
-        v-model="searchQuery" 
-        @keyup.enter="searchLocation" 
+      <input
+        v-if="mode === 'edit'"
+        type="text"
+        v-model="searchQuery"
+        @keyup.enter="searchLocation"
         placeholder="Search for a location (city or address)"
       />
-      <button type="button" v-if="mode === 'edit'" @click="searchLocation">Search</button>
+      <button type="button" v-if="mode === 'edit'" @click="searchLocation">
+        Search
+      </button>
     </div>
     <div id="map" class="map"></div>
     <p v-if="formattedAddress">
-      <strong>{{ formattedAddress.street }}</strong><br />
+      <strong>{{ formattedAddress.street }}</strong
+      ><br />
       {{ formattedAddress.city }}, {{ formattedAddress.postalCode }}<br />
       Latitude: {{ coordinates.lat }}, Longitude: {{ coordinates.lng }}
     </p>
@@ -20,20 +23,20 @@
 </template>
 
 <script>
-import 'ol/ol.css';
-import { Map, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
-import { fromLonLat, toLonLat } from 'ol/proj';
-import { Feature } from 'ol';
-import Point from 'ol/geom/Point';
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import { Style, Icon } from 'ol/style';
-import axios from 'axios';
+import "ol/ol.css";
+import { Map, View } from "ol";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
+import { fromLonLat, toLonLat } from "ol/proj";
+import { Feature } from "ol";
+import Point from "ol/geom/Point";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import { Style, Icon } from "ol/style";
+import axios from "axios";
 
 export default {
-  name: 'MapComponent',
+  name: "MapComponent",
   props: {
     address: {
       type: String,
@@ -42,7 +45,7 @@ export default {
     mode: {
       type: String,
       required: true,
-      validator: value => ['view', 'edit'].includes(value),
+      validator: (value) => ["view", "edit"].includes(value),
     },
   },
   data() {
@@ -52,7 +55,7 @@ export default {
       formattedAddress: null,
       marker: null,
       vectorLayer: null,
-      searchQuery: '',
+      searchQuery: "",
     };
   },
   mounted() {
@@ -66,7 +69,7 @@ export default {
       });
 
       this.map = new Map({
-        target: 'map',
+        target: "map",
         layers: [
           new TileLayer({
             source: new OSM(),
@@ -74,13 +77,13 @@ export default {
           this.vectorLayer,
         ],
         view: new View({
-          center: fromLonLat([20.4568, 44.8176]), // Default coordinates (Belgrade)
+          center: fromLonLat([20.4568, 44.8176]),
           zoom: 15,
         }),
       });
 
-      if (this.mode === 'edit') {
-        this.map.on('click', this.handleMapClick);
+      if (this.mode === "edit") {
+        this.map.on("click", this.handleMapClick);
       }
     },
     async handleMapClick(event) {
@@ -92,23 +95,30 @@ export default {
     },
     async reverseGeocode() {
       try {
-        const apiKey = 'c6903f574a694ef492000429f6139014'; // Replace with your OpenCage API key
+        const apiKey = "c6903f574a694ef492000429f6139014";
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${this.coordinates.lat}+${this.coordinates.lng}&key=${apiKey}&language=en`
         );
         const addressComponents = response.data.results[0].components;
         this.formattedAddress = {
-          street: addressComponents.road || '',
-          city: addressComponents.city || addressComponents.town || addressComponents.village || '',
-          postalCode: addressComponents.postcode || '',
+          street: addressComponents.road || "",
+          city:
+            addressComponents.city ||
+            addressComponents.town ||
+            addressComponents.village ||
+            "",
+          postalCode: addressComponents.postcode || "",
         };
       } catch (error) {
-        console.error('There was an error fetching the reverse geocode data:', error);
+        console.error(
+          "There was an error fetching the reverse geocode data:",
+          error
+        );
       }
     },
     async geocodeAddress() {
       try {
-        const apiKey = 'c6903f574a694ef492000429f6139014'; // Replace with your OpenCage API key
+        const apiKey = "c6903f574a694ef492000429f6139014";
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${this.address}&key=${apiKey}&language=en`
         );
@@ -118,8 +128,12 @@ export default {
         const addressComponents = response.data.results[0].components;
         this.formattedAddress = {
           street: addressComponents.road || this.address,
-          city: addressComponents.city || addressComponents.town || addressComponents.village || '',
-          postalCode: addressComponents.postcode || '',
+          city:
+            addressComponents.city ||
+            addressComponents.town ||
+            addressComponents.village ||
+            "",
+          postalCode: addressComponents.postcode || "",
         };
 
         const coordinates = fromLonLat([lng, lat]);
@@ -128,7 +142,7 @@ export default {
         this.updateMarker(coordinates);
         this.emitAddressData();
       } catch (error) {
-        console.error('There was an error fetching the geocode data:', error);
+        console.error("There was an error fetching the geocode data:", error);
       }
     },
     updateMarker(coordinates) {
@@ -144,7 +158,7 @@ export default {
         new Style({
           image: new Icon({
             anchor: [0.5, 1],
-            src: 'https://openlayers.org/en/latest/examples/data/icon.png',
+            src: "https://openlayers.org/en/latest/examples/data/icon.png",
           }),
         })
       );
@@ -152,7 +166,7 @@ export default {
       this.vectorLayer.getSource().addFeature(this.marker);
     },
     emitAddressData() {
-      this.$emit('location-selected', {
+      this.$emit("location-selected", {
         latitude: this.coordinates.lat,
         longitude: this.coordinates.lng,
         address: this.formattedAddress,
@@ -160,7 +174,7 @@ export default {
     },
     async searchLocation() {
       try {
-        const apiKey = 'c6903f574a694ef492000429f6139014'; // Replace with your OpenCage API key
+        const apiKey = "c6903f574a694ef492000429f6139014";
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${this.searchQuery}&key=${apiKey}&language=en`
         );
@@ -169,9 +183,13 @@ export default {
 
         const addressComponents = response.data.results[0].components;
         this.formattedAddress = {
-          street: addressComponents.road || '',
-          city: addressComponents.city || addressComponents.town || addressComponents.village || '',
-          postalCode: addressComponents.postcode || '',
+          street: addressComponents.road || "",
+          city:
+            addressComponents.city ||
+            addressComponents.town ||
+            addressComponents.village ||
+            "",
+          postalCode: addressComponents.postcode || "",
         };
 
         const coordinates = fromLonLat([lng, lat]);
@@ -180,7 +198,7 @@ export default {
         this.updateMarker(coordinates);
         this.emitAddressData();
       } catch (error) {
-        console.error('There was an error fetching the geocode data:', error);
+        console.error("There was an error fetching the geocode data:", error);
       }
     },
   },
@@ -190,6 +208,6 @@ export default {
 <style scoped>
 .map {
   width: 100%;
-  height: 250px; /* Ensure the map has a defined height */
+  height: 250px;
 }
 </style>

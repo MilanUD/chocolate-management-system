@@ -12,15 +12,15 @@
 </template>
 
 <script setup>
-import UserProfileSidebar from '@/components/UserProfileSidebar.vue';
+import UserProfileSidebar from "@/components/UserProfileSidebar.vue";
 </script>
 
 <style scoped>
 .container {
-  margin-top: 20px; /* Add some space at the top */
+  margin-top: 20px;
 }
 
 .row {
-  justify-content: flex-start; /* Align items to the start */
+  justify-content: flex-start;
 }
 </style>

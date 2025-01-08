@@ -21,19 +21,19 @@ public class PurchaseCancellationHistoryDAO {
 	 private ObjectMapper objectMapper = new ObjectMapper()
 	            .registerModule(new JavaTimeModule())
 	            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);	
-	 private String fileName = "C:\\Users\\Milan\\Desktop\\Web Project\\WebShopAppREST\\src\\main\\webapp";
+	 private String fileName;
 	
 	
 
-	public PurchaseCancellationHistoryDAO() {
-		// TODO Auto-generated constructor stub
+	public PurchaseCancellationHistoryDAO(String contextPath) {
+		this.fileName = contextPath + "/purchaseCancellations.json";
 		loadPurchaseCancellations(fileName);
 	}
 	
 	
 	private void loadPurchaseCancellations(String fileName) {
 		try {
-           File file = new File(fileName + "/purchaseCancellations.json");
+           File file = new File(fileName);
            if (file.exists()) {
         	   purchaseCancellationHistoryMap = objectMapper.readValue(file, new TypeReference<HashMap<String, PurchaseCancellationHistory>>() {});
                
@@ -65,7 +65,7 @@ public class PurchaseCancellationHistoryDAO {
 	
 	private void save(String fileName) {
 		try {
-           File file = new File(fileName + "/purchaseCancellations.json");
+           File file = new File(fileName);
            ObjectWriter writer = objectMapper.writerWithDefaultPrettyPrinter();
            writer.writeValue(file, purchaseCancellationHistoryMap);
        } catch (IOException e) {
@@ -75,19 +75,15 @@ public class PurchaseCancellationHistoryDAO {
 
 
 	public PurchaseCancellationHistory addToPurchaseHistory(String userId) {
-		// TODO Auto-generated method stub
 		System.out.println("Test 1");
 		Optional<PurchaseCancellationHistory> result =  purchaseCancellationHistoryMap.values().stream().filter(p -> p.getUserId().equals(userId) && p.getEndDateForRecording().isAfter(LocalDate.now())).findFirst();
 		if(result.isPresent()) {
-			System.out.println("Test 2a");
 			PurchaseCancellationHistory cancellation = result.get();
 			cancellation.setCancellationCounter(cancellation.getCancellationCounter()+1);
 			save(fileName);
-			System.out.println("Test 3a");
 			return cancellation;
 		}
 		PurchaseCancellationHistory newCancellationTracker = new PurchaseCancellationHistory(userId);
-		System.out.println("Test 2b");
 		return add(newCancellationTracker);
 	}
 	
