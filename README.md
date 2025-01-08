@@ -2,7 +2,7 @@
 
 ## **Description**
 The Chocolate Management System is a web application designed to manage chocolates and chocolate factories. The system offers functionalities tailored to different user roles, including Administrators, Managers, Workers, and Customers.
-
+> **Note**: The focus of this project was on implementing core functionalities rather than on the user interface (UI). As a result, the UI design is minimalistic and primarily aimed at usability.
 ---
 
 ## **Features**
@@ -35,15 +35,15 @@ git clone https://github.com/MilanUD/chocolate-management-system.git
 ```
 
 ### **2. Run the Frontend**
--Navigate to the frontend directory:
+- Navigate to the frontend directory:
 ```bash
 cd chocolate-factory-front-end
 ```
--Install dependencies:
+- Install dependencies:
 ```bash
 npm install
 ```
--Start the frontend application:
+- Start the frontend application:
 ```bash
 npm run serve
 ```
