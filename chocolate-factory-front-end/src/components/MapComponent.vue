@@ -95,7 +95,7 @@ export default {
     },
     async reverseGeocode() {
       try {
-        const apiKey = "c6903f574a694ef492000429f6139014";
+        const apiKey = "c8414f576c9e49c0ac12dddb0eb6a6a4";
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${this.coordinates.lat}+${this.coordinates.lng}&key=${apiKey}&language=en`
         );
@@ -174,7 +174,7 @@ export default {
     },
     async searchLocation() {
       try {
-        const apiKey = "c6903f574a694ef492000429f6139014";
+        const apiKey = "c8414f576c9e49c0ac12dddb0eb6a6a4";
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${this.searchQuery}&key=${apiKey}&language=en`
         );
