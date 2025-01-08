@@ -31,18 +31,22 @@ The application supports four distinct roles, each with specific permissions and
 ### **1. Clone the Repository**
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/MilanUD/chocolate-management-system.git ```
+git clone https://github.com/MilanUD/chocolate-management-system.git
+```
 
 ### **2. Run the Frontend**
 -Navigate to the frontend directory:
 ```bash
-cd chocolate-factory-front-end ```
+cd chocolate-factory-front-end
+```
 -Install dependencies:
 ```bash
-npm install```
+npm install
+```
 -Start the frontend application:
 ```bash
-npm run serve ```
+npm run serve
+```
 ### 3. Set Up and Run the Backend
 - **Open** the backend portion of the project in your development environment (e.g., **Eclipse**).
 - **Configure** the Tomcat server:
@@ -52,7 +56,8 @@ npm run serve ```
 - **Deploy** the backend project to the server.
 - **Run** the backend:
   ```plaintext
-  Run As -> Run on Server ```
+  Run As -> Run on Server
+  ```
 ## **Technologies**
 
 - **Backend**: JAX-RS for REST API services, running on a Tomcat server.
